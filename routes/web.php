@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Navigation;
+use App\Livewire\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/navigation', Navigation::class);
+
+Route::get('/dashboard', Dashboard::class);
