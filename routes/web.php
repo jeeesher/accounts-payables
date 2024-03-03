@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Dashboard;
+use App\Livewire\Payables;
+use App\Livewire\Tracking;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', Dashboard::class);
+
+Route::get('/payables', Payables::class);
+
+Route::get('/tracking', Tracking::class);
+
