@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Navigation;
 use App\Livewire\Dashboard;
 
 /*
@@ -18,7 +17,5 @@ use App\Livewire\Dashboard;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/navigation', Navigation::class);
 
 Route::get('/dashboard', Dashboard::class);
