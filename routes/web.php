@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Dashboard;
 use App\Livewire\Payables;
 use App\Livewire\Tracking;
+use App\Livewire\PayablesAdd;
+use App\Livewire\PayablesView;
+use App\Livewire\PayablesEdit;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +29,10 @@ Route::get('/payables', Payables::class);
 
 Route::get('/tracking', Tracking::class);
 
+Route::get('/payables/add', PayablesAdd::class);
+
+Route::get('/payables/view', PayablesView::class);
+//Route::get('/payables/view/{id}', PayablesView::class);
+
+Route::get('/payables/edit', PayablesEdit::class);
+//Route::get('/payables/edit/{id}', PayablesEdit::class);
