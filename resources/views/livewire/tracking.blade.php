@@ -4,7 +4,7 @@
             <div class="p-4 mt-20">
                 <!-- Tracking Header -->
                 <div class="mb-4 flex items-center justify-between">
-                    <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">
+                    <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter'] pt-2">
                         Tracking
                         <!-- Tab Buttons -->
                         <div class="ml-7 bg-zinc-100 justify-start items-start gap-2 inline-flex px-3 py-2 rounded-lg ">

@@ -2,9 +2,7 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4 mt-20">
             <!-- Add New Payables Header -->
-            <div class="mb-4 flex items-center justify-between">
-                <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Add New Payable</div>
-            </div>
+            <div class="mb-4 pt-2 font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Add New Payable</div>
 
             <div class="max-w-10xl mx-auto space-y-6 flex">
                 <!-- Add New Payables Form -->

@@ -1,102 +1,255 @@
 <div>
-    <div>
-        <div class="p-4 sm:ml-64">
-            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-20">
-                <div class="grid grid-cols-3 gap-4 mb-4">
-                    <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
+    <div class="p-4 sm:ml-64">
+        <div class="p-4 mt-20">
+            <!-- Dashboard Header -->
+            <div class="mb-4 pt-2 font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Dashboard</div>
+                
+            <!-- Summary Section -->
+            <div class="flex items-justify flex-col mb-6 pb-7 bg-gradient-to-b from-slate-500 to-indigo-800 border shadow rounded-lg border-zinc-200 font-['Inter']">
+                <div class="pt-6 pl-8 text-[#EFF0FF] text-lg font-medium pb-9">Summary</div>
+
+                <div class="flex flex-wrap -m-4">
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Payables</div>
+                        <div class="pl-10 text-white text-2xl font-medium">145</div>
                     </div>
-                    <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Paid</div>
+                        <div class="pl-10 text-white text-2xl font-medium">58</div>
                     </div>
-                    <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Suppliers</div>
+                        <div class="pl-10 text-white text-2xl font-medium">54</div>
                     </div>
-                </div>
-                <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800 border-2">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Pending for Voucher</div>
+                        <div class="pl-10 text-white text-2xl font-medium">22</div>
                     </div>
                 </div>
-                <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800 border-2">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                    </p>
+            </div>
+
+            <div class="mx-auto grid grid-cols-1 gap-64 w-full">
+                <!-- Recent Added Payables Section -->
+                <div class="mb-16">
+                    <div class="mb-4 flex items-center justify-between font-['Inter']">
+                        <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex">Recent Added Payables</div>
+                        <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                            <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                <path stroke="currentColor" d="M10.668 3.59823H12.0013C12.3549 3.59823 12.6941 3.7387 12.9441 3.98875C13.1942 4.2388 13.3346 4.57794 13.3346 4.93156V14.2649C13.3346 14.6185 13.1942 14.9577 12.9441 15.2077C12.6941 15.4578 12.3549 15.5982 12.0013 15.5982H4.0013C3.64768 15.5982 3.30854 15.4578 3.05849 15.2077C2.80844 14.9577 2.66797 14.6185 2.66797 14.2649V4.93156C2.66797 4.57794 2.80844 4.2388 3.05849 3.98875C3.30854 3.7387 3.64768 3.59823 4.0013 3.59823H5.33464M6.0013 2.26489H10.0013C10.3695 2.26489 10.668 2.56337 10.668 2.93156V4.26489C10.668 4.63308 10.3695 4.93156 10.0013 4.93156H6.0013C5.63311 4.93156 5.33464 4.63308 5.33464 4.26489V2.93156C5.33464 2.56337 5.63311 2.26489 6.0013 2.26489Z" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            See All Payables
+                        </button>
+                    </div>
+
+                    <!-- Payable Cards -->
+                    <div class="w-full h-20 font-['Inter']">
+                        <!-- 1st Payable Card -->
+                        <div class="p-5 mb-4 w-full bg-white border shadow border-zinc-200 inline-flex items-center justify-between">
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">BUR Number</div>
+                            </div>   
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Supplier</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Particular</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Amount</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">End-User</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Current Location</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Terms of Payment</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Remarks</div>
+                            </div> 
+
+                            <button class="w-10 h-10 justify-end bg-white rounded-md">
+                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path stroke="currentColor" d="M4.16797 10.5294H15.8346M15.8346 10.5294L10.0013 4.69604M15.8346 10.5294L10.0013 16.3627" stroke="#18181B" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- 2nd Payable Card -->
+                        <div class="p-5 mb-4 w-full bg-white border shadow border-zinc-200 inline-flex items-center justify-between">
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">BUR Number</div>
+                            </div>   
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Supplier</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Particular</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Amount</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">End-User</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Current Location</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Terms of Payment</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Remarks</div>
+                            </div> 
+
+                            <button class="w-10 h-10 justify-end bg-white rounded-md">
+                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path stroke="currentColor" d="M4.16797 10.5294H15.8346M15.8346 10.5294L10.0013 4.69604M15.8346 10.5294L10.0013 16.3627" stroke="#18181B" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- 3rd Payable Card -->
+                        <div class="p-5 mb-4 w-full bg-white border shadow border-zinc-200 inline-flex items-center justify-between">
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">BUR Number</div>
+                            </div>   
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Supplier</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Particular</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Amount</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">End-User</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Current Location</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Terms of Payment</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Remarks</div>
+                            </div> 
+
+                            <button class="w-10 h-10 justify-end bg-white rounded-md">
+                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path stroke="currentColor" d="M4.16797 10.5294H15.8346M15.8346 10.5294L10.0013 4.69604M15.8346 10.5294L10.0013 16.3627" stroke="#18181B" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- 4th Payable Card -->
+                        <div class="p-5 mb-4 w-full bg-white border shadow border-zinc-200 inline-flex items-center justify-between">
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">BUR Number</div>
+                            </div>   
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Supplier</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Particular</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Amount</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">End-User</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Current Location</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Terms of Payment</div>
+                            </div> 
+                            <div class="col-span-1">
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">Text</div>
+                                <div class="text-zinc-500 text-xs font-normal">Remarks</div>
+                            </div> 
+
+                            <button class="w-10 h-10 justify-end bg-white rounded-md">
+                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path stroke="currentColor" d="M4.16797 10.5294H15.8346M15.8346 10.5294L10.0013 4.69604M15.8346 10.5294L10.0013 16.3627" stroke="#18181B" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
+                
+                <!-- Recent Opened Folders Section -->
+                <div class="mb-8">
+                    <div class="mb-4 flex items-center justify-between font-['Inter']">
+                        <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex">Recent Opened Folders</div>
+                        <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                            <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                <path stroke="currentColor" d="M10.668 3.59823H12.0013C12.3549 3.59823 12.6941 3.7387 12.9441 3.98875C13.1942 4.2388 13.3346 4.57794 13.3346 4.93156V14.2649C13.3346 14.6185 13.1942 14.9577 12.9441 15.2077C12.6941 15.4578 12.3549 15.5982 12.0013 15.5982H4.0013C3.64768 15.5982 3.30854 15.4578 3.05849 15.2077C2.80844 14.9577 2.66797 14.6185 2.66797 14.2649V4.93156C2.66797 4.57794 2.80844 4.2388 3.05849 3.98875C3.30854 3.7387 3.64768 3.59823 4.0013 3.59823H5.33464M6.0013 2.26489H10.0013C10.3695 2.26489 10.668 2.56337 10.668 2.93156V4.26489C10.668 4.63308 10.3695 4.93156 10.0013 4.93156H6.0013C5.63311 4.93156 5.33464 4.63308 5.33464 4.26489V2.93156C5.33464 2.56337 5.63311 2.26489 6.0013 2.26489Z" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            See All Folders
+                        </button>
                     </div>
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800 border-2">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">
-                        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                        </svg>
-                        </p>
+
+                    <!-- Folder Cards -->
+                    <div class="w-full h-20 font-['Inter']">
+                        <div class="p-5 mb-4 w-full bg-white border shadow border-zinc-200 inline-flex items-center justify-between">
+                            <div>
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">2022-2023</div>
+                            </div> 
+
+                            <button class="w-10 h-10 justify-end bg-white rounded-md">
+                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path stroke="currentColor" d="M4.16797 10.5294H15.8346M15.8346 10.5294L10.0013 4.69604M15.8346 10.5294L10.0013 16.3627" stroke="#18181B" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="p-5 mb-7 w-full bg-white border shadow border-zinc-200 inline-flex items-center justify-between">
+                            <div>
+                                <div class="text-base font-medium tracking-widest overflow-hidden whitespace-nowrap overflow-ellipsis">2020-2021</div>
+                            </div> 
+
+                            <button class="w-10 h-10 justify-end bg-white rounded-md">
+                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path stroke="currentColor" d="M4.16797 10.5294H15.8346M15.8346 10.5294L10.0013 4.69604M15.8346 10.5294L10.0013 16.3627" stroke="#18181B" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

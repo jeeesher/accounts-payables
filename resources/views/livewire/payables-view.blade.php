@@ -2,7 +2,7 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4 mt-20">
             <!-- Back Button -->
-            <button type="button" class="mb-4 flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
+            <button type="button" class="mb-1 flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
                 <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                     <path stroke="currentColor" d="M7.9987 12.698L3.33203 8.03129M3.33203 8.03129L7.9987 3.36462M3.33203 8.03129H12.6654" stroke="#2D349A" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 sm:rounded-lg w-full md:mb-0">
+            <div class="bg-white dark:bg-gray-800 sm:rounded-lg ">
                 <!-- Payable Information Field -->
                 <div>
                     <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Payable Information</div>

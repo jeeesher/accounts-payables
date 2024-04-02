@@ -7,6 +7,7 @@ use App\Livewire\Tracking;
 use App\Livewire\PayablesAdd;
 use App\Livewire\PayablesView;
 use App\Livewire\PayablesEdit;
+use App\Livewire\Accounts;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,5 @@ Route::get('/payables/view', PayablesView::class);
 
 Route::get('/payables/edit', PayablesEdit::class);
 //Route::get('/payables/edit/{id}', PayablesEdit::class);
+
+Route::get('/accounts', Accounts::class);
