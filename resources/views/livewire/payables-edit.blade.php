@@ -172,36 +172,32 @@
                             </button>
                         </div>
 
-                        <div class="flex ">
-                            <div class=" bg-white rounded-lg overflow-hidden sm:mr-10 w-full items-end font-['Inter']">
-                                <div x-data="{ 
-                                    tableItems: [
-                                        { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                        { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                        { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                        { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                        { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                    ]}" class="mx-auto w-full">
-                                    
-                                    <div class="mt-3 rounded-md overflow-x-auto">
-                                        <table class="w-full table-auto text-sm text-left" style="table-layout: fixed;">
-                                            <thead class="bg-gray-50 text-gray-600 font-medium border-b">
-                                                <tr>
-                                                <th class="py-3 px-6">Particular</th>
-                                                <th class="py-3 px-6">Amount</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="text-gray-600 divide-y">
-                                                <template x-for="(item, idx) in tableItems" :key="idx">
-                                                    <tr>
-                                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis font-semibold" x-text="item.particular"></td>
-                                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" x-text="item.amount"></td>
-                                                    </tr>
-                                                </template>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                        <div x-data="{ 
+                            tableItems: [
+                                { particular: 'Bold text column', 'amount': 'Regular text column' },
+                                { particular: 'Bold text column', 'amount': 'Regular text column' },
+                                { particular: 'Bold text column', 'amount': 'Regular text column' },
+                                { particular: 'Bold text column', 'amount': 'Regular text column' },
+                                { particular: 'Bold text column', 'amount': 'Regular text column' },
+                            ]}" class="mx-auto w-full">
+                            
+                            <div class="mt-6 rounded-md overflow-x-auto font-['Inter']">
+                                <table class="w-full table-auto text-sm text-left" style="table-layout: fixed;">
+                                    <thead class="bg-gray-50 text-gray-600 font-medium border-b">
+                                        <tr>
+                                            <th class="py-3 px-6">Particular</th>
+                                            <th class="py-3 px-6">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-600 divide-y">
+                                        <template x-for="(item, idx) in tableItems" :key="idx">
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis font-semibold" x-text="item.particular"></td>
+                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" x-text="item.amount"></td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

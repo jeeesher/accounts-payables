@@ -204,12 +204,12 @@
                                 { particular: 'Bold text column', 'amount': 'Regular text column' },
                             ]}" class="mx-auto w-full">
                             
-                            <div class="mt-3 rounded-md overflow-x-auto">
+                            <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
                                 <table class="w-full table-auto text-sm text-left" style="table-layout: fixed;">
                                     <thead class="bg-gray-50 text-gray-600 font-medium border-b">
                                         <tr>
-                                        <th class="py-3 px-6">Particular</th>
-                                        <th class="py-3 px-6">Amount</th>
+                                            <th class="py-3 px-6">Particular</th>
+                                            <th class="py-3 px-6">Amount</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-600 divide-y">
