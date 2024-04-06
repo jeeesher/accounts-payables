@@ -100,7 +100,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-cyan-700 dark:hover:bg-gray-700 active:bg-cyan-700 group">
+                <a href="/notifications" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-cyan-700 dark:hover:bg-gray-700 active:bg-cyan-700 group">
                 <svg class="flex-shrink-0 w-6 h-6 text-white transition duration-75 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 21">
                     <path d="M8.599 18.4642C8.73848 18.7179 8.94354 18.9295 9.19274 19.0769C9.44194 19.2242 9.72615 19.302 10.0157 19.302C10.3052 19.302 10.5894 19.2242 10.8386 19.0769C11.0878 18.9295 11.2928 18.7179 11.4323 18.4642M5.01562 7.63086C5.01562 6.30478 5.54241 5.03301 6.48009 4.09533C7.41777 3.15764 8.68954 2.63086 10.0156 2.63086C11.3417 2.63086 12.6135 3.15764 13.5512 4.09533C14.4888 5.03301 15.0156 6.30478 15.0156 7.63086C15.0156 13.4642 17.5156 15.1309 17.5156 15.1309H2.51562C2.51562 15.1309 5.01562 13.4642 5.01562 7.63086Z" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -108,7 +108,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-cyan-700 dark:hover:bg-gray-700 active:bg-cyan-700 group">
+                <a href="/folders/main" class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-cyan-700 dark:hover:bg-gray-700 active:bg-cyan-700 group">
                 <svg class="flex-shrink-0 w-6 h-6 text-white transition duration-75 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 21">
                     <path d="M1.68237 8.92415H18.349M3.34904 17.2575H16.6824C17.1244 17.2575 17.5483 17.0819 17.8609 16.7693C18.1734 16.4568 18.349 16.0328 18.349 15.5908V7.25749C18.349 6.81546 18.1734 6.39154 17.8609 6.07898C17.5483 5.76641 17.1244 5.59082 16.6824 5.59082H10.074C9.79953 5.5894 9.52962 5.52019 9.28829 5.38935C9.04696 5.25851 8.84169 5.07009 8.69071 4.84082L8.00737 3.84082C7.85639 3.61155 7.65112 3.42313 7.40979 3.29229C7.16846 3.16145 6.89855 3.09224 6.62404 3.09082H3.34904C2.90701 3.09082 2.48309 3.26641 2.17053 3.57898C1.85797 3.89154 1.68237 4.31546 1.68237 4.75749V15.5908C1.68237 16.5075 2.43237 17.2575 3.34904 17.2575Z" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>

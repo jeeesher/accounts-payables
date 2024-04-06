@@ -8,6 +8,6 @@ class Tracking extends Component
 {
     public function render()
     {
-        return view('livewire.tracking');
+        return view('livewire.accounting.tracking');
     }
 }

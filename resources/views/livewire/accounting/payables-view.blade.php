@@ -1,6 +1,6 @@
 <div>
     <div class="p-4 sm:ml-64">
-        <div class="p-4 mt-20">
+        <div class="p-4 mt-8">
             <!-- Back Button -->
             <button type="button" class="mb-1 flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
                 <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
@@ -55,7 +55,7 @@
                     </button>
                         
                     <!-- Payable Tracking Button -->
-                    <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M10.6667 1.33337V4.66671H14M4.66667 5.33337V11.2C4.66667 11.4 4.8 11.6 4.93333 11.7334C5.06667 11.8667 5.26667 12 5.46667 12H10M2 8.00004V13.8667C2 14.0667 2.13333 14.2667 2.26667 14.4C2.4 14.5334 2.6 14.6667 2.8 14.6667H7.33333M14 4.00004V8.33337C14 8.86671 13.5333 9.33337 13 9.33337H8.33333C7.8 9.33337 7.33333 8.86671 7.33333 8.33337V2.33337C7.33333 1.80004 7.8 1.33337 8.33333 1.33337H11.3333L14 4.00004Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -205,7 +205,7 @@
                             ]}" class="mx-auto w-full">
                             
                             <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
-                                <table class="w-full table-auto text-sm text-left" style="table-layout: fixed;">
+                                <table class="w-full table-auto text-sm text-left">
                                     <thead class="bg-gray-50 text-gray-600 font-medium border-b">
                                         <tr>
                                             <th class="py-3 px-6">Particular</th>
@@ -215,8 +215,11 @@
                                     <tbody class="text-gray-600 divide-y">
                                         <template x-for="(item, idx) in tableItems" :key="idx">
                                             <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis font-semibold" x-text="item.particular"></td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" x-text="item.amount"></td>
+                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis font-semibold flex items-center gap-x-6" style="width: 60%;">
+                                                    <span x-text="idx + 1"></span>
+                                                    <span x-text="item.particular"></span>
+                                                </td>                                                
+                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 40%;" x-text="item.amount"></td>
                                             </tr>
                                         </template>
                                     </tbody>

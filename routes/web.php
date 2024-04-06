@@ -9,6 +9,10 @@ use App\Livewire\PayablesView;
 use App\Livewire\PayablesEdit;
 use App\Livewire\Accounts;
 use App\Livewire\TrackingView;
+use App\Livewire\FoldersMain;
+use App\Livewire\FoldersYearly;
+use App\Livewire\FoldersPayable;
+use App\Livewire\Notifications;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,17 +32,19 @@ Route::get('/', function () {
 Route::get('/dashboard', Dashboard::class);
 
 Route::get('/payables', Payables::class);
-
-Route::get('/tracking', Tracking::class);
-
 Route::get('/payables/add', PayablesAdd::class);
-
 Route::get('/payables/view', PayablesView::class);
 //Route::get('/payables/view/{id}', PayablesView::class);
-
 Route::get('/payables/edit', PayablesEdit::class);
 //Route::get('/payables/edit/{id}', PayablesEdit::class);
 
+Route::get('/tracking', Tracking::class);
+Route::get('/tracking/view', TrackingView::class);
+
 Route::get('/accounts', Accounts::class);
 
-Route::get('/tracking/view', TrackingView::class);
+Route::get('/folders/main', FoldersMain::class);
+Route::get('/folders/yearly', FoldersYearly::class);
+Route::get('/folders/payable', FoldersPayable::class);
+
+Route::get('/notifications', Notifications::class);

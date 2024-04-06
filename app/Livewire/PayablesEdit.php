@@ -8,6 +8,6 @@ class PayablesEdit extends Component
 {
     public function render()
     {
-        return view('livewire.payables-edit');
+        return view('livewire.accounting.payables-edit');
     }
 }

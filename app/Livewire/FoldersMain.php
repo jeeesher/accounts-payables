@@ -8,6 +8,6 @@ class FoldersMain extends Component
 {
     public function render()
     {
-        return view('livewire.folders-main');
+        return view('livewire.accounting.folders-main');
     }
 }

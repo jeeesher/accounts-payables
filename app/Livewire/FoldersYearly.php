@@ -8,6 +8,6 @@ class FoldersYearly extends Component
 {
     public function render()
     {
-        return view('livewire.folders-yearly');
+        return view('livewire.accounting.folders-yearly');
     }
 }

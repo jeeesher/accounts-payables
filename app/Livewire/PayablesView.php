@@ -8,6 +8,6 @@ class PayablesView extends Component
 {
     public function render()
     {
-        return view('livewire.payables-view');
+        return view('livewire.accounting.payables-view');
     }
 }

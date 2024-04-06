@@ -8,6 +8,6 @@ class FoldersPayable extends Component
 {
     public function render()
     {
-        return view('livewire.folders-payable');
+        return view('livewire.accounting.folders-payable');
     }
 }
