@@ -1,8 +1,8 @@
 <div>
     <div class="p-4 sm:ml-64">
-        <div class="p-4 mt-12">
+        <div class="p-4 mt-16">
             <!-- Add New Payables Header -->
-            <div class="mt-1 mb-4 pt-2 font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Add New Payable</div>
+            <div class="mt-4 mb-4 pt-2 font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Add New Payable</div>
 
             <div class="max-w-10xl mx-auto space-y-6 flex">
                 <!-- Add New Payables Form -->
@@ -45,7 +45,8 @@
                                     <label for="location" class="block mb-2 text-sm font-medium text-black dark:text-white">Current Location</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <select id="location" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Location" required>
+                                <select id="location" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    <option disabled selected>Select Location</option>    
                                     <option>Accounting</option>
                                     <option>Treasurer</option>
                                     <option>Budgeting</option>
@@ -85,7 +86,8 @@
                                     <label for="suplier_name" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Name</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <select id="suplier_name" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Supplier" required>
+                                <select id="suplier_name" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Supplier" required>
+                                    <option disabled selected>Select Supplier</option> 
                                     <option>Supplier 1</option>
                                     <option>Supplier 2</option>
                                     <option>Supplier 3</option>
@@ -102,7 +104,7 @@
                                 </div>
                                 <div class="w-full px-3 py-2 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-6 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-gray-900 text-sm font-normal font-['Inter'] leading-tight">Autofill Text</div>
+                                        <div class="grow shrink basis-0 text-gray-400 text-sm font-normal font-['Inter'] leading-tight">Autofill Text</div>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +117,7 @@
                                 </div>
                                 <div class="w-full px-3 py-2 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-6 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-gray-900 text-sm font-normal font-['Inter'] leading-tight">Autofill Text</div>
+                                        <div class="grow shrink basis-0 text-gray-400 text-sm font-normal font-['Inter'] leading-tight">Autofill Text</div>
                                     </div>
                                 </div>
                             </div>
@@ -241,33 +243,11 @@
                 </div>
 
                 <div class="flex justify-end mt-5">
-                    <!-- Generate DV Form Button-->
-                    <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                        <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                            <g clip-path="url(#clip0_4289_6279)">
-                                <path stroke="currentColor" d="M9.33464 2.14679V6.14679H13.3346M9.66797 2.14679H4.0013C3.64768 2.14679 3.30854 2.28727 3.05849 2.53731C2.80844 2.78736 2.66797 3.1265 2.66797 3.48012V14.1468C2.66797 14.5004 2.80844 14.8396 3.05849 15.0896C3.30854 15.3396 3.64768 15.4801 4.0013 15.4801H12.0013C12.3549 15.4801 12.6941 15.3396 12.9441 15.0896C13.1942 14.8396 13.3346 14.5004 13.3346 14.1468V5.81346L9.66797 2.14679Z" stroke="#18181B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_4289_6279">
-                                <rect width="16" height="16" fill="white" transform="translate(0 0.813477)"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        Generate DV Form
-                    </button>
-
                     <!-- Add Payable Button -->
                     <x-add-payable />
-                    <button x-data x-on:click="$dispatch('open-add-payable')" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <button x-data x-on:click="$dispatch('open-add-payable')" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                            <g clip-path="url(#clip0_4341_6813)">
-                                <path stroke="currentColor" d="M2.66667 15.4801H12C12.3536 15.4801 12.6928 15.3396 12.9428 15.0896C13.1929 14.8396 13.3333 14.5004 13.3333 14.1468V5.81346L9.66667 2.14679H4C3.64638 2.14679 3.30724 2.28727 3.05719 2.53731C2.80714 2.78736 2.66667 3.1265 2.66667 3.48012V6.14679M9.33333 2.14679V6.14679H13.3333M2 10.8135H6M4 8.81346V12.8135" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_4341_6813">
-                                <rect width="16" height="16" fill="white" transform="translate(0 0.813477)"/>
-                                </clipPath>
-                            </defs>
+                            <path stroke="currentColor" d="M2.66667 15.4801H12C12.3536 15.4801 12.6928 15.3396 12.9428 15.0896C13.1929 14.8396 13.3333 14.5004 13.3333 14.1468V5.81346L9.66667 2.14679H4C3.64638 2.14679 3.30724 2.28727 3.05719 2.53731C2.80714 2.78736 2.66667 3.1265 2.66667 3.48012V6.14679M9.33333 2.14679V6.14679H13.3333M2 10.8135H6M4 8.81346V12.8135" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Add Payable
                     </button>

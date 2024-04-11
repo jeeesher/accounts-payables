@@ -5,7 +5,7 @@
     x-on:close-delete-folder.window="show = false"
     style="display: none;"
     
-    class="fixed z-50 inset-0"
+    class="fixed z-100 inset-0"
     >
 
     <!-- Background -->

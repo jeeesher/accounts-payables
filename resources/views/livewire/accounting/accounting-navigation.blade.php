@@ -27,43 +27,8 @@
                     </form>
 
                     <!-- Dropdown Menu -->
-                    <div class="flex items-center ms-10">
-                        <button id="user-dropdown" type="button" class="inline-flex items-center text-sm leading-4 font-medium font-['Inter'] dark:focus:ring-gray-600 text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300" aria-expanded="false" data-dropdown-toggle="dropdown">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                <path stroke="currentColor" d="M19.8797 9.05015C19.8797 11.7085 17.7247 13.8635 15.0664 13.8635C12.4081 13.8635 10.2531 11.7085 10.2531 9.05015C10.2531 6.39182 12.4081 4.23682 15.0664 4.23682C17.7247 4.23682 19.8797 6.39182 19.8797 9.05015Z" stroke="#434343" stroke-width="2.40667" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path stroke="currentColor" d="M15.0664 17.4735C10.4143 17.4735 6.64307 21.2447 6.64307 25.8968H23.4897C23.4897 21.2447 19.7185 17.4735 15.0664 17.4735Z" stroke="#434343" stroke-width="2.40667" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>  
-                            <div class="ml-2">Mara Calinao</div> <!-- should be the name of the user || Auth::user()->name if getting the name from the db record -->                                   
-                            <div class="ms-1">  
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>  
-                        </button>                 
-                        <div id="dropdown" class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
-                            <div class="px-4 py-3" role="none">
-                                <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                Neil Sims
-                                </p>
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                                neil.sims@flowbite.com
-                                </p>
-                            </div>
-                            <ul class="py-1" role="none" aria-labelledby="user-dropdown">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="flex items-center ms-2">
+                        <x-menu-dropdown />
                     </div>
                 </div>
             </div>

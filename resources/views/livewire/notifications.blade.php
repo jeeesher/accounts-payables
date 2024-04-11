@@ -1,8 +1,8 @@
 <div>
     <div class="p-4 sm:ml-64">
-        <div class="p-4 mt-12">
+        <div class="p-4 mt-16">
             <!-- Notifications Header -->
-            <div class="mt-1 flex items-center justify-between mb-4">
+            <div class="mt-4 flex items-center justify-between mb-4">
                 <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Notifications</div>
 
             <!-- Tab Buttons -->

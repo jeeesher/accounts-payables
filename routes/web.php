@@ -13,6 +13,8 @@ use App\Livewire\FoldersMain;
 use App\Livewire\FoldersYearly;
 use App\Livewire\FoldersPayable;
 use App\Livewire\Notifications;
+use App\Livewire\AccountingGenerateDv;
+use App\Livewire\AccountingDvView;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +50,6 @@ Route::get('/folders/yearly', FoldersYearly::class);
 Route::get('/folders/payable', FoldersPayable::class);
 
 Route::get('/notifications', Notifications::class);
+
+Route::get('/accounting/generate/dv', AccountingGenerateDv::class);
+Route::get('/accounting/dv/view', AccountingDvView::class);

@@ -1,8 +1,8 @@
 <div>
     <div class="p-4 sm:ml-64">
-        <div class="p-4 mt-8">
+        <div class="p-4 mt-16">
             <!-- Back Button -->
-            <button type="button" class="mb-1 flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
+            <button type="button" class=" mt-1 mb-1 flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
                 <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                     <path stroke="currentColor" d="M7.9987 12.698L3.33203 8.03129M3.33203 8.03129L7.9987 3.36462M3.33203 8.03129H12.6654" stroke="#2D349A" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -16,7 +16,8 @@
                 <!-- Button Group -->
                 <div class="flex space gap-1">
                     <!-- Delete Button -->
-                    <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <x-delete-payable />
+                    <button x-data x-on:click="$dispatch('open-delete-payable')" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M2 4.00004H14M12.6667 4.00004V13.3334C12.6667 14 12 14.6667 11.3333 14.6667H4.66667C4 14.6667 3.33333 14 3.33333 13.3334V4.00004M5.33333 4.00004V2.66671C5.33333 2.00004 6 1.33337 6.66667 1.33337H9.33333C10 1.33337 10.6667 2.00004 10.6667 2.66671V4.00004M6.66667 7.33337V11.3334M9.33333 7.33337V11.3334" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -24,12 +25,7 @@
                     </button>
 
                     <!-- Export Dropdown -->
-                    <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                        <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path stroke="currentColor" d="M2.66754 9.9326C2.17224 9.42654 1.79859 8.81441 1.5749 8.14256C1.35121 7.47071 1.28335 6.75676 1.37645 6.0548C1.46955 5.35284 1.72118 4.68127 2.11227 4.09096C2.50337 3.50064 3.02367 3.00708 3.63377 2.64763C4.24386 2.28819 4.92776 2.0723 5.63365 2.01632C6.33955 1.96033 7.04892 2.06572 7.70805 2.32451C8.36718 2.58329 8.95878 2.98867 9.43803 3.50996C9.91728 4.03124 10.2716 4.65475 10.4742 5.33327H11.6675C12.3112 5.33319 12.9378 5.54015 13.4549 5.92356C13.9719 6.30697 14.3519 6.84651 14.5387 7.46247C14.7256 8.07843 14.7093 8.73815 14.4924 9.34418C14.2755 9.95021 13.8695 10.4704 13.3342 10.8279M8.00081 7.99994V13.9999M8.00081 13.9999L5.33415 11.3333M8.00081 13.9999L10.6675 11.3333" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Export
-                    </button>
+                    <x-export-dropdown />
 
                     <!-- Edit Button -->
                     <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
@@ -55,15 +51,23 @@
                     </button>
                         
                     <!-- Payable Tracking Button -->
-                    <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <button type="button" class="inline-flex items-center text-[#2D349A] text-sm font-medium font-['Inter'] bg-indigo-50 shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M10.6667 1.33337V4.66671H14M4.66667 5.33337V11.2C4.66667 11.4 4.8 11.6 4.93333 11.7334C5.06667 11.8667 5.26667 12 5.46667 12H10M2 8.00004V13.8667C2 14.0667 2.13333 14.2667 2.26667 14.4C2.4 14.5334 2.6 14.6667 2.8 14.6667H7.33333M14 4.00004V8.33337C14 8.86671 13.5333 9.33337 13 9.33337H8.33333C7.8 9.33337 7.33333 8.86671 7.33333 8.33337V2.33337C7.33333 1.80004 7.8 1.33337 8.33333 1.33337H11.3333L14 4.00004Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Payable Tracking
-                        <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    </button>
+
+                    <!-- Generate DV Form Button-->
+                    <a href="/accounting/generate/dv" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                        <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path stroke="currentColor" d="M8.66536 3.33325V4.66659M8.66536 11.3333V12.6666M8.66536 7.33325V8.66659M1.33203 5.99992C1.86246 5.99992 2.37117 6.21063 2.74624 6.5857C3.12132 6.96078 3.33203 7.46949 3.33203 7.99992C3.33203 8.53035 3.12132 9.03906 2.74624 9.41413C2.37117 9.78921 1.86246 9.99992 1.33203 9.99992V11.3333C1.33203 11.6869 1.47251 12.026 1.72256 12.2761C1.9726 12.5261 2.31174 12.6666 2.66536 12.6666H13.332C13.6857 12.6666 14.0248 12.5261 14.2748 12.2761C14.5249 12.026 14.6654 11.6869 14.6654 11.3333V9.99992C14.1349 9.99992 13.6262 9.78921 13.2512 9.41413C12.8761 9.03906 12.6654 8.53035 12.6654 7.99992C12.6654 7.46949 12.8761 6.96078 13.2512 6.5857C13.6262 6.21063 14.1349 5.99992 14.6654 5.99992V4.66659C14.6654 4.31296 14.5249 3.97382 14.2748 3.72378C14.0248 3.47373 13.6857 3.33325 13.332 3.33325H2.66536C2.31174 3.33325 1.9726 3.47373 1.72256 3.72378C1.47251 3.97382 1.33203 4.31296 1.33203 4.66659V5.99992Z" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Disbursement Voucher
+                        <svg class="ms-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M3.33203 8.00004H12.6654M12.6654 8.00004L7.9987 3.33337M12.6654 8.00004L7.9987 12.6667" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </div>
 

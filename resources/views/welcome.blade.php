@@ -19,14 +19,14 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-        @livewireStyles
+        
     </head>
     <body class="antialiased p-5">
         <x-create-folder />
 
         <button x-data x-on:click="$dispatch('open-create-folder')" class="px-3 py-1 bg-teal-500 text-white rounded">Open</button>
 
-        @livewireScripts
+        <x-sample />
 
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))

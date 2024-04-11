@@ -1,7 +1,7 @@
 <div>
     <div class="p-4 sm:ml-64">
-        <div class="p-4 mt-12">
-            <div class="mt-1 max-w-10xl mx-auto space-y-6 flex">
+        <div class="p-4 mt-16">
+            <div class="mt-4 max-w-10xl mx-auto space-y-6 flex">
                 <!-- Add New Payables Form -->
                 <div class="bg-white dark:bg-gray-800 sm:rounded-lg lg:max-w-lg lg:w-1/3 md:w-1/2 w-full mb-10 md:mb-0">
                     <!-- Payable Information Input Field -->
@@ -136,7 +136,7 @@
                                 
                             <!-- Add Tracking Log -->
                             <x-add-track />
-                            <button x-data x-on:click="$dispatch('open-add-track')" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                            <button x-data x-on:click="$dispatch('open-add-track')" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] shadow bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                                 <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <path stroke="currentColor" d="M3.33203 8.50016H12.6654M7.9987 3.8335V13.1668" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>

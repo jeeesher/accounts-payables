@@ -1,8 +1,8 @@
 <div>
     <div class="p-4 sm:ml-64">
-        <div class="p-4 mt-12">
+        <div class="p-4 mt-16">
             <!-- Folders Header -->
-            <div class="mt-1 flex items-center justify-between mb-4">
+            <div class="mt-4 flex items-center justify-between mb-4">
                 <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Folders </div>
 
                 <!-- Button Group -->
@@ -17,16 +17,11 @@
                     </button>
 
                     <!-- Export Button -->
-                    <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                        <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path stroke="currentColor" d="M6.66406 14.6667L9.9974 18M9.9974 18L13.3307 14.6667M9.9974 18V10.5M16.6641 14.4524C17.682 13.6117 18.3307 12.3399 18.3307 10.9167C18.3307 8.38536 16.2787 6.33333 13.7474 6.33333C13.5653 6.33333 13.3949 6.23833 13.3025 6.08145C12.2158 4.23736 10.2094 3 7.91406 3C4.46228 3 1.66406 5.79822 1.66406 9.25C1.66406 10.9718 2.36027 12.5309 3.48652 13.6613" stroke="#344054" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Export
-                    </button>
+                    <x-export-dropdown />
                         
                     <!-- Add Folder Button -->
                     <x-create-folder />
-                    <button x-data x-on:click="$dispatch('open-create-folder')" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <button x-data x-on:click="$dispatch('open-create-folder')" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M3.33203 8.50016H12.6654M7.9987 3.8335V13.1668" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -45,7 +40,7 @@
                                     <path stroke="currentColor" fill="currentColor" d="M17.4961 5H13.7461L9.41406 1.75C8.98047 1.42578 8.45312 1.25 7.91406 1.25H2.49609C1.11719 1.25 -0.00390625 2.37109 -0.00390625 3.75V16.25C-0.00390625 17.6289 1.11719 18.75 2.49609 18.75H17.4961C18.875 18.75 19.9961 17.6289 19.9961 16.25V7.5C19.9961 6.12109 18.875 5 17.4961 5Z" fill="#6B6C7E"/>
                                 </svg>
                             </div>
-                            <a href="#" class="mt-1 inline-flex items-left grow shrink basis-0 text-sm font-semibold font-['Inter'] leading-[21px]">2023-2024</a>
+                            <a href="/folders/yearly" class="mt-1 inline-flex items-left grow shrink basis-0 text-sm font-semibold font-['Inter'] leading-[21px]">2023-2024</a>
                         </div>
                             <div class="w-60 h-[0px] relative"></div>
                     </button>
@@ -60,7 +55,7 @@
                                     <path stroke="currentColor" fill="currentColor" d="M17.4961 5H13.7461L9.41406 1.75C8.98047 1.42578 8.45312 1.25 7.91406 1.25H2.49609C1.11719 1.25 -0.00390625 2.37109 -0.00390625 3.75V16.25C-0.00390625 17.6289 1.11719 18.75 2.49609 18.75H17.4961C18.875 18.75 19.9961 17.6289 19.9961 16.25V7.5C19.9961 6.12109 18.875 5 17.4961 5Z" fill="#6B6C7E"/>
                                 </svg>
                             </div>
-                            <a href="#" class="mt-1 inline-flex items-left grow shrink basis-0 text-sm font-semibold font-['Inter'] leading-[21px]">2021-2022</a>
+                            <a href="/folders/yearly" class="mt-1 inline-flex items-left grow shrink basis-0 text-sm font-semibold font-['Inter'] leading-[21px]">2021-2022</a>
                         </div>
                             <div class="w-60 h-[0px] relative"></div>
                     </button>
@@ -75,7 +70,7 @@
                                     <path stroke="currentColor" fill="currentColor" d="M17.4961 5H13.7461L9.41406 1.75C8.98047 1.42578 8.45312 1.25 7.91406 1.25H2.49609C1.11719 1.25 -0.00390625 2.37109 -0.00390625 3.75V16.25C-0.00390625 17.6289 1.11719 18.75 2.49609 18.75H17.4961C18.875 18.75 19.9961 17.6289 19.9961 16.25V7.5C19.9961 6.12109 18.875 5 17.4961 5Z" fill="#6B6C7E"/>
                                 </svg>
                             </div>
-                            <a href="#" class="mt-1 inline-flex items-left grow shrink basis-0 text-sm font-semibold font-['Inter'] leading-[21px]">2019-2020</a>
+                            <a href="/folders/yearly" class="mt-1 inline-flex items-left grow shrink basis-0 text-sm font-semibold font-['Inter'] leading-[21px]">2019-2020</a>
                         </div>
                             <div class="w-60 h-[0px] relative"></div>
                     </button>

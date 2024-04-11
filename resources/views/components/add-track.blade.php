@@ -32,7 +32,8 @@
                     <label for="location" class="block mb-2 text-sm font-medium text-black dark:text-white">Current Location</label>
                     <span class="text-red-500 p-1 pl-3">*</span>
                 </div>
-                <select id="location" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Location" required>
+                <select id="location" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    <option disabled selected>Select Location</option>    
                     <option>Accounting</option>
                     <option>Treasurer</option>
                     <option>Budgeting</option>
@@ -47,7 +48,7 @@
                     <label for="date" class="block mb-2 text-sm font-medium text-black dark:text-white">Date</label>
                     <span class="text-red-500 p-1 pl-3">*</span>
                 </div>
-                <input type="text" id="date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Date" required />
+                <input type="text" id="date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
             </div>
 
             <!-- Time Dropdown Field -->
