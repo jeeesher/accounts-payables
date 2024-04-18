@@ -105,7 +105,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.terms"></td>
                                         <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.remarks"></td>
                                         <td class="text-right px-6 whitespace-nowrap">
-                                            <x-tracking-action-dropdown />
+                                            <x-table-action-dropdown />
                                         </td>
                                     </tr>
                                 </template>

@@ -21,7 +21,7 @@
         }"
         x-on:keydown.escape.prevent.stop="close($refs.button)"
         x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-        x-id="['dropdown-payables-action']"
+        x-id="['dropdown-table-action']"
         class="relative z-100 inset-0"
     >
         <!-- Button -->
@@ -29,7 +29,7 @@
             x-ref="button"
             x-on:click="toggle()"
             :aria-expanded="open"
-            :aria-controls="$id('dropdown-payables-action')"
+            :aria-controls="$id('dropdown-table-action')"
             type="button"
             href="javascript:void(0)" class="py-2 leading-none duration-150"
         >
@@ -44,7 +44,7 @@
             x-show="open"
             x-transition.origin.top.left
             x-on:click.outside="close($refs.button)"
-            :id="$id('dropdown-payables-action')"
+            :id="$id('dropdown-table-action')"
             style="display: none;"
             class="absolute right-0 mt-1 w-24 rounded-md bg-white shadow-md font-['Inter'] z-50"
         >  
@@ -52,17 +52,17 @@
                 Actions
             </div>
 
-            <button class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+            <a href="/payables/edit"  class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                 Edit
-            </button>
+            </a>
 
-            <button class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+            <a href="/payables/view" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                 View
-            </button>
+            </a>
 
-            <button class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+            <a href="/tracking/view" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                 Track
-            </button>
+            </a>
         </div>
     </div>
 </div>
