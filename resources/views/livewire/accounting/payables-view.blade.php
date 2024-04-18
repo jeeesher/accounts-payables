@@ -28,7 +28,7 @@
                     <x-export-dropdown />
 
                     <!-- Edit Button -->
-                    <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <a href="/payables/edit" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_4293_5083)">
                                 <path stroke="currentColor" d="M7.33203 2.66667H2.66536C2.31174 2.66667 1.9726 2.80714 1.72256 3.05719C1.47251 3.30724 1.33203 3.64638 1.33203 4V13.3333C1.33203 13.687 1.47251 14.0261 1.72256 14.2761C1.9726 14.5262 2.31174 14.6667 2.66536 14.6667H11.9987C12.3523 14.6667 12.6915 14.5262 12.9415 14.2761C13.1916 14.0261 13.332 13.687 13.332 13.3333V8.66667M12.332 1.66665C12.5972 1.40144 12.957 1.25244 13.332 1.25244C13.7071 1.25244 14.0668 1.40144 14.332 1.66665C14.5972 1.93187 14.7462 2.29158 14.7462 2.66665C14.7462 3.04173 14.5972 3.40144 14.332 3.66665L7.9987 9.99999L5.33203 10.6667L5.9987 7.99999L12.332 1.66665Z" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
@@ -40,7 +40,7 @@
                             </defs>
                         </svg>
                         Edit
-                    </button>
+                    </a>
 
                     <!-- Go to Folders Button -->
                     <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
@@ -81,7 +81,7 @@
                             <div class="h-full pt-3 pb-2 text-left relative">
                                 <div class="mb-6">
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">BUR Number</div>
-                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                             <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                         </div>
@@ -90,7 +90,7 @@
                                 
                                 <div class="mb-6">
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Current Location</div>
-                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                             <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                         </div>
@@ -104,7 +104,7 @@
                             <div class="h-full pt-3 pb-2 pl-2 rounded-lg text-left relative">
                                 <div class="mb-6">
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">End-user</div>
-                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                             <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                         </div>
@@ -113,7 +113,7 @@
                             
                                 <div class="mb-6">
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Terms of Payment</div>
-                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                             <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                         </div>
@@ -127,7 +127,7 @@
                             <div class="h-full pt-3 pl-4 pb-2 rounded-lg text-left relative">
                                 <div class="mb-6">
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Total Amount</div>
-                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                             <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                         </div>
@@ -136,7 +136,7 @@
                                 
                                 <div class="mb-6">
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Remarks</div>
-                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                    <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                             <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                         </div>
@@ -155,7 +155,7 @@
                         <div class="pr-4 lg:w-1/3">
                             <div class="h-full pt-3 pb-2 text-left relative">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Name</div>
-                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                         <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                     </div>
@@ -167,7 +167,7 @@
                         <div class="pr-4 lg:w-1/3">
                             <div class="h-full pt-3 pb-2 pl-2 rounded-lg text-left relative">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Address</div>
-                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                         <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                     </div>
@@ -179,7 +179,7 @@
                         <div class="pr-4 lg:w-1/3">
                             <div class="h-full pt-3 pl-4 pb-2 rounded-lg text-left relative">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Contact Number</div>
-                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md shadow border border-gray-200 justify-start items-center gap-2 inline-flex">
+                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                         <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                     </div>
