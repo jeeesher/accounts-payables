@@ -4,14 +4,14 @@
             <!-- Add New Payables Header -->
             <div class="mt-4 mb-4 pt-2 font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Add New Payable</div>
 
-            <div class="max-w-10xl mx-auto space-y-6 flex">
+            <form class="max-w-10xl mx-auto space-y-6 flex">
                 <!-- Add New Payables Form -->
                 <div class="bg-white dark:bg-gray-800 sm:rounded-lg lg:max-w-lg lg:w-1/3 md:w-1/2 w-full mb-10 md:mb-0">
                     <!-- Payable Information Input Field -->
                     <div>
                         <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Payable Information</div>
 
-                        <form class="mx-auto mt-5 font-['Inter']">
+                        <div class="mx-auto mt-5 font-['Inter']">
                             <!-- BUR Input Field -->
                             <div class="mb-4">
                                 <div class="flex items-center">
@@ -19,80 +19,84 @@
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
                                 <input type="text" id="BUR" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter BUR Number" required />
+                                @error('BUR') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
 
                             <!-- End-user Input Field -->
                             <div class="mb-4">
                                 <div class="flex items-center">
-                                    <label for="end_user" class="block mb-2 text-sm font-medium text-black dark:text-white">End-user</label>
+                                    <label for="EndUser" class="block mb-2 text-sm font-medium text-black dark:text-white">End-user</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <input type="text" id="end_user" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter End-user" required />
+                                <input type="text" id="EndUser" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter End-user" required />
+                                @error('EndUser') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
                             
                             <!-- Total Amount Input Field -->
                             <div class="mb-4">
                                 <div class="flex items-center">
-                                    <label for="total_amount" class="block mb-2 text-sm font-medium text-black dark:text-white">Total Amount</label>
+                                    <label for="Amount" class="block mb-2 text-sm font-medium text-black dark:text-white">Total Amount</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <input type="text" id="total_amount" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Php 0.00 " required />
+                                <input type="text" id="Amount" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Php 0.00 " required />
+                                @error('Amount') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
 
                             <!-- Current Location Dropdown Field -->
                             <div class="mb-4">
                                 <div class="flex items-center">
-                                    <label for="location" class="block mb-2 text-sm font-medium text-black dark:text-white">Current Location</label>
+                                    <label for="CurrentLocation" class="block mb-2 text-sm font-medium text-black dark:text-white">Current Location</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <select id="location" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                <select id="CurrentLocation" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                     <option disabled selected>Select Location</option>    
-                                    <option>Accounting</option>
-                                    <option>Treasurer</option>
-                                    <option>Budgeting</option>
-                                    <option>Procurement</option>
-                                    <option>OVPF</option>
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="Treasurer">Treasurer</option>
+                                    <option value="Budgeting">Budgeting</option>
+                                    <option value="Procurement">Procurement</option>
+                                    <option value="OVPF">OVPF</option>
                                 </select>
+                                @error('CurrentLocation') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
 
                             <!-- Terms of Payment Input Field -->    
                             <div class="mb-4">
                                 <div class="flex items-center">
-                                    <label for="remarks" class="block mb-2 text-sm font-medium text-black dark:text-white">Terms of Payment</label>
+                                    <label for="TermsPayment" class="block mb-2 text-sm font-medium text-black dark:text-white">Terms of Payment</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <input type="text" id="remarks" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Terms of Payment" required />
+                                <input type="text" id="TermsPayment" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Terms of Payment" required />
+                                @error('TermsPayment') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
 
                             <!-- Remarks Input Field -->    
                             <div class="mb-4">
                                 <div class="flex items-center">
-                                    <label for="remarks" class="block mb-2 text-sm font-medium text-black dark:text-white">Remarks</label>
+                                    <label for="Remarks" class="block mb-2 text-sm font-medium text-black dark:text-white">Remarks</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <input type="text" id="remarks" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Remarks" required />
+                                <input type="text" id="Remarks" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Remarks" required />
+                                @error('Remarks') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                             </div>
-                        </form>
+                        </div>
                     </div>
 
                     <!-- Supplier Information Input Field -->
                     <div class="pt-5">
                         <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Supplier Information</div>
 
-                        <form class="mx-auto mt-5 font-['Inter']">
+                        <div class="mx-auto mt-5 font-['Inter']">
                             <!-- Supplier Name Dropdown Field -->
                             <div class="mb-4">
                                 <div class="flex items-center">
-                                    <label for="suplier_name" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Name</label>
+                                    <label for="SupplierName" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Name</label>
                                     <span class="text-red-500 p-1 pl-3">*</span>
                                 </div>
-                                <select id="suplier_name" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Supplier" required>
+                                <select id="SupplierName" wire:model="supplier_id" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Supplier" required>
                                     <option disabled selected>Select Supplier</option> 
-                                    <option>Supplier 1</option>
-                                    <option>Supplier 2</option>
-                                    <option>Supplier 3</option>
-                                    <option>Supplier 4</option>
-                                    <option>Supplier 5</option>
+                                    @foreach ($suppliers as $key => $value)
+                                        <option value="{{ $key }}">{{ $value }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -121,7 +125,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
 
