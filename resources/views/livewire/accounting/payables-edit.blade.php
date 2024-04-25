@@ -205,17 +205,17 @@
                         </div>
                     </div>
 
-                    <!-- Payable Preview Section -->
+                    <!-- Disbursement Voucher Preview Section -->
                     <div class="flex flex-col">
                         <div class="flex items-center justify-between mb-5">
-                            <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Payable Preview</div>
+                            <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Disbursement Voucher Preview</div>
                             
-                            <!-- Upload New Copy of Payable Button-->
+                            <!-- Upload Signed Disbursement Voucher Button-->
                             <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-zinc-100 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                                 <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <path stroke="currentColor" d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10M11.3333 5.33333L8 2M8 2L4.66667 5.33333M8 2V10" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Upload New Copy of Payable
+                                Upload Signed Disbursement Voucher
                             </button>
                         </div>
                         <div class="border shadow h-96">

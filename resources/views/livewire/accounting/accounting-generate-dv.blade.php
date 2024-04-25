@@ -166,17 +166,6 @@
                             </select>
                         </form>
 
-                        <!-- Signature Upload -->
-                        <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Signature</div>
-                            <button type="button" class="w-full inline-flex items-center justify-center text-black text-sm font-medium font-['Inter'] bg-zinc-100 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                                    <path stroke="currentColor" d="M14.25 10V12.6667C14.25 13.0203 14.1095 13.3594 13.8595 13.6095C13.6094 13.8595 13.2703 14 12.9167 14H3.58333C3.22971 14 2.89057 13.8595 2.64052 13.6095C2.39048 13.3594 2.25 13.0203 2.25 12.6667V10M11.5833 5.33333L8.25 2M8.25 2L4.91667 5.33333M8.25 2V10" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>    
-                                Upload E-Signature
-                            </button>
-                        </div>
-
                         <!-- Printed Name Input Field -->
                         <form class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
@@ -184,15 +173,9 @@
                         </form>
 
                         <!-- Position Input Field -->
-                        <form class="mb-6">
+                        <form class="mb-2">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
                             <input type="text" id="dv-a-position" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required />
-                        </form>
-
-                        <!-- Date Input Field -->
-                        <form class="mb-2">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                            <input type="text" id="dv-a-date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
                         </form>
                     </div>
 
@@ -212,17 +195,6 @@
                             </select>
                         </form>
 
-                        <!-- Signature Upload -->
-                        <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Signature</div>
-                            <button type="button" class="w-full inline-flex items-center justify-center text-black text-sm font-medium font-['Inter'] bg-zinc-100 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                                    <path stroke="currentColor" d="M14.25 10V12.6667C14.25 13.0203 14.1095 13.3594 13.8595 13.6095C13.6094 13.8595 13.2703 14 12.9167 14H3.58333C3.22971 14 2.89057 13.8595 2.64052 13.6095C2.39048 13.3594 2.25 13.0203 2.25 12.6667V10M11.5833 5.33333L8.25 2M8.25 2L4.91667 5.33333M8.25 2V10" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>    
-                                Upload E-Signature
-                            </button>
-                        </div>
-
                         <!-- Printed Name Input Field -->
                         <form class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
@@ -230,15 +202,9 @@
                         </form>
 
                         <!-- Position Input Field -->
-                        <form class="mb-6">
+                        <form class="mb-2">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
                             <input type="text" id="dv-b-position" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required />
-                        </form>
-
-                        <!-- Date Input Field -->
-                        <form class="mb-2">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                            <input type="text" id="dv-b-date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
                         </form>
                     </div>
                 </div>
@@ -251,73 +217,60 @@
                 </div>
 
                 <div class="flex flex-wrap w-full mx-auto mb-2">
-                    <!-- Check No. Input Field and Signature Button -->
+                    <!-- Check No. Input Field -->
                     <form class="pr-4 lg:w-1/3">
                         <div class="h-full pb-2 text-left relative">
-                            <div class="mb-6">
+                            <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Check No.</div>
                                 <input type="text" id="dv-c-check" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Check No." required />
-                            </div>
-
-                            <div class="mb-2">
-                                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Signature</div>
-                                <button type="button" class="w-full inline-flex items-center justify-center text-black text-sm font-medium font-['Inter'] bg-zinc-100 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                                    <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                                        <path stroke="currentColor" d="M14.25 10V12.6667C14.25 13.0203 14.1095 13.3594 13.8595 13.6095C13.6094 13.8595 13.2703 14 12.9167 14H3.58333C3.22971 14 2.89057 13.8595 2.64052 13.6095C2.39048 13.3594 2.25 13.0203 2.25 12.6667V10M11.5833 5.33333L8.25 2M8.25 2L4.91667 5.33333M8.25 2V10" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>    
-                                    Upload E-Signature
-                                </button>
                             </div>
                         </div>
                     </form>
 
-                    <!-- Check Date and Signature Date Input Field -->
+                    <!-- Check Date Input Field -->
                     <form class="pr-2 lg:w-1/3">
                         <div class="h-full pb-2 pl-2 rounded-lg text-left relative">
-                            <div class="mb-6">
+                            <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
                                 <input type="text" id="dv-c-check-date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
                             </div>
                                 
-                            <div class="mb-2">
-                                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                                <input type="text" id="dv-c-signature-date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
-                            </div>
+                            
                         </div>                    
                     </form>
 
-                    <!-- Bank Name and Printed Name Input Field -->
+                    <!-- Bank Name Input Field -->
                     <form class="lg:w-1/3">
                         <div class="h-full pl-4 pb-2 rounded-lg text-left relative">
-                            <div class="mb-6">
+                            <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Bank Name</div>
                                 <input type="text" id="dv-c-bank" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Bank Name" required />
-                            </div>
-                                    
-                            <div class="mb-2">
-                                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
-                                <input type="text" id="dv-c-name" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required />
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
+            <div class="mb-6">
+                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
+                <input type="text" id="dv-c-name" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required />
+            </div>
             
             <div class="bg-white dark:bg-gray-800 sm:rounded-lg mx-auto flex sm:flex-nowrap flex-wrap">
                 <div class="lg:w-1/2 md:w-1/2 bg-white overflow-hidden sm:mr-10 w-full items-end justify-start relative font-['Inter']">
                     <!-- JEV No. Input Field -->
-                    <form class="">
+                    <div class="mb-2">
                         <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">JEV No.</div>
                         <input type="text" id="dv-c-jev" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter JEV No." required />
-                    </form>
+                    </div>
                 </div>
 
                 <div class="lg:w-1/2 md:w-1/2 bg-white flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0" style="align-self: flex-start; margin-top: 0; padding-top: 0;">
                     <!-- Date Input Field -->
-                    <form class="">
+                    <div class="mb-2">
                         <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
                         <input type="text" id="dv-c-jev-date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
-                    </form>
+                    </div>
                 </div>
             </div>
             <div class="font-['Inter']">

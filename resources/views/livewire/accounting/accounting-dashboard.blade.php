@@ -6,23 +6,19 @@
                 
             <!-- Summary Section -->
             <div class="flex items-justify flex-col mb-6 pb-7 bg-gradient-to-b from-slate-500 to-indigo-800 border shadow rounded-lg border-zinc-200 font-['Inter']">
-                <div class="pt-6 pl-8 text-[#EFF0FF] text-lg font-medium pb-9">Summary</div>
+                <div class="pt-6 pl-8 text-[#EFF0FF] text-xl font-medium pb-9">Summary</div>
 
                 <div class="flex flex-wrap -m-4">
-                    <div class="xl:w-1/4 md:w-1/2 p-4">
-                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Payables</div>
+                    <div class="xl:w-1/3 md:w-1/2 p-4">
+                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Accounts Payable</div>
                         <div class="pl-10 text-white text-2xl font-medium">145</div>
                     </div>
-                    <div class="xl:w-1/4 md:w-1/2 p-4">
-                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Paid</div>
-                        <div class="pl-10 text-white text-2xl font-medium">58</div>
-                    </div>
-                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                    <div class="xl:w-1/3 md:w-1/2 p-4">
                         <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Suppliers</div>
                         <div class="pl-10 text-white text-2xl font-medium">54</div>
                     </div>
-                    <div class="xl:w-1/4 md:w-1/2 p-4">
-                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Pending for Voucher</div>
+                    <div class="xl:w-1/3 md:w-1/2 p-4">
+                        <div class="pl-10 pb-4 text-zinc-100 text-base font-normal">Total Overdue Accounts Payable</div>
                         <div class="pl-10 text-white text-2xl font-medium">22</div>
                     </div>
                 </div>

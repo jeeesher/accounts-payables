@@ -35,7 +35,7 @@
             <!-- Disbursement Voucher Field -->
             <div class="flex flex-wrap w-full mx-auto mb-2">
                 <!-- No., Payee, and Address Field -->
-                <form class="pr-4 lg:w-1/3">
+                <div class="pr-4 lg:w-1/3">
                     <div class="h-full pt-3 pb-2 text-left relative">
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">No.</div>
@@ -64,10 +64,10 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
 
                 <!-- Date and TIN Employee No. Field -->
-                <form class="pr-2 lg:w-1/3">
+                <div class="pr-2 lg:w-1/3">
                     <div class="h-full pt-3 pb-2 pl-2 rounded-lg text-left relative">
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
@@ -97,10 +97,10 @@
                             </div>
                         </div>
                     </div>                    
-                </form>
+                </div>
 
                 <!-- Mode of Payment and BUR No. Field -->
-                <form class="lg:w-1/3">
+                <div class="lg:w-1/3">
                     <div class="h-full pt-3 pl-4 pb-2 rounded-lg text-left relative">
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Mode of Payment</div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
 
             <!-- Disbursement Voucher Table -->
@@ -188,54 +188,34 @@
                         </div>
 
                         <!-- Certified Field -->
-                        <form class="mb-6">
+                        <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Certified</div>
                             <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                 <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                     <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                 </div>
                             </div>                            
-                        </form>
-
-                        <!-- Signature Upload -->
-                        <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Signature</div>
-                            <div class="w-full h-9 px-3 py-2 bg-white justify-start items-center gap-2 inline-flex">
-                                <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                    <div class="grow shrink basis-0 text-[#2D349A] text-sm font-normal font-['Inter'] leading-tight italic">E-Signature File Name</div>
-                                </div>
-                            </div>    
                         </div>
 
                         <!-- Printed Name Field -->
-                        <form class="mb-6">
+                        <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
                             <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                 <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                     <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Name</div>
                                 </div>
                             </div>                         
-                        </form>
+                        </div>
 
                         <!-- Position Field -->
-                        <form class="mb-6">
+                        <div class="mb-2">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
                             <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                 <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                     <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Position</div>
                                 </div>
                             </div>                         
-                        </form>
-
-                        <!-- Date Field -->
-                        <form class="mb-2">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                            <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
-                                <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                    <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Date</div>
-                                </div>
-                            </div>                         
-                        </form>
+                        </div>
                     </div>
 
                     <!-- B Section -->
@@ -245,54 +225,34 @@
                         </div>
 
                         <!-- Approved For Field -->
-                        <form class="mb-6">
+                        <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Approved for</div>
                             <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                 <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                     <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
                                 </div>
                             </div>                         
-                        </form>
-
-                        <!-- Signature Upload -->
-                        <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Signature</div>
-                            <div class="w-full h-9 px-3 py-2 bg-white justify-start items-center gap-2 inline-flex">
-                                <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                    <div class="grow shrink basis-0 text-[#2D349A] text-sm font-normal font-['Inter'] leading-tight italic">E-Signature File Name</div>
-                                </div>
-                            </div> 
                         </div>
 
                         <!-- Printed Name Field -->
-                        <form class="mb-6">
+                        <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
                             <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                 <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                     <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Name</div>
                                 </div>
                             </div>                         
-                        </form>
+                        </div>
 
                         <!-- Position Field -->
-                        <form class="mb-6">
+                        <div class="mb-2">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
                             <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                 <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                     <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Position</div>
                                 </div>
                             </div>                         
-                        </form>
-
-                        <!-- Date Field -->
-                        <form class="mb-2">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                            <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
-                                <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                    <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Date</div>
-                                </div>
-                            </div>                         
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -304,10 +264,10 @@
                 </div>
 
                 <div class="flex flex-wrap w-full mx-auto mb-2">
-                    <!-- Check No. Field and Signature Button -->
-                    <form class="pr-4 lg:w-1/3">
+                    <!-- Check No. Field -->
+                    <div class="pr-4 lg:w-1/3">
                         <div class="h-full pb-2 text-left relative">
-                            <div class="mb-6">
+                            <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Check No.</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
@@ -315,30 +275,12 @@
                                     </div>
                                 </div>                             
                             </div>
-
-                            <div class="mb-2">
-                                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Signature</div>
-                                <div class="w-full h-9 px-3 py-2 bg-white justify-start items-center gap-2 inline-flex">
-                                    <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-[#2D349A] text-sm font-normal font-['Inter'] leading-tight italic">E-Signature File Name</div>
-                                    </div>
-                                </div> 
-                            </div>
                         </div>
-                    </form>
+                    </div>
 
-                    <!-- Check Date and Signature Date Field -->
-                    <form class="pr-2 lg:w-1/3">
+                    <!-- Check Date Field -->
+                    <div class="pr-2 lg:w-1/3">
                         <div class="h-full pb-2 pl-2 rounded-lg text-left relative">
-                            <div class="mb-6">
-                                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
-                                    <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Date</div>
-                                    </div>
-                                </div>                             
-                            </div>
-                                
                             <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
@@ -348,12 +290,12 @@
                                 </div>                             
                             </div>
                         </div>                    
-                    </form>
+                    </div>
 
-                    <!-- Bank Name and Printed Name Field -->
-                    <form class="lg:w-1/3">
+                    <!-- Bank Name Field -->
+                    <div class="lg:w-1/3">
                         <div class="h-full pl-4 pb-2 rounded-lg text-left relative">
-                            <div class="mb-6">
+                            <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Bank Name</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
@@ -361,43 +303,44 @@
                                     </div>
                                 </div>                             
                             </div>
-                                    
-                            <div class="mb-2">
-                                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
-                                <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
-                                    <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Name</div>
-                                    </div>
-                                </div>                             
-                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Printed Name Field -->
+            <div class="mb-6">
+                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
+                <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
+                    <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
+                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Name</div>
+                    </div>
+                </div>                             
             </div>
             
             <div class="bg-white dark:bg-gray-800 sm:rounded-lg mx-auto flex sm:flex-nowrap flex-wrap">
                 <div class="lg:w-1/2 md:w-1/2 bg-white overflow-hidden sm:mr-10 w-full items-end justify-start relative font-['Inter']">
                     <!-- JEV No. Field -->
-                    <form class="">
+                    <div class="">
                         <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">JEV No.</div>
                         <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                             <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                 <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">JEV No.</div>
                             </div>
                         </div>                     
-                    </form>
+                    </div>
                 </div>
 
                 <div class="lg:w-1/2 md:w-1/2 bg-white flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0" style="align-self: flex-start; margin-top: 0; padding-top: 0;">
                     <!-- Date Field -->
-                    <form class="">
+                    <div class="">
                         <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
                         <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                             <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
                                 <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Date</div>
                             </div>
                         </div>                     
-                    </form>
+                    </div>
                 </div>
             </div>
             <div class="font-['Inter']">

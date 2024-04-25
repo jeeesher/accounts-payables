@@ -232,10 +232,10 @@
                         </div>
                     </div>
 
-                    <!-- Payable View Section -->
+                    <!-- Disbursement Voucher Preview Section -->
                     <div class="lg:w-1/2 md:w-1/2 bg-white rounded-lg flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0" style="align-self: flex-start; margin-top: 0; padding-top: 0;">
                         <div class="flex items-center justify-between mb-2">
-                            <div class="text-zinc-950 font-semibold text-lg font-['Inter'] leading-loose">Payable Preview</div>
+                            <div class="text-zinc-950 font-semibold text-lg font-['Inter'] leading-loose">Disbursement Voucher Preview</div>
                         </div>
                         <div class="mt-3 border shadow h-96">
                             <!-- file preview -->
