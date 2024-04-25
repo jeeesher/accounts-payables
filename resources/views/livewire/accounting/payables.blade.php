@@ -9,26 +9,10 @@
                     <!-- Button Group -->
                     <div class="flex space gap-1">
                         <!-- Year Filter Dropdown -->
-                        <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] shadow bg-zinc-100 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                            <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path stroke="currentColor" d="M10.6667 1.33337V4.00004M5.33333 1.33337V4.00004M2 6.66671H14M3.33333 2.66671H12.6667C13.403 2.66671 14 3.26366 14 4.00004V13.3334C14 14.0698 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0698 2 13.3334V4.00004C2 3.26366 2.59695 2.66671 3.33333 2.66671Z" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            2022 - 2023
-                            <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path stroke="currentColor" d="M7.9987 3.33337V12.6667M7.9987 12.6667L12.6654 8.00004M7.9987 12.6667L3.33203 8.00004" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                        <x-filter-payable-year />
 
                         <!-- Due Status Filter Dropdown-->
-                        <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] shadow bg-zinc-100 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                            <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path stroke="currentColor" d="M6.66797 1.33337H9.33464M8.0013 9.33337L10.0013 7.33337M13.3346 9.33337C13.3346 12.2789 10.9468 14.6667 8.0013 14.6667C5.05578 14.6667 2.66797 12.2789 2.66797 9.33337C2.66797 6.38786 5.05578 4.00004 8.0013 4.00004C10.9468 4.00004 13.3346 6.38786 13.3346 9.33337Z" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Due next year
-                            <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path stroke="currentColor" d="M7.9987 3.33337V12.6667M7.9987 12.6667L12.6654 8.00004M7.9987 12.6667L3.33203 8.00004" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                        <x-filter-due-year />
 
                         <!-- Delete Button -->
                         <x-delete-payable />
