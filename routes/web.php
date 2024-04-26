@@ -15,6 +15,7 @@ use App\Livewire\FoldersPayable;
 use App\Livewire\Notifications;
 use App\Livewire\AccountingGenerateDv;
 use App\Livewire\AccountingDvView;
+use App\Http\Controllers\PayableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::get('/payables/view', PayablesView::class);
 //Route::get('/payables/view/{id}', PayablesView::class);
 Route::get('/payables/edit', PayablesEdit::class);
 //Route::get('/payables/edit/{id}', PayablesEdit::class);
+Route::post('/payables/add', [PayableController::class, 'store'])->name('submit.payable');
 
 Route::get('/tracking', Tracking::class);
 Route::get('/tracking/view', TrackingView::class);

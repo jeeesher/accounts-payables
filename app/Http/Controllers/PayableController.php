@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payable;
+use App\Models\payable;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,12 +12,9 @@ class PayableController extends Controller
     {
         $validated = $request->validate([
             'BUR' => 'required',
-            'SupplierName' => 'required',
             'EndUser' => 'required',
             'Amount' => 'required',
-            'CurrentLocation' => 'required',
             'TermsPayment' => 'required',
-            'Remarks' => 'required'
         ]);
 
         payable::create($validated);
