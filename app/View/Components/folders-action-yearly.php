@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class folders-action-yearly extends Component
+class FoldersActionYearly extends Component
 {
     /**
      * Create a new component instance.

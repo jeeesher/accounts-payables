@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class save-changes extends Component
+class SaveChanges extends Component
 {
     /**
      * Create a new component instance.
