@@ -1,3 +1,26 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+@import "./pikaday.css";
+
+@import "tailwindcss/utilities";
+
+.section-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+    }
+
+input[type="file"] {
+    display: none; /* Hide the default input element */
+}     
+
+.filename-display {
+    color: rgb(84, 84, 248);  /* Change 'blue' to your desired color */ 
+    font-style: italic;
+    font-size: 0.9rem;
+    }

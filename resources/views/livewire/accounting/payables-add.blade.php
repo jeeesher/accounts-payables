@@ -7,6 +7,7 @@
             <form class="max-w-10xl mx-auto space-y-6" enctype="multipart/form-data" action="{{ route('submit.payable') }}" method="POST">
                 <!-- Add New Payables Form -->
                 @csrf
+                
                 <div class="flex items-center justify-center w-full">
                     <div class="section-container bg-white dark:bg-gray-800 sm:rounded-lg lg:max-w-lg lg:w-1/3 md:w-1/2 w-full mb-10 md:mb-0">
                         <!-- Payable Information Input Field -->
@@ -72,6 +73,7 @@
                                                 <option value="{{ $supplier->SupplierName }}">{{ $supplier->SupplierName }}</option>
                                             @endforeach
                                     </select>
+                                    @error('SupplierName') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
 
                                 <!-- Supplier Address Input Field -->
@@ -119,7 +121,7 @@
                                     </svg>
                                     Upload Copy of Inspection and Acceptance Report
                                 </label>
-                                <input type="file" id="IAR-file-upload" accept=".pdf, .docx, .jpg, .png">
+                                <input type="file" name="IAR_File" id="IAR-file-upload" accept=".pdf, .jpeg, .jpg, .png">
                                 <span id="IAR-selected-file" class="filename-display"></span>
                             </div>
                             
@@ -131,7 +133,7 @@
                                     </svg>
                                     Upload Copy of Supplies Received and Issued Directly to End-User
                                 </label>
-                                <input type="file" id="SRIDE-file-upload" accept=".pdf, .docx, .jpg, .png">
+                                <input type="file" name="SRIDE_File" id="SRIDE-file-upload" accept=".pdf, .jpeg, .jpg, .png">
                                 <span id="SRIDE-selected-file" class="filename-display"></span>
                             </div>
                             
@@ -143,7 +145,7 @@
                                     </svg>
                                     Upload Copy of Requisition and Issue Slip 
                                 </label>
-                                <input type="file" id="RIS-file-upload" accept=".pdf, .docx, .jpg, .png">
+                                <input type="file" name="RIS_File" id="RIS-file-upload" accept=".pdf, .jpeg, .jpg, .png">
                                 <span id="RIS-selected-file" class="filename-display"></span>
                             </div>
                             
@@ -155,7 +157,7 @@
                                     </svg>
                                     Upload Copy of Delivery Receipt
                                 </label>
-                                <input type="file" id="DR-file-upload" accept=".pdf, .docx, .jpg, .png">
+                                <input type="file" name="DR_File" id="DR-file-upload" accept=".pdf, .jpeg, .jpg, .png">
                                 <span id="DR-selected-file" class="filename-display"></span>
                             </div>
                             
@@ -167,7 +169,7 @@
                                     </svg>
                                     Upload Copy of Sales Invoice
                                 </label>
-                                <input type="file" id="SI-file-upload" accept=".pdf, .docx, .jpg, .png">
+                                <input type="file" name="SI_File" id="SI-file-upload" accept=".pdf, .jpeg, .jpg, .png">
                                 <span id="SI-selected-file" class="filename-display"></span>
                             </div>
 
@@ -179,7 +181,7 @@
                                     </svg>
                                     Upload Checklist of Requirements from Procurement Office
                                 </label>
-                                <input type="file" id="CRPO-file-upload" accept=".pdf, .docx, .jpg, .png">
+                                <input type="file" name="CRPO_File" id="CRPO-file-upload" accept=".pdf, .jpeg, .jpg, .png">
                                 <span id="CRPO-selected-file" class="filename-display"></span>
                             </div>
 
@@ -191,7 +193,7 @@
                                     </svg>
                                     Upload BUR
                                 </label>
-                                <input type="file" id="BUR-file-upload" accept=".pdf, .docx, .jpg, .png">
+                                <input type="file" name="BUR_File" id="BUR-file-upload" accept=".pdf, .jpeg, .jpg, .png">
                                 <span id="BUR-selected-file" class="filename-display"></span>
                             </div>
                         </div>
