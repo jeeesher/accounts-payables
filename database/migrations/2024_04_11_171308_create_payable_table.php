@@ -53,20 +53,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        /*Schema::create('files', function (Blueprint $table) {
-            $table->integer('ID')->primary();
-            $table->string('BUR', 11);
-            $table->string('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('IAR');
-            $table->string('SRIDE');
-            $table->string('RIS');
-            $table->string('DR');
-            $table->string('SI');
-            $table->string('CRPO');
-            $table->string('BURFile');
-            $table->timestamps();
-        });*/
-
         Schema::create('disbursement', function (Blueprint $table) {
             $table->integer('No')->primary()->unique();
             $table->date('Date');
