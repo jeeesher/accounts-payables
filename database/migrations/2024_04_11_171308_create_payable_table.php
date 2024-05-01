@@ -34,7 +34,7 @@ return new class extends Migration
         });
 
         Schema::create('particular', function (Blueprint $table) {
-            $table->integer('ID')->primary();
+            $table->unsignedInteger('ID')->autoIncrement()->change();
             $table->string('BUR', 11);
             $table->foreign('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
             $table->string('ParticularDesc');
@@ -43,7 +43,7 @@ return new class extends Migration
         });
 
         Schema::create('tracking', function (Blueprint $table) {
-            $table->integer('ID')->primary();
+            $table->unsignedInteger('ID')->autoIncrement()->change();
             $table->string('BUR', 11);
             $table->foreign('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('CurrentLocation', ['Procurement', 'Accounting', 'Treasurer', 'Budgeting', 'OVPF', 'Property']);
