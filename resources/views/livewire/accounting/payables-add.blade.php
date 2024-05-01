@@ -22,7 +22,7 @@
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
                                     <input type="text" id="BUR" name="BUR" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter BUR Number" required />
-                                    @error('BUR') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    @error('BUR') <span class="text-red-500 text-xs italic">{{ $message }}</span> @enderror
                                 </div>
 
                                 <!-- End-user Input Field -->
@@ -32,7 +32,7 @@
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
                                     <input type="text" id="EndUser" name="EndUser" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter End-user" required />
-                                    @error('EndUser') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    @error('EndUser') <span class="text-red-500 text-xs italic">{{ $message }}</span> @enderror
                                 </div>
                                 
                                 <!-- Total Amount Input Field -->
@@ -42,7 +42,7 @@
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
                                     <input type="text" id="Amount" name="Amount" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Php 0.00 " required />
-                                    @error('Amount') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    @error('Amount') <span class="text-red-500 text-xs italic">{{ $message }}</span> @enderror
                                 </div>
 
                                 <!-- Terms of Payment Input Field -->    
@@ -52,7 +52,7 @@
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
                                     <input type="text" id="TermsPayment" name="TermsPayment" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Terms of Payment" required />
-                                    @error('TermsPayment') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    @error('TermsPayment') <span class="text-red-500 text-xs italic">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                                                 <option value="{{ $supplier->SupplierName }}">{{ $supplier->SupplierName }}</option>
                                             @endforeach
                                     </select>
-                                    @error('SupplierName') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                                    @error('SupplierName') <span class="text-red-500 text-xs italic">{{ $message }}</span> @enderror
                                 </div>
 
                                 <!-- Supplier Address Input Field -->
