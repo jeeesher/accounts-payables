@@ -24,7 +24,7 @@ return new class extends Migration
         });
 
         Schema::create('payables', function (Blueprint $table) {
-            $table->string('BUR', 11)->primary()->unique();
+            $table->string('BUR', 13)->primary()->unique();
             $table->string('SupplierName')->nullable();
             $table->foreign('SupplierName')->references('SupplierName')->on('suppliers')->onDelete('set null')->onUpdate('cascade');
             $table->string('EndUser');
@@ -35,7 +35,7 @@ return new class extends Migration
 
         Schema::create('particular', function (Blueprint $table) {
             $table->unsignedInteger('ID')->autoIncrement()->change();
-            $table->string('BUR', 11);
+            $table->string('BUR', 13);
             $table->foreign('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
             $table->string('ParticularDesc');
             $table->float('Amount');
@@ -44,7 +44,7 @@ return new class extends Migration
 
         Schema::create('tracking', function (Blueprint $table) {
             $table->unsignedInteger('ID')->autoIncrement()->change();
-            $table->string('BUR', 11);
+            $table->string('BUR', 13);
             $table->foreign('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('CurrentLocation', ['Procurement', 'Accounting', 'Treasurer', 'Budgeting', 'OVPF', 'Property']);
             $table->string('CurrentStatus');
@@ -59,7 +59,7 @@ return new class extends Migration
             $table->enum('ModePayment', ['Check', 'Cash', 'Others']);
             $table->string('Payee');
             $table->string('TIN');
-            $table->string('BUR', 11);
+            $table->string('BUR', 13);
             $table->foreign('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
             $table->string('Address');
             $table->string('RCOffice');

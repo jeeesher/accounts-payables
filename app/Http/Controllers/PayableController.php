@@ -13,8 +13,8 @@ class PayableController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'BUR' => ['required', 'string', 'max:11', 'unique:payables'],
-            'SupplierName' => 'required',
+            'BUR' => ['required', 'string', 'min:13',  'max:13', 'unique:payables'],
+            'SupplierName' => ['required', 'string', 'exists:suppliers,SupplierName'],
             'EndUser' => 'required',
             'Amount' => 'required',
             'TermsPayment' => 'required',

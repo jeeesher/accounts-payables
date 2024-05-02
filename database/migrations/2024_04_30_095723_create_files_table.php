@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('files', function (Blueprint $table) {
-            $table->string('BUR', 11)->primary();
+            $table->string('BUR', 13)->primary();
             $table->foreign('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
             $table->string('IAR_File')->nullable(); 
             $table->string('SRIDE_File')->nullable();
