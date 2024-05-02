@@ -13,7 +13,7 @@
 
     <!-- Modal Content -->
     <div class="fixed inset-0 bg-white rounded-md p-6 m-auto w-auto max-w-lg h-96 max-h-96 font-['Inter'] overflow-y-auto">
-        <div class="pb-3 font-semibold text-base text-black dark:text-gray-200 leading-right flex">Add Particular</div>
+        <div class="pb-3 font-semibold text-lg text-black dark:text-gray-200 leading-right flex">Add Particular</div>
 
         <!-- Insert Another Particular Button -->
         <button type="button" class="mb-5 inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
