@@ -76,10 +76,11 @@
                                     @error('SupplierName') <span class="text-red-500 text-xs italic">{{ $message }}</span> @enderror
                                 </div>
 
+
                                 <!-- Supplier Address Input Field -->
                                 <div class="mb-4">
                                     <div class="flex items-center">
-                                        <label for="supplier_add" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Address</label>
+                                        <label for="SupplierAdd" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Address</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
                                     <div class="w-full px-3 py-2 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex">
@@ -92,7 +93,7 @@
                                 <!-- Supplier Contact Number Input Field -->
                                 <div class="mb-4">
                                     <div class="flex items-center">
-                                        <label for="supplier_contact" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Contact Number</label>
+                                        <label for="SupplierContact" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Contact Number</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
                                     <div class="w-full px-3 py-2 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex">
@@ -198,18 +199,7 @@
                             </div>
                         </div>
 
-                        <div class="pt-5">
-                            <div class="mb-5 font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Particular</div>
-                            
-                            <x-add-particular />
-                            <!-- Add Particular Button -->
-                            <button x-data x-on:click="$dispatch('open-add-particular')" type="ParticularButton" class="mb-4 inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path stroke="currentColor" d="M3.33203 8.00001H12.6654M7.9987 3.33334V12.6667" stroke="#18181B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Add Particular Here
-                            </button>
-                        </div>
+                        
                     </div>
                 </div>
 

@@ -13,5 +13,11 @@ class payable extends Model
 
     protected $table = 'payables';
 
-    protected $guarded = [];
+    protected $fillable = [
+        'BUR',
+        'SupplierName',
+        'EndUser',
+        'Amount',
+        'TermsPayment'
+    ];
 }

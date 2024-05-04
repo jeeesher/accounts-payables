@@ -65,50 +65,31 @@
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 divide-y">
-                                <template x-for="(item, idx) in tableItems" :key="idx">
-                                    <tr class="odd:bg-gray-50 even:bg-white">
-                                        <td class="px-6 py-4 whitespace-nowrap flex items-center gap-x-4 font-semibold max-w-[180px]">
-                                            <div>
-                                                <input type="checkbox" :id="'checkbox-' + idx" :name="'checkbox-' + idx" class="checkbox-item peer hidden"
-                                                    :checked="checkboxItems[`checkbox${idx}`]"
-                                                    @click="handleCheckboxChange($event, idx)">
-                                                <label :for="'checkbox-' + idx" class="relative flex w-5 h-5 bg-white peer-checked:bg-indigo-600 rounded-md border ring-offset-2 ring-indigo-600 duration-150 peer-active:ring cursor-pointer after:absolute after:inset-x-0 after:top-[3px] after:m-auto after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45"></label>
-                                            </div>
-                                            <span x-text="item.BUR"></span>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.supplier"></td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.particular"></td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.amount"></td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.enduser"></td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[180px] overflow-hidden overflow-ellipsis">
-                                            <template x-if="item.location === 'Accounting' || item.location === 'Budget' || item.location === 'Treasurer' || item.location === 'OVPFM' || item.location === 'PLM President'">
-                                                <span>
-                                                    <div class="w-26 h-5 pl-1.5 pr-2 py-0.5 bg-emerald-50 rounded-2xl justify-left items-center gap-1.5 inline-flex">
-                                                        <div class="w-2 h-2 relative">
-                                                            <div class="w-1.5 h-1.5 left-[1px] top-[1px] absolute bg-emerald-500 rounded-full"></div>
-                                                        </div>
-                                                        <div x-text="item.location" class="text-emerald-700 text-xs font-medium font-['Inter'] leading-none"></div>
-                                                    </div>
-                                                </span>
-                                            </template>
-                                            <template x-if="item.location === 'COA'">
-                                                <span>
-                                                    <div class="w-26 h-5 pl-1.5 pr-2 py-0.5 bg-gray-100 rounded-2xl justify-left items-center gap-1.5 inline-flex">
-                                                        <div class="w-2 h-2 relative">
-                                                            <div class="w-1.5 h-1.5 left-[1px] top-[1px] absolute bg-slate-500 rounded-full"></div>
-                                                        </div>
-                                                        <div x-text="item.location" class="text-gray-700 text-xs font-medium font-['Inter'] leading-none"></div>
-                                                    </div>
-                                                </span>
-                                            </template>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.terms"></td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis" x-text="item.remarks"></td>
-                                        <td class="text-right px-6 whitespace-nowrap">
-                                            <x-table-action-dropdown />
-                                        </td>
-                                    </tr>
-                                </template>
+                                    @foreach($payables as $payable)
+                                        <tr class="odd:bg-gray-50 even:bg-white">
+                                            <td class="px-6 py-4 whitespace-nowrap flex items-center gap-x-4 font-semibold max-w-[180px]">
+                                                <div>
+                                                    <input type="checkbox" id="checkbox-{{ $loop->index }}" 
+                                                        class="checkbox-item peer hidden" x-model="checkboxItems[`{{ $loop->index }}`]" 
+                                                        @click="handleCheckboxChange($event, {{ $loop->index }})"> 
+                                                    <label for="checkbox-{{ $loop->index }}" class="relative flex w-5 h-5 bg-white peer-checked:bg-indigo-600 rounded-md border ring-offset-2 ring-indigo-600 duration-150 peer-active:ring cursor-pointer after:absolute after:inset-x-0 after:top-[3px] after:m-auto after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45"></label>
+                                                </div>
+                                                <span>{{ $payable->BUR }}</span> 
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->SupplierName}}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis"></td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->Amount}}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->EndUser}}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[180px] overflow-hidden overflow-ellipsis">
+                                                
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->TermsPayment}}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis"></td>
+                                            <td class="text-right px-6 whitespace-nowrap">
+                                                <x-table-action-dropdown />
+                                            </td>
+                                        </tr>
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -161,29 +142,31 @@
                 <script>
                     function dataHandler() {
                         return {
-                            tableItems: [
-                                { BUR: "Bold Text Column", supplier: "Regular Text Columnnnnnnnnnnnnnnnnnnnxxxxxxxx", particular: "Regular Text Column", amount: "$100K", enduser: "Regular Text Column", location: "COA", remarks: "Regular Text Column", terms: "1 year"},
-                                { BUR: "Bold Text Column", supplier: "Regular Text Column", particular: "Regular Text Column", amount: "$90K", enduser: "Regular Text Column", location: "OVPFM", remarks: "Regular Text Column", terms: "1 year"},
-                                { BUR: "Bold Text Column", supplier: "Regular Text Column", particular: "Regular Text Column", amount: "$120K", enduser: "Regular Text Column", location: "Accounting", remarks: "Regular Text Column", terms: "6 months"},
-                                { BUR: "Bold Text Column", supplier: "Regular Text Column", particular: "Regular Text Column", amount: "$80K", enduser: "Regular Text Column", location: "Treasurer", remarks: "Regular Text Column", terms: "2 years"}
-                            ],
                             areAllChecked: false,
                             checkboxItems: {},
+
+                            init() {
+                                if (this.payables) {
+                                    this.payables.forEach((_, idx) => {
+                                        this.checkboxItems[idx] = false;
+                                    });
+                                }
+                                
+                            },
+
                             handleCheckboxItems() {
                                 this.areAllChecked = !this.areAllChecked;
-                                this.tableItems.forEach((_, idx) => {
-                                    this.checkboxItems[`checkbox${idx}`] = this.areAllChecked;
+                                const checkboxes = document.querySelectorAll('.checkbox-item');
+
+                                checkboxes.forEach(checkbox => {
+                                    checkbox.checked = this.areAllChecked; 
                                 });
                             },
+
                             handleCheckboxChange(e, idx) {
-                                this.areAllChecked = false;
-                                this.checkboxItems[`checkbox${idx}`] = e.target.checked;
-                                if (Object.values(this.checkboxItems).every(val => val === true)) this.areAllChecked = true;
-                            },
-                            init() {
-                                this.tableItems.forEach((_, idx) => {
-                                    this.checkboxItems[`checkbox${idx}`] = false;
-                                });
+                                this.checkboxItems[idx] = e.target.checked;
+
+                                this.areAllChecked = Object.values(this.checkboxItems).every(checked => checked);                           
                             }
                         };
                     }
