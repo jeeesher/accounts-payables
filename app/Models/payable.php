@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Track;
 
-class payable extends Model
+class Payable extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -20,4 +21,19 @@ class payable extends Model
         'Amount',
         'TermsPayment'
     ];
+
+    public function trackings()
+    {
+        return $this->hasMany(Track::class, 'BUR', 'BUR');
+    }
+
+    public function latestTracking()
+    {
+        return $this->hasOne(Track::class, 'BUR', 'BUR')->latest('created_at');
+    }
+
+    public function latestParticular()
+    {
+        return $this->hasOne(Particular::class, 'BUR', 'BUR')->latest('created_at');
+    }
 }

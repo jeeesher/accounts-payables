@@ -9,5 +9,5 @@ class Particular extends Model
 {
     use HasFactory;
 
-    protected $table = 'particulars';
+    protected $table = 'particular';
 }
