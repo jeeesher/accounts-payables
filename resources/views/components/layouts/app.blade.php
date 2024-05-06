@@ -17,7 +17,6 @@
         @include ('livewire.accounting.accounting-navigation')
         {{ $slot }}
 
-        <script src="{{ asset('resources/js/app.js') }}"></script>  
         @stack('scripts')
     </body>
 
