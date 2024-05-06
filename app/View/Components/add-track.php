@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class add-track extends Component
+class AddTrack extends Component
 {
     /**
      * Create a new component instance.
@@ -15,6 +15,8 @@ class add-track extends Component
     {
         //
     }
+
+    public $custom_date = '2024-01-01';
 
     /**
      * Get the view / contents that represent the component.
