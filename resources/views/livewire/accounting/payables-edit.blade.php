@@ -45,7 +45,7 @@
                     <div>
                         <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Payable Information</div>
 
-                        <form class="mx-auto mt-5 font-['Inter']">
+                        <div class="mx-auto mt-5 font-['Inter']">
                             <!-- BUR Input Field -->
                             <div class="mb-4">
                                 <div class="flex items-center">
@@ -73,22 +73,6 @@
                                 <input type="text" id="total_amount" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Php 0.00 " required />
                             </div>
 
-                            <!-- Current Location Dropdown Field -->
-                            <div class="mb-4">
-                                <div class="flex items-center">
-                                    <label for="location" class="block mb-2 text-sm font-medium text-black dark:text-white">Current Location</label>
-                                    <span class="text-red-500 p-1 pl-3">*</span>
-                                </div>
-                                <select id="location" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                    <option disabled selected>Select Location</option>    
-                                    <option>Accounting</option>
-                                    <option>Treasurer</option>
-                                    <option>Budgeting</option>
-                                    <option>Procurement</option>
-                                    <option>OVPF</option>
-                                </select>
-                            </div>
-
                             <!-- Terms of Payment Input Field -->    
                             <div class="mb-4">
                                 <div class="flex items-center">
@@ -97,23 +81,14 @@
                                 </div>
                                 <input type="text" id="remarks" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Terms of Payment" required />
                             </div>
-                            
-                            <!-- Remarks Input Field -->    
-                            <div class="mb-4">
-                                <div class="flex items-center">
-                                    <label for="remarks" class="block mb-2 text-sm font-medium text-black dark:text-white">Remarks</label>
-                                    <span class="text-red-500 p-1 pl-3">*</span>
-                                </div>
-                                <input type="text" id="remarks" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Remarks" required />
-                            </div>
-                        </form>
+                        </div>
                     </div>
 
                     <!-- Supplier Information Input Field -->
                     <div class="pt-5">
                         <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Supplier Information</div>
 
-                        <form class="mx-auto mt-5 font-['Inter']">
+                        <div class="mx-auto mt-5 font-['Inter']">
                             <!-- Supplier Name Dropdown Field -->
                             <div class="mb-4">
                                 <div class="flex items-center">
@@ -155,7 +130,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
 
