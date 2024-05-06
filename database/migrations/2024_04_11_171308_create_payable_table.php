@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('BUR', 13);
             $table->foreign('BUR')->references('BUR')->on('payables')->onDelete('cascade')->onUpdate('cascade');
             $table->string('ParticularDesc');
-            $table->float('Amount');
+            $table->float('ParticularAmount');
             $table->timestamps();
         });
 
