@@ -8,6 +8,6 @@ class PropertyNavigation extends Component
 {
     public function render()
     {
-        return view('livewire.property.property-navigation');
+        return view('livewire.offices.property-navigation');
     }
 }

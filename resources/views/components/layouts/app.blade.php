@@ -15,6 +15,7 @@
     </head>
     <body>
         @include ('livewire.accounting.accounting-navigation')
+        @include ('livewire.offices.bt-navigation')
         {{ $slot }}
 
         @stack('scripts')

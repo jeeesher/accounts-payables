@@ -8,6 +8,6 @@ class BtDashboard extends Component
 {
     public function render()
     {
-        return view('livewire.budgeting-treasurer.bt-dashboard');
+        return view('livewire.offices.bt-dashboard');
     }
 }

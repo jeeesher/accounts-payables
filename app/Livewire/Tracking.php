@@ -35,6 +35,7 @@ class Tracking extends Component
                     $join->on('particular.BUR', '=', 'latest_particular.BUR')
                         ->on('particular.created_at', '=', 'latest_particular.latest_created_at');
                 })
+            ->orderBy('payables.created_at', 'desc')
             ->get();
 
         return view('livewire.accounting.tracking', compact('payables'));

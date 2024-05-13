@@ -8,6 +8,6 @@ class BtPayablesView extends Component
 {
     public function render()
     {
-        return view('livewire.budgeting-treasurer.bt-payables-view');
+        return view('livewire.offices.bt-payables-view');
     }
 }
