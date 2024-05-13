@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Livewire\Dashboard;
 use App\Livewire\Payables;
 use App\Livewire\Tracking;
@@ -15,6 +16,16 @@ use App\Livewire\FoldersPayable;
 use App\Livewire\Notifications;
 use App\Livewire\AccountingGenerateDv;
 use App\Livewire\AccountingDvView;
+
+use App\Livewire\PropertyNavigation;
+
+use App\Livewire\BtDashboard;
+use App\Livewire\BtPayables;
+use App\Livewire\BtPayablesView;
+use App\Livewire\BtTracking;    
+use App\Livewire\BtNavigation;
+
+
 use App\Http\Controllers\PayableController;
 
 /*
@@ -55,3 +66,11 @@ Route::get('/notifications', Notifications::class);
 
 Route::get('/accounting/generate/dv', AccountingGenerateDv::class);
 Route::get('/accounting/dv/view', AccountingDvView::class);
+
+Route::get('/budgeting-treasurer/dashboard', BtDashboard::class);
+Route::get('/budgeting-treasurer/payables', BtPayables::class);
+Route::get('/budgeting-treasurer/payables/view', BtPayablesView::class);
+Route::get('/budgeting-treasurer/tracking', BtTracking::class);
+Route::get('/budgeting-treasurer/navigation', BtNavigation::class);
+
+Route::get('/property/navigation', PropertyNavigation::class);
