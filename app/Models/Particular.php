@@ -10,4 +10,10 @@ class Particular extends Model
     use HasFactory;
 
     protected $table = 'particular';
+    protected $primarykey = 'ID';
+
+    public function payable()
+    {
+        return $this->belongsTo(Payable::class, 'BUR', 'BUR');
+    }
 }

@@ -71,6 +71,12 @@
                 </div>
             </div>
 
+            @if($error)
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span class="block sm:inline">{{ $error }}</span>
+                </div>
+            @else
             <div class="bg-white dark:bg-gray-800 sm:rounded-lg ">
                 <!-- Payable Information Field -->
                 <div>
@@ -83,7 +89,7 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">BUR Number</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> BUR }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +98,11 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Current Location</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                            @if($payable->latestTracking)
+                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable->latestTracking->CurrentLocation }}</div>
+                                            @else
+                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">No Tracking Information</div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -106,7 +116,7 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">End-user</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> EndUser }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +125,7 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Terms of Payment</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> TermsPayment }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +139,7 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Total Amount</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> Amount }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +148,11 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Remarks</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                            @if($payable->latestTracking)
+                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable->latestTracking->CurrentStatus }}</div>
+                                            @else
+                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">No Tracking Information</div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +171,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Name</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> SupplierName }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +183,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Address</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable->supplier->Address }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +195,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Contact Number</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable->supplier->ContactNumber }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -199,14 +213,7 @@
                             <div class="text-zinc-950 font-semibold text-lg font-['Inter'] leading-loose">Particular</div>
                         </div>
 
-                        <div x-data="{ 
-                            tableItems: [
-                                { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                { particular: 'Bold text column', 'amount': 'Regular text column' },
-                                { particular: 'Bold text column', 'amount': 'Regular text column' },
-                            ]}" class="mx-auto w-full">
+                        <div  class="mx-auto w-full">
                             
                             <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
                                 <table class="w-full table-auto text-sm text-left">
@@ -217,15 +224,14 @@
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-600 divide-y">
-                                        <template x-for="(item, idx) in tableItems" :key="idx">
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis font-semibold flex items-center gap-x-6" style="width: 60%;">
-                                                    <span x-text="idx + 1"></span>
-                                                    <span x-text="item.particular"></span>
-                                                </td>                                                
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 40%;" x-text="item.amount"></td>
-                                            </tr>
-                                        </template>
+                                        @foreach($payable->otherParticulars as $particular)
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis font-semibold flex items-center gap-x-6" style="width: 60%;">
+                                                <span x-text="item.particular">{{ $particular->ParticularDesc }}</span>
+                                            </td>                                                
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 40%;" x-text="item.amount">{{ $particular->ParticularAmount }}</td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -238,11 +244,14 @@
                             <div class="text-zinc-950 font-semibold text-lg font-['Inter'] leading-loose">Disbursement Voucher Preview</div>
                         </div>
                         <div class="mt-3 border shadow h-96">
-                            <!-- file preview -->
+                            @if($payable->files->IAR_File != null)
+                            <iframe id="documentViewer" src="{{ asset($payable->files->IAR_File) }}" class="w-full border-0 h-96"></iframe>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>

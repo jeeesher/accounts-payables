@@ -178,8 +178,7 @@ class PayableController extends Controller
             $particular->save();
         }
 
-        // return redirect('/payables/view?payable=' . $payable->id)->with('success', 'Payable created successfully!'); 
-        return dd($validated, $validated['particulars'][0]['ParticularDesc']);
+        return redirect('/payables/view?payable=' . $payable->BUR)->with('success', 'Payable created successfully!'); 
     }
 
     public function SupplierInfo($supplier)
@@ -191,5 +190,12 @@ class PayableController extends Controller
 
         return response()->json(['address' => $address, 'contact' => $contact]);
 
+    }
+
+    public function show($id)
+    {
+        $payable = Payable::with('particulars')->find($id);
+
+        return view('/payables/view', compact('payable'));
     }
 }

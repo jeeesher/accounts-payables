@@ -27,6 +27,16 @@ class Payable extends Model
         return $this->hasMany(Track::class, 'BUR', 'BUR');
     }
 
+    public function particulars()
+    {
+        return $this->hasMany(Particular::class, 'BUR', 'BUR');
+    }
+
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'SupplierName', 'SupplierName');
+    }
+
     public function latestTracking()
     {
         return $this->hasOne(Track::class, 'BUR', 'BUR')->latest('created_at');
@@ -35,5 +45,15 @@ class Payable extends Model
     public function latestParticular()
     {
         return $this->hasOne(Particular::class, 'BUR', 'BUR')->latest('created_at');
+    }
+
+    public function otherParticulars()
+    {
+        return $this->hasMany(Particular::class, 'BUR', 'BUR'); // Adjust as necessary
+    }
+
+    public function files()
+    {
+        return $this->hasOne(Files::class, 'BUR', 'BUR');
     }
 }
