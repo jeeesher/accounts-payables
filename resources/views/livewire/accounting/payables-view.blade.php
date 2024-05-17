@@ -245,7 +245,7 @@
                         </div>
                         <div class="mt-3 border shadow h-96">
                             @if($payable->files->IAR_File != null)
-                            <iframe id="documentViewer" src="{{ asset($payable->files->IAR_File) }}" class="w-full border-0 h-96"></iframe>
+                            <iframe id="documentViewer" src="{{ asset($payable->files->DV_File) }}" class="w-full border-0 h-96"></iframe>
                             @endif
                         </div>
                     </div>
