@@ -19,24 +19,25 @@ class Tracking extends Component
         $payables = Payable::select('payables.*', 'tracking.*', 'particular.*')
                 ->join('tracking', 'tracking.BUR', '=', 'payables.BUR')
                 ->joinSub(function($query) {
-                    $query->select('BUR', DB::raw('MAX(created_at) as latest_created_at'))
+                    $query->select('BUR', DB::raw('MIN(id) as min_id'))
                         ->from('tracking')
                         ->groupBy('BUR');
-                }, 'latest_tracking', function($join) {
-                    $join->on('tracking.BUR', '=', 'latest_tracking.BUR')
-                        ->on('tracking.created_at', '=', 'latest_tracking.latest_created_at');
+                }, 'unique_tracking', function($join) {
+                    $join->on('tracking.BUR', '=', 'unique_tracking.BUR')
+                        ->on('tracking.id', '=', 'unique_tracking.min_id');
                 })
                 ->join('particular', 'particular.BUR', '=', 'payables.BUR')
                 ->joinSub(function($query) {
-                    $query->select('BUR', DB::raw('MAX(created_at) as latest_created_at'))
+                    $query->select('BUR', DB::raw('MIN(id) as min_id'))
                         ->from('particular')
                         ->groupBy('BUR');
-                }, 'latest_particular', function($join) {
-                    $join->on('particular.BUR', '=', 'latest_particular.BUR')
-                        ->on('particular.created_at', '=', 'latest_particular.latest_created_at');
+                }, 'unique_particular', function($join) {
+                    $join->on('particular.BUR', '=', 'unique_particular.BUR')
+                        ->on('particular.id', '=', 'unique_particular.min_id');
                 })
             ->orderBy('payables.created_at', 'desc')
             ->get();
+
 
         return view('livewire.accounting.tracking', compact('payables'));
     }
