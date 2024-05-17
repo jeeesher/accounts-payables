@@ -52,6 +52,8 @@ Route::get('/payables/view', PayablesView::class);
 Route::get('/payables/edit', PayablesEdit::class);
 //Route::get('/payables/edit/{id}', PayablesEdit::class);
 Route::post('/payables/add', [PayableController::class, 'store'])->name('submit.payable');
+Route::post('/particular/store', [PayableController::class, 'store'])->name('particular.store');
+
 
 Route::get('/tracking', Tracking::class);
 Route::get('/tracking/view', TrackingView::class);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Files;
 use App\Models\payable;
 use App\Models\Supplier;
+use App\Models\Particular;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
@@ -19,6 +20,8 @@ class PayableController extends Controller
             'EndUser' => 'required',
             'Amount' => 'required',
             'TermsPayment' => 'required',
+            'particulars.*.ParticularDesc' => ['required', 'string'],
+            'particulars.*.ParticularAmount' => ['required', 'numeric'],
         ]);
 
         if (Payable::where('BUR', $validated['BUR'])->exists()) {
@@ -167,7 +170,16 @@ class PayableController extends Controller
 
         $fileRecord->save();
 
-        return redirect('/payables/view?payable=' . $payable->id)->with('success', 'Payable created successfully!'); 
+        foreach ($validated['particulars'] as $particularData) {
+            $particular = new Particular();
+            $particular->BUR = $payable->BUR;  // Assuming $payable->BUR is already set correctly
+            $particular->ParticularDesc = $particularData['ParticularDesc'];
+            $particular->ParticularAmount = $particularData['ParticularAmount'];
+            $particular->save();
+        }
+
+        // return redirect('/payables/view?payable=' . $payable->id)->with('success', 'Payable created successfully!'); 
+        return dd($validated, $validated['particulars'][0]['ParticularDesc']);
     }
 
     public function SupplierInfo($supplier)
