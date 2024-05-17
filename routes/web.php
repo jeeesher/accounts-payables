@@ -67,10 +67,12 @@ Route::get('/notifications', Notifications::class);
 Route::get('/accounting/generate/dv', AccountingGenerateDv::class);
 Route::get('/accounting/dv/view', AccountingDvView::class);
 
-Route::get('/offices/bt/dashboard', BtDashboard::class);
-Route::get('/offices/bt/payables', BtPayables::class);
-Route::get('/offices/bt/payables/view', BtPayablesView::class);
-Route::get('/offices/bt/tracking', BtTracking::class);
-Route::get('/offices/bt/navigation', BtNavigation::class);
+Route::get('/SupplierInfo/{supplier}', [PayableController::class, 'SupplierInfo']);
 
-Route::get('/offices/property/navigation', PropertyNavigation::class);
+//Route::get('/offices/bt/dashboard', BtDashboard::class);
+//Route::get('/offices/bt/payables', BtPayables::class);
+//Route::get('/offices/bt/payables/view', BtPayablesView::class);
+//Route::get('/offices/bt/tracking', BtTracking::class);
+//Route::get('/offices/bt/navigation', BtNavigation::class);
+
+//Route::get('/offices/property/navigation', PropertyNavigation::class);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Files;
 use App\Models\payable;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
@@ -166,6 +167,17 @@ class PayableController extends Controller
 
         $fileRecord->save();
 
-        return redirect()->back()->with('success', 'Payable created successfully!'); 
+        return redirect('/payables/view?payable=' . $payable->id)->with('success', 'Payable created successfully!'); 
+    }
+
+    public function SupplierInfo($supplier)
+    {
+        $supplierInfo = Supplier::where('SupplierName', $supplier)->first();
+
+        $address = $supplierInfo->Address;
+        $contact = $supplierInfo->ContactNumber;
+
+        return response()->json(['address' => $address, 'contact' => $contact]);
+
     }
 }

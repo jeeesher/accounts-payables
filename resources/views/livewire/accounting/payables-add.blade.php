@@ -67,7 +67,7 @@
                                         <label for="SupplierName" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Name</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
-                                    <select id="SupplierName" wire:model="supplier_id" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Supplier" required />
+                                    <select id="SupplierName" name="SupplierName" wire:model="supplier_id" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Supplier" required />
                                         <option disabled selected>Select Supplier</option> 
                                             @foreach ($suppliers as $supplier)
                                                 <option value="{{ $supplier->SupplierName }}">{{ $supplier->SupplierName }}</option>
@@ -83,11 +83,7 @@
                                         <label for="SupplierAdd" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Address</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
-                                    <div class="w-full px-3 py-2 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex">
-                                        <div class="grow shrink basis-0 h-6 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-gray-400 text-sm font-normal font-['Inter'] leading-tight">Autofill Text</div>
-                                        </div>
-                                    </div>
+                                    <input id="SupplierAdd" name="SupplierAdd" class="w-full px-3 py-2 bg-white text-sm text-gray-700 rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex" disabled value=""/>
                                 </div>
                                 
                                 <!-- Supplier Contact Number Input Field -->
@@ -96,11 +92,7 @@
                                         <label for="SupplierContact" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Contact Number</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
-                                    <div class="w-full px-3 py-2 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex">
-                                        <div class="grow shrink basis-0 h-6 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-gray-400 text-sm font-normal font-['Inter'] leading-tight">Autofill Text</div>
-                                        </div>
-                                    </div>
+                                    <input id="SupplierContact" name="SupplierContact" class="w-full px-3 py-2 text-sm text-gray-700 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex"/>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +191,18 @@
                             </div>
                         </div>
 
-                        
+                        <div class="pt-5">
+                            <div class="mb-5 font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Particular</div>
+                            
+                            <x-add-particular />
+                            <!-- Add Particular Button -->
+                            <button x-data x-on:click="$dispatch('open-add-particular')" type="ParticularButton" class="mb-4 inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path stroke="currentColor" d="M3.33203 8.00001H12.6654M7.9987 3.33334V12.6667" stroke="#18181B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Add Particular Here
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -222,3 +225,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#SupplierName').change(function(){
+            var supplier = $(this).val();
+            $.ajax({
+                url: '/SupplierInfo/' + supplier,
+                method: 'GET',
+                success: function(data){
+                    $('#SupplierAdd').val(data.address);
+                    $('#SupplierContact').val(data.contact);
+                }
+            });
+        });
+    });
+</script>
