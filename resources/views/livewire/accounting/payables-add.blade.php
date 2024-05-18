@@ -67,7 +67,7 @@
                                         <label for="SupplierName" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Name</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
-                                    <select id="SupplierName" name="SupplierName" wire:model="supplier_id" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Supplier" required />
+                                    <select id="SupplierName" name="SupplierName" wire:model="supplier_id" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                                         <option disabled selected>Select Supplier</option> 
                                             @foreach ($suppliers as $supplier)
                                                 <option value="{{ $supplier->SupplierName }}">{{ $supplier->SupplierName }}</option>
@@ -83,7 +83,7 @@
                                         <label for="SupplierAdd" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Address</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
-                                    <input id="SupplierAdd" name="SupplierAdd" class="w-full px-3 py-2 bg-white text-sm text-gray-700 rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex" disabled value=""/>
+                                    <input id="SupplierAdd" name="SupplierAdd" class="w-full px-3 py-2 bg-white text-sm text-gray-700 rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex" placeholder="Supplier Address" disabled value=""/>
                                 </div>
                                 
                                 <!-- Supplier Contact Number Input Field -->
@@ -92,7 +92,7 @@
                                         <label for="SupplierContact" class="block mb-2 text-sm font-medium text-black dark:text-white">Supplier Contact Number</label>
                                         <span class="text-red-500 p-1 pl-3">*</span>
                                     </div>
-                                    <input id="SupplierContact" name="SupplierContact" class="w-full px-3 py-2 text-sm text-gray-700 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex"/>
+                                    <input id="SupplierContact" name="SupplierContact" class="w-full px-3 py-2 text-sm text-gray-700 bg-white rounded-md border border-zinc-200 justify-start items-center gap-2 inline-flex" placeholder="Supplier Contact" disabled value=""/>
                                 </div>
                             </div>
                         </div>
