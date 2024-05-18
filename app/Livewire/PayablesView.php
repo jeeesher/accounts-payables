@@ -32,11 +32,6 @@ class PayablesView extends Component
         }
     }
 
-    public function delete(Payable $payable){
-        $this->payable->delete();
-        return redirect()->route('accounting.payables');
-    }
-
     public function render()
     {
         return view('livewire.accounting.payables-view');

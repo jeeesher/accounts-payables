@@ -13,6 +13,8 @@ class Payable extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = 'payables';
+    protected $primaryKey = 'BUR';  
+    protected $keyType = 'string';
 
     protected $fillable = [
         'BUR',
@@ -49,7 +51,7 @@ class Payable extends Model
 
     public function otherParticulars()
     {
-        return $this->hasMany(Particular::class, 'BUR', 'BUR'); // Adjust as necessary
+        return $this->hasMany(Particular::class, 'BUR', 'BUR'); 
     }
 
     public function files()

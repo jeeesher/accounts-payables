@@ -16,19 +16,18 @@
                 <!-- Button Group -->
                 <div class="flex space gap-1">
                     <!-- Delete Button -->
-                    <x-delete-payable />
-                    <button x-data x-on:click="$dispatch('open-delete-payable')" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <a href="{{ route('delete.payable', ['id' => $payable->BUR]) }}" onclick="return confirmDeletePayable()" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M2 4.00004H14M12.6667 4.00004V13.3334C12.6667 14 12 14.6667 11.3333 14.6667H4.66667C4 14.6667 3.33333 14 3.33333 13.3334V4.00004M5.33333 4.00004V2.66671C5.33333 2.00004 6 1.33337 6.66667 1.33337H9.33333C10 1.33337 10.6667 2.00004 10.6667 2.66671V4.00004M6.66667 7.33337V11.3334M9.33333 7.33337V11.3334" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Delete
-                    </button>
+                    </a>
 
                     <!-- Export Dropdown -->
                     <x-export-dropdown />
 
                     <!-- Edit Button -->
-                    <a href="/payables/edit" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <a href="{{ url('/payables/edit?payable=' . $payable -> BUR)}}" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_4293_5083)">
                                 <path stroke="currentColor" d="M7.33203 2.66667H2.66536C2.31174 2.66667 1.9726 2.80714 1.72256 3.05719C1.47251 3.30724 1.33203 3.64638 1.33203 4V13.3333C1.33203 13.687 1.47251 14.0261 1.72256 14.2761C1.9726 14.5262 2.31174 14.6667 2.66536 14.6667H11.9987C12.3523 14.6667 12.6915 14.5262 12.9415 14.2761C13.1916 14.0261 13.332 13.687 13.332 13.3333V8.66667M12.332 1.66665C12.5972 1.40144 12.957 1.25244 13.332 1.25244C13.7071 1.25244 14.0668 1.40144 14.332 1.66665C14.5972 1.93187 14.7462 2.29158 14.7462 2.66665C14.7462 3.04173 14.5972 3.40144 14.332 3.66665L7.9987 9.99999L5.33203 10.6667L5.9987 7.99999L12.332 1.66665Z" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
@@ -59,7 +58,7 @@
                     </button>
 
                     <!-- Generate DV Form Button-->
-                    <a href="/accounting/generate/dv" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <a href="{{ url('/accounting/generate/dv?payable=' . $payable -> BUR)}}" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M8.66536 3.33325V4.66659M8.66536 11.3333V12.6666M8.66536 7.33325V8.66659M1.33203 5.99992C1.86246 5.99992 2.37117 6.21063 2.74624 6.5857C3.12132 6.96078 3.33203 7.46949 3.33203 7.99992C3.33203 8.53035 3.12132 9.03906 2.74624 9.41413C2.37117 9.78921 1.86246 9.99992 1.33203 9.99992V11.3333C1.33203 11.6869 1.47251 12.026 1.72256 12.2761C1.9726 12.5261 2.31174 12.6666 2.66536 12.6666H13.332C13.6857 12.6666 14.0248 12.5261 14.2748 12.2761C14.5249 12.026 14.6654 11.6869 14.6654 11.3333V9.99992C14.1349 9.99992 13.6262 9.78921 13.2512 9.41413C12.8761 9.03906 12.6654 8.53035 12.6654 7.99992C12.6654 7.46949 12.8761 6.96078 13.2512 6.5857C13.6262 6.21063 14.1349 5.99992 14.6654 5.99992V4.66659C14.6654 4.31296 14.5249 3.97382 14.2748 3.72378C14.0248 3.47373 13.6857 3.33325 13.332 3.33325H2.66536C2.31174 3.33325 1.9726 3.47373 1.72256 3.72378C1.47251 3.97382 1.33203 4.31296 1.33203 4.66659V5.99992Z" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -98,8 +97,8 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Current Location</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            @if($payable->latestTracking)
-                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable->latestTracking->CurrentLocation }}</div>
+                                            @if($payable -> latestTracking)
+                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> latestTracking -> CurrentLocation }}</div>
                                             @else
                                                 <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">No Tracking Information</div>
                                             @endif
@@ -148,8 +147,8 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Remarks</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            @if($payable->latestTracking)
-                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable->latestTracking->CurrentStatus }}</div>
+                                            @if($payable -> latestTracking)
+                                                <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> latestTracking -> CurrentStatus }}</div>
                                             @else
                                                 <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">No Tracking Information</div>
                                             @endif
@@ -183,7 +182,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Address</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable->supplier->Address }}</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> supplier -> Address }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +213,6 @@
                         </div>
 
                         <div  class="mx-auto w-full">
-                            
                             <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
                                 <table class="w-full table-auto text-sm text-left">
                                     <thead class="bg-gray-50 text-gray-600 font-medium border-b">
@@ -224,12 +222,12 @@
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-600 divide-y">
-                                        @foreach($payable->otherParticulars as $particular)
-                                        <tr>
+                                        @foreach($payable -> otherParticulars as $particular)
+                                        <tr wire:key="{{ $particular -> ID }}">
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis font-semibold flex items-center gap-x-6" style="width: 60%;">
-                                                <span x-text="item.particular">{{ $particular->ParticularDesc }}</span>
+                                                <span x-text="item.particular">{{ $particular -> ParticularDesc }}</span>
                                             </td>                                                
-                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 40%;" x-text="item.amount">{{ $particular->ParticularAmount }}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 40%;" x-text="item.amount">{{ $particular -> ParticularAmount }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -244,8 +242,12 @@
                             <div class="text-zinc-950 font-semibold text-lg font-['Inter'] leading-loose">Disbursement Voucher Preview</div>
                         </div>
                         <div class="mt-3 border shadow h-96">
-                            @if($payable->files->IAR_File != null)
-                            <iframe id="documentViewer" src="{{ asset($payable->files->DV_File) }}" class="w-full border-0 h-96"></iframe>
+                            @if($payable -> files -> DV_File != null)
+                                <iframe id="documentViewer" src="{{ asset($payable -> files -> DV_File) }}" class="w-full border-0 h-96"></iframe>
+                            @else
+                                <div class="bg-gray-100 h-full flex items">
+                                    <div class="m-auto font-['Inter'] font-medium text-gray-400">No Disbursement Voucher Available</div>
+                                </div>
                             @endif
                         </div>
                     </div>

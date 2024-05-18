@@ -48,12 +48,19 @@ Route::get('/dashboard', Dashboard::class);
 Route::get('/payables', Payables::class);
 Route::get('/payables/add', PayablesAdd::class);
 Route::get('/payables/view', PayablesView::class);
-//Route::get('/payables/view/{id}', PayablesView::class);
 Route::get('/payables/edit', PayablesEdit::class);
-//Route::get('/payables/edit/{id}', PayablesEdit::class);
-Route::post('/payables/add', [PayableController::class, 'store'])->name('submit.payable');
-Route::post('/particular/store', [PayableController::class, 'store'])->name('particular.store');
 
+Route::controller(PayableController::class)->group(function () {
+    Route::post('/payables/add', 'store')->name('submit.payable');
+    Route::get('/payables/{id}/delete', 'delete')->name('delete.payable');
+    Route::get('/payables/edit?payable={id}', 'edit')->name('edit.payable');
+    Route::post('/payables/update', 'update')->name('update.payable');
+
+    Route::post('/accounting/generate/dv', 'generateDv')->name('generate.dv');
+
+    Route::get('/SupplierInfo/{supplier}', 'SupplierInfo');
+    Route::post('/particular/store', 'store')->name('particular.store');
+});
 
 Route::get('/tracking', Tracking::class);
 Route::get('/tracking/view', TrackingView::class);
@@ -69,7 +76,8 @@ Route::get('/notifications', Notifications::class);
 Route::get('/accounting/generate/dv', AccountingGenerateDv::class);
 Route::get('/accounting/dv/view', AccountingDvView::class);
 
-Route::get('/SupplierInfo/{supplier}', [PayableController::class, 'SupplierInfo']);
+
+
 
 //Route::get('/offices/bt/dashboard', BtDashboard::class);
 //Route::get('/offices/bt/payables', BtPayables::class);
