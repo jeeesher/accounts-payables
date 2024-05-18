@@ -12,6 +12,10 @@ class Particular extends Model
     protected $table = 'particular';
     protected $primarykey = 'ID';
 
+    protected $fillable = [
+        'BUR', 'ParticularDesc', 'ParticularAmount'
+    ];
+
     public function payable()
     {
         return $this->belongsTo(Payable::class, 'BUR', 'BUR');

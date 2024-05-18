@@ -138,11 +138,16 @@
                                                                 Actions
                                                             </div>
 
-                                                            <a href="/payables/edit"  class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                            @php
+                                                                $url = '/payables/edit?payable=' . $payable -> BUR;
+                                                            @endphp
+
+                                                            <a href="{{ $url }}" wire:navigate class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                 Edit
                                                             </a>
+                                                            
                                                             @php
-                                                                $url = '/payables/view?payable=' . $payable->BUR;
+                                                                $url = '/payables/view?payable=' . $payable -> BUR;
                                                             @endphp
 
                                                             <a href="{{ $url }}" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
