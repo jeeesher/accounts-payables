@@ -3,11 +3,14 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Title;
 use App\Models\Payable;
 use Livewire\WithPagination;
 use App\Models\Particular;
 use App\Models\Track;
 use Illuminate\Support\Facades\DB;
+
+#[Title('Tracking')]
 
 class Tracking extends Component
 {

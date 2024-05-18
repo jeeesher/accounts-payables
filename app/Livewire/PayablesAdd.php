@@ -3,7 +3,10 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Title;
 use App\Models\Supplier;
+
+#[Title('Add Payable')]
 
 class PayablesAdd extends Component
 {

@@ -3,9 +3,12 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Title;
 use App\Models\Payable;
 use App\Models\Particular;
 use Illuminate\Http\Request;
+
+#[Title('Payable View')]
 
 class PayablesView extends Component
 {
@@ -27,6 +30,11 @@ class PayablesView extends Component
         } else {
             $this->error = true;
         }
+    }
+
+    public function delete(Payable $payable){
+        $this->payable->delete();
+        return redirect()->route('accounting.payables');
     }
 
     public function render()

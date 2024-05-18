@@ -3,6 +3,9 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Title;
+
+#[Title('Disbursement Voucher')]
 
 class AccountingDvView extends Component
 {

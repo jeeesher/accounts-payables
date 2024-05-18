@@ -5,6 +5,9 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Payable;
 use Illuminate\Support\Facades\DB;
+use Livewire\Attributes\Title;
+
+#[Title('Tracking')]
 
 class BtTracking extends Component
 {
