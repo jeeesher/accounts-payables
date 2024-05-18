@@ -11,6 +11,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use App\Models\Disbursement;
+use Illuminate\Support\Facades\DB;
 
 class PayableController extends Controller
 {
@@ -261,8 +262,6 @@ class PayableController extends Controller
             Particular::where('ID', $particularId)->delete();
         }
 
-        return dd($validated['particulars'], $validated['newparticulars'], $existingParticularIds, $newParticularIds, $particularsToDelete);
-
         // Create a new file record or update an existing one
         $fileRecord = Files::where('BUR', $payable->BUR)->firstOrNew([]);
 
@@ -274,10 +273,13 @@ class PayableController extends Controller
             $path = 'uploads/payables/';
             $file->move($path, $filename);
             $fileRecord->DV_File = $path.$filename;
+            $fileRecord->BUR = $payable->BUR;
+            DB::table('files')
+                ->where('BUR', $payable->BUR)
+                ->update([
+                    'DV_File' => $path.$filename,
+                ]);
         }
-
-        $fileRecord->BUR = $payable->BUR;
-        $fileRecord->save();
 
         return redirect('/payables/view?payable=' . $payable->BUR)->with('success', 'Payable updated successfully!');
     }
