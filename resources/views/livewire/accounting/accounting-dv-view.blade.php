@@ -2,8 +2,8 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4 mt-16">
             <!-- Disbursement Voucher Header -->
-            <div class="mt-4 mb-4 flex items-center justify-between">
-                <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Disbursement Voucher of BUR Number</div>
+            <div class="mt-4 mb-4 flex items-center justify-between font-['Inter'] ">
+                <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Disbursement Voucher of {{ $payable -> BUR }}</div>
                 <!-- BUR No. should be the BUR No. of the current dv -->
 
                 <!-- Button Group -->

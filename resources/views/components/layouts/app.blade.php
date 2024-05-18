@@ -22,6 +22,7 @@
 
             input[type="number"] {
             -moz-appearance: textfield;
+            appearance: textfield;
             }
         </style>
         
@@ -67,6 +68,8 @@
             return confirm('Are you sure you want to delete this folder?\nThis action cannot be undone. This will permanently delete the folder and remove the data from our records.');
         }
 
-
+        function confirmSaveDV() {
+            return confirm('Are you sure you want to save this disbursement voucher?\nThis action cannot be undone. This will permanently save the disbursement voucher and its data in our records.');
+        }
     </script>
 </html>
