@@ -403,7 +403,7 @@
                         <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Disbursement Voucher Preview</div>
 
                         <div class="mt-3 mb-4 border shadow h-96">
-                            @if($payable -> files -> DV_File != null)
+                            @if($payable->files->DV_File != null)
                                 <iframe id="documentViewer" src="{{ asset($payable -> files -> DV_File) }}" class="w-full border-0 h-96"></iframe>
                             @else
                                 <div class="bg-gray-100 h-full flex items">
