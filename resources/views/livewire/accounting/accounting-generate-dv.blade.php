@@ -104,17 +104,9 @@
             </div>
 
             <!-- Disbursement Voucher Table -->
-            <div class="mb-10">
+            <div class="mb-10 mx-auto w-full">
                 <div class="flex items-center">
-                    <div x-data="{ 
-                        tableItems: [
-                            { explanation: 'Regular text column', 'amount': 'Php 00.00' },
-                            { explanation: 'Regular text column', 'amount': 'Php 00.00' },
-                            { explanation: 'Regular text column', 'amount': 'Php 00.00' },
-                            { explanation: 'Regular text column', 'amount': 'Php 00.00' },
-                            { explanation: 'Regular text column', 'amount': 'Php 00.00' },
-                        ]}" class="mx-auto w-full">
-                            
+                    <div class="mx-auto w-full">
                         <div class="mt-2 rounded-md overflow-x-auto font-['Inter']">
                             <table class="w-full table-auto text-sm text-left">
                                 <thead class="bg-gray-50 text-gray-600 font-medium border-b">
@@ -124,12 +116,12 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 divide-y">
-                                    <template x-for="(item, idx) in tableItems" :key="idx">
-                                        <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis gap-x-6" style="width: 50%;" x-text="item.explanation"></td>
-                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis ps-16" style="width: 50%;" x-text="item.amount"></td>
-                                        </tr>
-                                    </template>
+                                    @foreach($payable -> otherParticulars as $particular)
+                                    <tr wire:key="{{ $particular -> ID }}">
+                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis gap-x-6" style="width: 50%;">{{ $particular -> ParticularDesc }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis ps-16 particular-amount" style="width: 50%;">Php {{ $particular -> ParticularAmount }}</td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -140,12 +132,33 @@
                 <div class="flex justify-end">
                     <div class="w-1/2 h-9 px-3 py-2 bg-white border border-gray-200 items-center gap-2 inline-flex">
                         <div class="grow shrink basis-0 h-5 items-center gap-2 flex">
-                            <div class="text-zinc-950 text-sm font-medium font-['Inter'] leading-tight ps-2">Total:</div>
-                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Php 00.00</div>
+                            <div class="text-zinc-950 text-sm font-medium font-['Inter'] leading-tight ps-1">Total:</div>
+                            <div id="total-amount" class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Php 00.00</div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    function calculateTotal() {
+                        let total = 0;
+                        document.querySelectorAll('.particular-amount').forEach(function(element) {
+                            let amountText = element.textContent.replace('Php', '').trim();
+                            let amount = parseFloat(amountText.replace(/,/g, '')); // Handle possible comma separators
+                            if (!isNaN(amount)) {
+                                total += amount;
+                            }
+                        });
+                        document.getElementById('total-amount').textContent = 'Php ' + total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); // Format as currency
+                    }
+
+                    calculateTotal(); // Initial calculation
+
+                    // Optional: Recalculate if the content changes dynamically
+                    // For example, if you use Livewire or other frameworks that dynamically update the table, you can call calculateTotal() accordingly.
+                });
+            </script>
 
             <div class="w-full md:mb-0">
                 <div class="bg-white dark:bg-gray-800 sm:rounded-lg mx-auto flex sm:flex-nowrap flex-wrap">
