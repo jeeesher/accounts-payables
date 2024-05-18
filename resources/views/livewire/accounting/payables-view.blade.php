@@ -2,12 +2,12 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4 mt-16">
             <!-- Back Button -->
-            <button type="button" class=" mt-1 mb-1 flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
+            <a href="{{ route('back') }}" class=" mt-1 mb-1 flex items-center font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
                 <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                     <path stroke="currentColor" d="M7.9987 12.698L3.33203 8.03129M3.33203 8.03129L7.9987 3.36462M3.33203 8.03129H12.6654" stroke="#2D349A" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 Back
-            </button>
+            </a>
 
             <!-- View Payable Header -->
             <div class="mb-4 flex items-center justify-between">
@@ -138,7 +138,7 @@
                                     <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Total Amount</div>
                                     <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                         <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> Amount }}</div>
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Php {{ $payable -> Amount }}</div>
                                         </div>
                                     </div>
                                 </div>
