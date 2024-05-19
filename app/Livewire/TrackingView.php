@@ -17,7 +17,9 @@ class TrackingView extends Component
     {
         $payableBUR = $request->query('payable');
 
-        $this->payable = Payable::with(['particulars', 'supplier', 'latestTracking', 'trackings'])->where('BUR', $payableBUR)->first();
+        $this->payable = Payable::with(['particulars', 'supplier', 'latestTracking', 'trackings' => function ($query) {
+            $query->orderBy('created_at', 'desc');
+        }])->where('BUR', $payableBUR)->first();
     }
     public function render()
     {
