@@ -15,6 +15,7 @@ class Payable extends Model
     protected $table = 'payables';
     protected $primaryKey = 'BUR';  
     protected $keyType = 'string';
+    public $incrementing = false;
 
     protected $fillable = [
         'BUR',

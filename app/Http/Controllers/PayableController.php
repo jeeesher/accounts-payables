@@ -32,12 +32,20 @@ class PayableController extends Controller
             return redirect()->back()->with('error', 'The provided BUR is already in use. Please try a different one.');
         }
 
+        $payableData = [
+            'BUR' => $validated['BUR'],
+            'SupplierName' => $validated['SupplierName'],
+            'EndUser' => $validated['EndUser'],
+            'Amount' => $validated['Amount'],
+            'TermsPayment' => $validated['TermsPayment'],
+        ];
+
         // Create a new payable
-        $payable = payable::create($validated);
+        $payable = Payable::create($payableData);
 
         // Create a new file record or update an existing one
         $fileRecord = Files::where('BUR', $payable->BUR)->firstOrNew([]);
-        $fileRecord->BUR = $payable->BUR;
+        $fileRecord->BUR = $validated['BUR'];
 
         if ($request->hasFile('IAR_File')) {
             // Validate the file
@@ -176,19 +184,19 @@ class PayableController extends Controller
 
         foreach ($validated['particulars'] as $particularData) {
             $particular = new Particular();
-            $particular->BUR = $payable->BUR;  // Assuming $payable->BUR is already set correctly
+            $particular->BUR = $validated['BUR'];  // Assuming $payable->BUR is already set correctly
             $particular->ParticularDesc = $particularData['ParticularDesc'];
             $particular->ParticularAmount = $particularData['ParticularAmount'];
             $particular->save();
         }
 
-        return redirect('/payables/view?payable=' . $payable->BUR)->with('success', 'Payable created successfully!'); 
+        return redirect('/payables/view?payable=' . $validated['BUR'])->with('success', 'Payable created successfully!'); 
     }
 
     // deleting payable
-    public function delete($id)
+    public function delete($iden)
     {
-        $payable = Payable::where('BUR', $id)->first()->delete();
+        $payable = Payable::where('BUR', $iden)->first()->delete();
 
         return redirect('/payables');
     }
@@ -234,17 +242,20 @@ class PayableController extends Controller
         $existingParticularIds = $payable->particulars()->pluck('id')->toArray();
         $newParticularIds = [];
 
-        
 
-        foreach ($validated['particulars'] as $particularData) {
-            $particular = Particular::find($particularData['identifier']);
-            $particular->update([
-                'ParticularDesc' => $particularData['ParticularDesc'],
-                'ParticularAmount' => $particularData['ParticularAmount'],
-            ]);
+        if(count($validated['particulars']) > 0)
+        {
+            foreach ($validated['particulars'] as $particularData) {
+                $particular = Particular::find($particularData['identifier']);
+                $particular->update([
+                    'ParticularDesc' => $particularData['ParticularDesc'],
+                    'ParticularAmount' => $particularData['ParticularAmount'],
+                ]);
 
-            $newParticularIds[] = (int)$particularData['identifier'];
+                $newParticularIds[] = (int)$particularData['identifier'];
+            }
         }
+        
         $particularsToDelete = array_diff($existingParticularIds, $newParticularIds);
 
         foreach ($validated['newparticulars'] as $particularData) {

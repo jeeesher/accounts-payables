@@ -52,7 +52,7 @@ Route::get('/payables/edit', PayablesEdit::class);
 
 Route::controller(PayableController::class)->group(function () {
     Route::post('/payables/add', 'store')->name('submit.payable');
-    Route::get('/payables/{id}/delete', 'delete')->name('delete.payable');
+    Route::get('/payables/{iden}/delete', 'delete')->name('delete.payable');
     Route::get('/payables/edit?payable={id}', 'edit')->name('edit.payable');
     Route::post('/payables/update', 'update')->name('update.payable');
 
