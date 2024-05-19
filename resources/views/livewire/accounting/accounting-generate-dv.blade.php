@@ -1,6 +1,6 @@
 <div>
     <div class="p-4 sm:ml-64">
-        <form class="p-4 mt-16" enctype="multipart/form-data" action="{{ route('generate.dv') }}" method="POST">
+        <form class="p-4 mt-16" enctype="multipart/form-data" action="{{ route('generate.dv', ['id' => $payable->BUR]) }}" method="POST">
             @csrf
             <!-- Disbursement Voucher Header -->
             <div class="mt-4 mb-4 flex items-center justify-between">
@@ -37,16 +37,19 @@
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">No.</div>
                             <input type="text" id="No" name="No" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter No." required />
+                            @error('No') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                                 
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Payee</div>
                             <input type="text" id="Payee" name="Payee" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Payee" required />
+                            @error('Payee') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Address</div>
                             <input type="text" id="Address" name="Address" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Address" required />
+                            @error('Address') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                     </div>
                 </div>
@@ -56,12 +59,14 @@
                     <div class="h-full pt-3 pb-2 pl-2 rounded-lg text-left relative">
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                            <input type="text" id="Date" name="Date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
+                            <input type="date" id="Date" name="Date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                            @error('Date') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                             
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">TIN Employee No.</div>
                             <input type="text" id="TIN" name="TIN" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter TIN Employee No." required />
+                            @error('TIN') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <div class="mb-6">
@@ -69,6 +74,7 @@
                             <div class="relative items-center">
                                 <div class="text-zinc-950 text-sm font-medium font-['Inter'] absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">Office/Unit/Project:</div>
                                 <input type="text" id="RCOffice" name="RCOffice" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-40 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" required />
+                                @error('RCOffice') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>                    
@@ -85,18 +91,21 @@
                                 <option value="Cash">Cash</option>
                                 <option value="Others">Others</option>
                             </select>
+                            @error('ModePayment') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                                 
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">BUR No.</div>
                             <input type="text" id="BUR" name="BUR" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ $payable -> BUR }}" required />
+                            @error('BUR') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <div class="mb-6">
                             <div class="mb-3 text-white text-sm font-medium font-['Inter'] leading-tight dark:text-black">text</div>
                             <div class="relative items-center">
                                 <div class="text-zinc-950 text-sm font-medium font-['Inter'] absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">Code:</div>
-                                <input type="text" id="RCCode" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" required />
+                                <input type="text" id="RCCode" name="RCCode" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" required />
+                                @error('RCCode') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>
@@ -153,10 +162,7 @@
                         document.getElementById('total-amount').textContent = 'Php ' + total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); // Format as currency
                     }
 
-                    calculateTotal(); // Initial calculation
-
-                    // Optional: Recalculate if the content changes dynamically
-                    // For example, if you use Livewire or other frameworks that dynamically update the table, you can call calculateTotal() accordingly.
+                    calculateTotal();
                 });
             </script>
 
@@ -171,25 +177,28 @@
                         <!-- Certified Dropdown -->
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Certified</div>
-                            <select id="Certified" name="Certified" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Certified Status" required>
+                            <select id="Certified" name="Certified" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option disabled selected>Select Certified Status</option> 
                                 <option value="Supporting Documents Complete">Supporting Documents Complete</option>
                                 <option value="Supporting Documents Incomplete">Supporting Documents Incomplete</option>
                                 <option value="Missing Documents">Missing Documents</option>
                                 <option value="Others">Others</option>
                             </select>
+                            @error('Certified') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Printed Name Input Field -->
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
-                            <input type="text" id="CertifiedBy" name="CertifiedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required />
+                            <input type="text" id="CertifiedBy" name="CertifiedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" />
+                            @error('CertifiedBy') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Position Input Field -->
                         <div class="mb-2">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
-                            <input type="text" id="CertifiedPosition" name="CertifiedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required />
+                            <input type="text" id="CertifiedPosition" name="CertifiedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" />
+                            @error('CertifiedPosition') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                     </div>
 
@@ -202,23 +211,26 @@
                         <!-- Approved for Dropdown -->
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Approved for</div>
-                            <select id="Approved" name="Approved" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Approved for Status" required>
+                            <select id="Approved" name="Approved" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
                                 <option disabled selected>Select Approved for Status</option> 
                                 <option value="Approved">Approved</option>
                                 <option value="Not approved">Not approved</option>
                             </select>
+                            @error('Approved') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Printed Name Input Field -->
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
-                            <input type="text" id="ApprovedBy" name="ApprovedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required />
+                            <input type="text" id="ApprovedBy" name="ApprovedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" />
+                            @error('ApprovedBy') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Position Input Field -->
                         <div class="mb-2">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
-                            <input type="text" id="ApprovedPosition" name="ApprovedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required />
+                            <input type="text" id="ApprovedPosition" name="ApprovedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" />
+                            @error('ApprovedPosition') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                     </div>
                 </div>
@@ -236,20 +248,20 @@
                         <div class="h-full pb-2 text-left relative">
                             <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Check No.</div>
-                                <input type="text" id="CheckNo" name="CheckNo" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Check No." required />
+                                <input type="text" id="CheckNo" name="CheckNo" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Check No." />
+                                @error('CheckNo') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>
 
                     <!-- Check Date Input Field -->
                     <div class="pr-2 lg:w-1/3">
-                        <div class="h-full pb-2 pl-2 rounded-lg text-left relative">
+                        <div class="h-full pb-2 pl-2 rounded-lg text-left relative font-['Inter'] ">
                             <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                                <input type="text" id="CheckDate" name="CheckDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
+                                <input type="date" id="CheckDate" name="CheckDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" />
+                                @error('CheckDate') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
-                                
-                            
                         </div>                    
                     </div>
 
@@ -258,7 +270,8 @@
                         <div class="h-full pl-4 pb-2 rounded-lg text-left relative">
                             <div class="mb-2">
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Bank Name</div>
-                                <input type="text" id="BankName" name="BankName" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Bank Name" required />
+                                <input type="text" id="BankName" name="BankName" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Bank Name" />
+                                @error('BankName') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>
@@ -267,15 +280,17 @@
 
             <div class="mb-6">
                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
-                <input type="text" id="CheckName" name="CheckName" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required />
+                <input type="text" id="CheckName" name="CheckName" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" />
+                @error('CheckName') <span class="text-red-500">{{ $message }}</span> @enderror
             </div>
             
-            <div class="bg-white dark:bg-gray-800 sm:rounded-lg mx-auto flex sm:flex-nowrap flex-wrap">
+            <div class="bg-white dark:bg-gray-800 sm:rounded-lg mx-auto flex sm:flex-nowrap flex-wrap font-['Inter'] ">
                 <div class="lg:w-1/2 md:w-1/2 bg-white overflow-hidden sm:mr-10 w-full items-end justify-start relative font-['Inter']">
                     <!-- JEV No. Input Field -->
                     <div class="mb-2">
                         <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">JEV No.</div>
-                        <input type="text" id="JEVNo" name="JEVNo" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter JEV No." required />
+                        <input type="text" id="JEVNo" name="JEVNo" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter JEV No." />
+                        @error('JEVNo') <span class="text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
@@ -283,13 +298,15 @@
                     <!-- Date Input Field -->
                     <div class="mb-2">
                         <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
-                        <input type="text" id="JEVDate" name="JEVDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
+                        <input type="date" id="JEVDate" name="JEVDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" />
+                        @error('JEVDate') <span class="text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
             </div>
             <div class="font-['Inter']">
                 <label for="ORNo" class="block mb-3 text-sm font-medium text-zinc-950 dark:text-white">OR No./Other Documents</label>
-                <textarea id="ORNo" name="ORNo" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter OR No./Other Documents here..." required></textarea>
+                <textarea id="ORNo" name="ORNo" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter OR No./Other Documents here..."></textarea>
+                @error('ORNo') <span class="text-red-500">{{ $message }}</span> @enderror
             </div>
         </form>
     </div>

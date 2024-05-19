@@ -56,7 +56,7 @@ Route::controller(PayableController::class)->group(function () {
     Route::get('/payables/edit?payable={id}', 'edit')->name('edit.payable');
     Route::post('/payables/update', 'update')->name('update.payable');
 
-    Route::post('/accounting/generate/dv', 'generateDv')->name('generate.dv');
+    Route::post('/accounting/generate/gen/{id}', 'generateDv')->name('generate.dv');
 
     Route::get('/SupplierInfo/{supplier}', 'SupplierInfo');
     Route::post('/particular/store', 'store')->name('particular.store');
@@ -75,9 +75,6 @@ Route::get('/notifications', Notifications::class);
 
 Route::get('/accounting/generate/dv', AccountingGenerateDv::class);
 Route::get('/accounting/dv/view', AccountingDvView::class);
-
-
-
 
 //Route::get('/offices/bt/dashboard', BtDashboard::class);
 //Route::get('/offices/bt/payables', BtPayables::class);

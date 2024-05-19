@@ -9,6 +9,8 @@ class Disbursement extends Model
 {
     use HasFactory;    
     protected $table = 'disbursement';
+    protected $primaryKey = 'No';
+    public $incrementing = false;
 
     protected $fillable = [
         'No', 'Payee',

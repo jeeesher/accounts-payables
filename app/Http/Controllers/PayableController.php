@@ -6,12 +6,13 @@ use App\Models\Files;
 use App\Models\payable;
 use App\Models\Supplier;
 use App\Models\Particular;
+use App\Models\Disbursement;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Validation\Rule;
-use App\Models\Disbursement;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
+
 
 class PayableController extends Controller
 {
@@ -184,7 +185,7 @@ class PayableController extends Controller
 
         foreach ($validated['particulars'] as $particularData) {
             $particular = new Particular();
-            $particular->BUR = $validated['BUR'];  // Assuming $payable->BUR is already set correctly
+            $particular->BUR = $validated['BUR'];
             $particular->ParticularDesc = $particularData['ParticularDesc'];
             $particular->ParticularAmount = $particularData['ParticularAmount'];
             $particular->save();
@@ -314,33 +315,61 @@ class PayableController extends Controller
         return view('/payables/view', compact('payable'));
     }    
 
+    // creating dv
     public function generateDv(Request $request)
     {
         $validated = $request->validate([
-            'Date' => 'required|date',
-            'ModePayment' => 'required|in:Check,Cash,Others',
-            'Payee' => 'required|string|max:255',
-            'TIN' => 'required|string|max:255',
-            'BUR' => 'required|string|max:13',
-            'Address' => 'required|string|max:255',
-            'RCOffice' => 'required|string|max:255',
-            'RCCode' => 'required|string|max:255',
-            'Certified' => 'required|in:Supporting Documents Complete,Supporting Documents Incomplete,Missing Documents,Others',
-            'CertifiedBy' => 'required|string|max:255',
-            'CertifiedPosition' => 'required|string|max:255',
-            'Approved' => 'required|in:Approved,Not Approved',
-            'ApprovedBy' => 'required|string|max:255',
-            'ApprovedPosition' => 'required|string|max:255',
-            'CheckNo' => 'required|string|max:255',
-            'CheckDate' => 'required|date',
-            'BankName' => 'required|string|max:255',
-            'CheckName' => 'required|string|max:255',
-            'JEVNo' => 'required|string|max:255',
-            'JEVDate' => 'required|date',
-            'ORNo' => 'string|max:255',
+            'No' => ['required', 'unique:disbursement'],
+            'Date' => ['required', 'date'],
+            'ModePayment' => ['required', 'in:Check,Cash,Others'],
+            'Payee' => ['required', 'string', 'max:255'],
+            'TIN' => ['required', 'string', 'max:255'],
+            'BUR' => ['required', 'string', 'min:13',  'max:13', 'exists:payables,BUR'],
+            'Address' => ['required', 'string', 'max:255'],
+            'RCOffice' => ['required', 'string', 'max:255'],
+            'RCCode' => ['required', 'string', 'max:255'],
+            'Certified' => ['nullable'],
+            'CertifiedBy' => ['nullable', 'string', 'max:255'],
+            'CertifiedPosition' => ['nullable', 'string', 'max:255'],
+            'Approved' => ['nullable', 'in:Approved,Not Approved'],
+            'ApprovedBy' => ['nullable', 'string', 'max:255'],
+            'ApprovedPosition' => ['nullable', 'string', 'max:255'],
+            'CheckNo' => ['nullable', 'string', 'max:255'],
+            'CheckDate' => ['nullable', 'date'],
+            'BankName' => ['nullable', 'string', 'max:255'],
+            'CheckName' => ['nullable', 'string', 'max:255'],
+            'JEVNo' => ['nullable', 'string', 'max:255'],
+            'JEVDate' => ['nullable', 'date'],
+            'ORNo' => ['nullable', 'string', 'max:255'],
         ]);
 
-        $disbursement = Disbursement::create($validated);
+        $disbursementData = [
+            'No' => $validated['No'],
+            'Date' => $validated['Date'],
+            'ModePayment' => $validated['ModePayment'],
+            'Payee' => $validated['Payee'],
+            'TIN' => $validated['TIN'],
+            'BUR' => $validated['BUR'],
+            'Address' => $validated['Address'],
+            'RCOffice' => $validated['RCOffice'],
+            'RCCode' => $validated['RCCode'],
+            'Certified' => $validated['Certified'],
+            'CertifiedBy' => $validated['CertifiedBy'],
+            'CertifiedPosition' => $validated['CertifiedPosition'],
+            'Approved' => $validated['Approved'],
+            'ApprovedBy' => $validated['ApprovedBy'],
+            'ApprovedPosition' => $validated['ApprovedPosition'],
+            'CheckNo' => $validated['CheckNo'],
+            'CheckDate' => $validated['CheckDate'],
+            'BankName' => $validated['BankName'],
+            'CheckName' => $validated['CheckName'],
+            'JEVNo' => $validated['JEVNo'],
+            'JEVDate' => $validated['JEVDate'],
+            'ORNo' => $validated['ORNo']
+        ];
+
+        // Create a new disbursement
+        $disbursement = Disbursement::create($disbursementData);
 
         return redirect('/accounting/dv/view?disbursement=' . $disbursement->BUR)->with('success', 'Disbursement saved successfully!'); 
     }
