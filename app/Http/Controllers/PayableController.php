@@ -7,6 +7,7 @@ use App\Models\payable;
 use App\Models\Supplier;
 use App\Models\Particular;
 use App\Models\Disbursement;
+use App\Models\Track;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
@@ -380,5 +381,45 @@ class PayableController extends Controller
         
 
         return redirect('/accounting/dv/view?payable=' . $disbursement->BUR)->with('success', 'Disbursement saved successfully!'); 
+    }
+
+    // adding track
+    public function addTrack($id, Request $request){
+        $validated = $request->validate([
+            'CurrentLocation' => ['required', 'string', 'max:255'],
+            'CurrentStatus' => ['required', 'string', 'max:255'],
+        ]);
+
+        $trackData = [
+            'BUR' => $id,
+            'CurrentLocation' => $validated['CurrentLocation'],
+            'CurrentStatus' => $validated['CurrentStatus'],
+            'CurrentDate' => now()->toDateString(),
+            'CurrentTime' => now(),
+        ];
+
+        // Create a new track
+        $track = Track::create($trackData);
+
+        return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking added successfully!');
+    }
+
+    public function updateTrack($id, Request $request){
+        $validated = $request->validate([
+            'CurrentLocation' => ['required', 'string', 'max:255'],
+            'CurrentStatus' => ['required', 'string', 'max:255'],
+            'CurrentDate' => ['required', 'date'],
+        ]);
+
+        Track::where('ID', $id)->update([
+            'CurrentLocation' => $validated['CurrentLocation'],
+            'CurrentStatus' => $validated['CurrentStatus'],
+            'CurrentDate' => $validated['CurrentDate'],
+            'CurrentTime' => now(),
+        ]);
+
+        $track = Track::where('ID', $id)->first();
+
+        return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking updated successfully!');
     }
 }

@@ -52,10 +52,6 @@
             return confirm('Are you sure you want to add this tracking log?\nThis action cannot be undone. This will permanently add the tracking log and its data in our records.');
         }
 
-        function confirmDeleteTrack() {
-            return confirm('Are you sure you want to delete this tracking log?\nThis action cannot be undone. This will permanently delete the payable track and remove the data from our records.');
-        }
-
         function confirmSaveTrack() {
             return confirm('Are you sure you want to update this tracking log?\nThis action cannot be undone. This will permanently edit the tracking log and replace the data in our records.');
         }
