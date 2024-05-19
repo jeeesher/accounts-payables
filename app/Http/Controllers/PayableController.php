@@ -319,7 +319,7 @@ class PayableController extends Controller
     public function generateDv(Request $request)
     {
         $validated = $request->validate([
-            'No' => ['required', 'unique:disbursement'],
+            'No' => ['required'],
             'Date' => ['required', 'date'],
             'ModePayment' => ['required', 'in:Check,Cash,Others'],
             'Payee' => ['required', 'string', 'max:255'],
@@ -368,9 +368,17 @@ class PayableController extends Controller
             'ORNo' => $validated['ORNo']
         ];
 
-        // Create a new disbursement
-        $disbursement = Disbursement::create($disbursementData);
+        $disbursement = Disbursement::where('No', $validated['No'])->first();
 
-        return redirect('/accounting/dv/view?disbursement=' . $disbursement->BUR)->with('success', 'Disbursement saved successfully!'); 
+        if ($disbursement) {
+            $disbursement->update($disbursementData);
+        } else {
+            $disbursement = Disbursement::create($disbursementData);
+        }
+
+        // Create a new disbursement
+        
+
+        return redirect('/accounting/dv/view?payable=' . $disbursement->BUR)->with('success', 'Disbursement saved successfully!'); 
     }
 }

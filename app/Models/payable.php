@@ -59,4 +59,9 @@ class Payable extends Model
     {
         return $this->hasOne(Files::class, 'BUR', 'BUR');
     }
+
+    public function disbursement()
+    {
+        return $this->hasOne(Disbursement::class, 'BUR', 'BUR');
+    }
 }
