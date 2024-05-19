@@ -138,19 +138,27 @@
                                                                 Actions
                                                             </div>
 
-                                                            <a href="/payables/edit"  class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                            @php
+                                                                $urledit = '/payables/edit?payable=' . $payable -> BUR;
+                                                            @endphp
+
+                                                            <a href="{{ $urledit }}" wire:navigate class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                 Edit
                                                             </a>
                                                             
                                                             @php
-                                                                $url = '/payables/view?payable=' . $payable->BUR;
+                                                                $urlpayable = '/payables/view?payable=' . $payable -> BUR;
                                                             @endphp
 
-                                                            <a href="{{ $url }}" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                            <a href="{{ $urlpayable }}" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                 View
                                                             </a>
 
-                                                            <a href="/tracking/view" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                            @php
+                                                                $urltracking = '/tracking/view?payable=' . $payable -> BUR;
+                                                            @endphp
+
+                                                            <a href="{{ $urltracking }}" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                 Track
                                                             </a>
                                                         </div>
