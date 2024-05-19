@@ -22,12 +22,12 @@
                     <x-export-dropdown />
 
                     <!-- Cancel Edit Button -->
-                    <button type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <a href="{{ url('/payables/view?payable=' . $payable -> BUR)}}" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M10 6.00708L6 10.0071M6 6.00708L10 10.0071M3.33333 2.00708H12.6667C13.403 2.00708 14 2.60403 14 3.34041V12.6737C14 13.4101 13.403 14.0071 12.6667 14.0071H3.33333C2.59695 14.0071 2 13.4101 2 12.6737V3.34041C2 2.60403 2.59695 2.00708 3.33333 2.00708Z" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Cancel Edit
-                    </button>
+                    </a>
                         
                     <!-- Save Edit Button -->
                     <button onclick="return confirmSavePayable()" type="update" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] shadow bg-[#2D349A] border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
