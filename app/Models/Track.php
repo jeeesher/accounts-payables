@@ -11,6 +11,7 @@ class Track extends Model
     use HasFactory;
 
     protected $table = 'tracking';
+    protected $primaryKey = 'ID'; 
 
     // Mass Assignment for automatic insertion of data into the database
     protected $fillable = ['BUR', 'CurrentLocation', 'CurrentStatus', 'CurrentDate', 'CurrentTime']; 

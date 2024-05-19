@@ -22,7 +22,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">BUR Number</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> BUR }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">End-user</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> EndUser }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Total Amount</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Php {{ $payable -> Amount }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,11 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Current Location</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        @if($payable -> latestTracking)
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> latestTracking -> CurrentLocation }}</div>
+                                        @else
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">No Tracking Information</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +66,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Terms of Payment</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> TermsPayment }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +76,11 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Remarks</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        @if($payable -> latestTracking)
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> latestTracking -> CurrentStatus }}</div>
+                                        @else
+                                            <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">No Tracking Information</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +97,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Name</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> SupplierName }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +107,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Address</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> supplier -> Address }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +117,7 @@
                                 <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Supplier Contact Number</div>
                                 <div class="w-full h-9 px-3 py-2 bg-white rounded-md border border-gray-200 justify-start items-center gap-2 inline-flex">
                                     <div class="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
-                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">Text</div>
+                                        <div class="grow shrink basis-0 text-zinc-500 text-sm font-normal font-['Inter'] leading-tight">{{ $payable -> supplier -> ContactNumber }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +171,7 @@
                             <div class="inline-flex items-center justify-start w-full gap-10 h-9">
                             <div class="text-gray-900 text-base font-medium font-['Inter'] leading-tight">BUR Number:</div>
                             <div class="flex items-center justify-start gap-2">
-                                <div class="text-black text-base font-medium font-['Inter'] leading-tight">2023-11-BUR</div>
+                                <div class="text-black text-base font-medium font-['Inter'] leading-tight">{{ $payable -> BUR }}</div>
                             </div>
 
                             <!-- Copy BUR Number Button -->
@@ -175,22 +183,7 @@
                             </button>
                         </div>
 
-                        <div x-data="{ 
-                            tableItems: [
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                                    { date: '00/00/0000', 'time': 'Regular text column', 'status': 'Regular text column', 'location': 'Regular text column'  },
-                            ]}" class="mx-auto w-full">
-                            
+                        <div class="mx-auto w-full">
                             <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
                                 <table class="w-full table-auto text-sm text-left">
                                     <thead class="bg-gray-50 text-gray-600 font-medium border-b">
@@ -202,18 +195,18 @@
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-600 divide-y">
-                                        <template x-for="(item, idx) in tableItems" :key="idx">
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 20%;" x-text="item.date"></td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 25%;" x-text="item.time"></td>
-                                                <td class="flex items-center gap-x-3 py-3 px-6 whitespace-nowrap" style="width: 55%;">
-                                                    <div>
-                                                        <span class="block text-gray-700 text-sm" x-text="item.status"></span>
-                                                        <span class="block text-gray-700 text-xs" x-text="item.location"></span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </template>
+                                        @foreach($payable -> trackings as $tracking)
+                                        <tr wire:key="{{ $tracking -> ID }}">
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 20%;" x-text="item.date">{{ \Carbon\Carbon::parse($tracking->CurrentDate)->format('m/d/Y') }}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 25%;">{{ \Carbon\Carbon::parse($tracking->CurrentTime)->format('h:i A') }}</td>
+                                            <td class="flex items-center gap-x-3 py-3 px-6 whitespace-nowrap" style="width: 55%;">
+                                                <div>
+                                                    <span class="block text-gray-700 text-sm font-medium">{{ $tracking -> CurrentStatus }}</span>
+                                                    <span class="block text-gray-700 text-xs mt-1 italic">{{ $tracking -> CurrentLocation }}</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
