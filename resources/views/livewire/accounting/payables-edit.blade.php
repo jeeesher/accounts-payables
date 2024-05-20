@@ -18,9 +18,6 @@
                         Delete
                     </a>
 
-                    <!-- Export Dropdown -->
-                    <x-export-dropdown />
-
                     <!-- Cancel Edit Button -->
                     <a href="{{ url('/payables/view?payable=' . $payable -> BUR)}}" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
