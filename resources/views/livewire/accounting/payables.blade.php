@@ -81,13 +81,13 @@
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">Php {{$payable->Amount}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->EndUser}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[180px] overflow-hidden overflow-ellipsis">
-                                                @if ($payable->CurrentLocation == 'COA')
+                                                @if ($payable->latestTracking->CurrentLocation == 'COA')
                                                     <span>
                                                         <div class="w-26 h-6 pl-2 pr-2 py-1 bg-gray-100 rounded-2xl justify-left items-center gap-1.5 inline-flex text-gray-700 text-xs font-medium">
                                                             <div class="w-2 h-2 pb-3 relative">
                                                                 <div class="w-2 h-2 left-[1px] top-[1px] absolute bg-slate-500 rounded-full"></div>
                                                             </div>
-                                                            {{$payable->CurrentLocation}}
+                                                            {{$payable->latestTracking->CurrentLocation}}
                                                         </div>
                                                     </span>
                                                 @else
@@ -96,13 +96,13 @@
                                                             <div class="w-2 h-2 pb-3 relative">
                                                                 <div class="w-2 h-2 left-[1px] top-[1px] absolute bg-emerald-500 rounded-full"></div>
                                                             </div>
-                                                            {{$payable->CurrentLocation}}
+                                                            {{$payable->latestTracking->CurrentLocation}}
                                                         </div>
                                                     </span>
                                                 @endif
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->TermsPayment}}</td>
-                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->CurrentStatus}}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->latestTracking->CurrentStatus}}</td>
                                             <td class="text-right px-6 whitespace-nowrap">
                                                 <div class="flex justify-center">
                                                     <div
