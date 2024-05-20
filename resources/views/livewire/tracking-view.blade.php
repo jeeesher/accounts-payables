@@ -4,7 +4,7 @@
             <div class="mt-4 max-w-10xl mx-auto space-y-6 flex">
                 <!-- Add New Payables Form -->
                 <div class="bg-white dark:bg-gray-800 sm:rounded-lg lg:max-w-lg lg:w-1/3 md:w-1/2 w-full mb-10 md:mb-0">
-                    <!-- Payable Information Input Field -->
+                    <!-- Payable Information Field -->
                     <div>
                         <!-- Payable Information -->
                         <div class="flex items-center justify-between mb-4 pt-3">
@@ -87,7 +87,7 @@
                         </div>
                     </div>
 
-                    <!-- Supplier Information Information Field -->
+                    <!-- Supplier Information Field -->
                     <div class="pt-5">
                         <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Supplier Information</div>
 
@@ -297,6 +297,13 @@
                                 <div class="ms-2 text-gray-100 text-lg font-semibold font-['Inter'] leading-9">{{$payable -> latestTracking -> CurrentStatus}}</div>
                             <!-- Subcopy -->
                                 <div class="ms-2 text-zinc-100 text-xs font-regular font-['Inter'] leading-none">Payable already at {{ $payable -> latestTracking -> CurrentLocation }}</div>
+                            </div>
+                        @elseif ($payable -> latestTracking -> CurrentLocation == 'Treasurer')
+                            <div class="inline-flex flex-col items-start justify-start w-full gap-1.5 p-6 bg-[#0070FF] rounded-lg h-hug">
+                            <!-- Heading -->
+                                <div class="ms-2 text-gray-100 text-lg font-semibold font-['Inter'] leading-9">{{$payable -> latestTracking -> CurrentStatus}}</div>
+                            <!-- Subcopy -->
+                                <div class="ms-2 text-zinc-100 text-xs font-regular font-['Inter'] leading-none">Payable already at {{ $payable -> latestTracking -> CurrentLocation }}'s Office</div>
                             </div>
                         @else
                             <div class="inline-flex flex-col items-start justify-start w-full gap-1.5 p-6 bg-[#0070FF] rounded-lg h-hug">
