@@ -41,7 +41,7 @@
 
                 <!-- Payables Table -->
                 <div x-data="dataHandler()">
-                    <div class="mb-4 shadow-sm border rounded-lg overflow-x-auto" style="table-layout: fixed;">
+                    <div class="mb-4 shadow-sm border rounded-lg overflow-x-auto font-['Inter']" style="table-layout: fixed;">
                         <table class="w-full table-auto text-sm text-left">
                             <thead class="text-gray-500 font-medium border-b-2 bg-gray-50 border-gray-200 font-['Inter']">
                                 <tr>
@@ -80,7 +80,27 @@
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->ParticularDesc}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">Php {{$payable->Amount}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->EndUser}}</td>
-                                            <td class="px-6 py-4 whitespace-nowrap max-w-[180px] overflow-hidden overflow-ellipsis">{{$payable->CurrentLocation}}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap max-w-[180px] overflow-hidden overflow-ellipsis">
+                                                @if ($payable->CurrentLocation == 'COA')
+                                                    <span>
+                                                        <div class="w-26 h-6 pl-2 pr-2 py-1 bg-gray-100 rounded-2xl justify-left items-center gap-1.5 inline-flex text-gray-700 text-xs font-medium">
+                                                            <div class="w-2 h-2 pb-3 relative">
+                                                                <div class="w-2 h-2 left-[1px] top-[1px] absolute bg-slate-500 rounded-full"></div>
+                                                            </div>
+                                                            {{$payable->CurrentLocation}}
+                                                        </div>
+                                                    </span>
+                                                @else
+                                                    <span>
+                                                        <div class="w-26 h-6 pl-1.5 pr-2 py-0.5 bg-emerald-50 rounded-2xl justify-left items-center gap-1.5 inline-flex text-emerald-700 text-xs font-medium">
+                                                            <div class="w-2 h-2 pb-3 relative">
+                                                                <div class="w-2 h-2 left-[1px] top-[1px] absolute bg-emerald-500 rounded-full"></div>
+                                                            </div>
+                                                            {{$payable->CurrentLocation}}
+                                                        </div>
+                                                    </span>
+                                                @endif
+                                            </td>
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->TermsPayment}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->CurrentStatus}}</td>
                                             <td class="text-right px-6 whitespace-nowrap">
