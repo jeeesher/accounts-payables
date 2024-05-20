@@ -41,7 +41,7 @@
 
                 <!-- Payables Table -->
                 <div x-data="dataHandler()">
-                    <div class="mb-4 shadow-sm border rounded-lg overflow-x-auto" style="table-layout: fixed;">
+                    <div class="mb-4 shadow-sm border rounded-lg overflow-x-auto font-['Inter']" style="table-layout: fixed;">
                         <table class="w-full table-auto text-sm text-left">
                             <thead class="text-gray-500 font-medium border-b-2 bg-gray-50 border-gray-200 font-['Inter']">
                                 <tr>
@@ -66,7 +66,7 @@
                             </thead>
                             <tbody class="text-gray-600 divide-y">
                                     @foreach($payables as $payable)
-                                        <tr class="odd:bg-gray-50 even:bg-white" wire:key="{{ $payable->BUR }}">
+                                    <tr class="odd:bg-gray-50 even:bg-white" wire:key="{{ $payable->BUR }}">
                                             <td class="px-6 py-4 whitespace-nowrap flex items-center gap-x-4 font-semibold max-w-[180px]">
                                                 <div>
                                                     <input type="checkbox" id="checkbox-{{ $loop->index }}" 
@@ -128,7 +128,7 @@
                                                         x-on:keydown.escape.prevent.stop="close($refs.button)"
                                                         x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
                                                         x-id="['dropdown-table-action']"
-                                                        class="relative z-100 inset-0"
+                                                        class="relative z-100"
                                                     >
                                                         <!-- Button -->
                                                         <button
@@ -151,7 +151,7 @@
                                                             x-transition.origin.top.left
                                                             x-on:click.outside="close($refs.button)"
                                                             :id="$id('dropdown-table-action')"
-                                                            style="display: none;"
+                                                            style="display: none; overflow: visible;"
                                                             class="absolute right-0 mt-1 w-24 rounded-md bg-white shadow-md font-['Inter'] z-50"
                                                         >  
                                                             <div class="flex items-center gap-2 w-full border-b-2 px-4 py-2.5 text-left text-sm font-semibold disabled:text-gray-500">
