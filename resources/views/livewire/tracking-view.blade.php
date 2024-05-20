@@ -314,19 +314,31 @@
                         <div class="mb-6 items-center">
                             <!-- BUR Number -->
                             <div class="inline-flex items-center justify-start w-full gap-10 h-9">
-                            <div class="text-gray-900 text-base font-medium font-['Inter'] leading-tight">BUR Number:</div>
-                            <div class="flex items-center justify-start gap-2">
-                                <div class="text-black text-base font-medium font-['Inter'] leading-tight">{{ $payable -> BUR }}</div>
-                            </div>
+                                <div class="text-gray-900 text-base font-medium font-['Inter'] leading-tight">BUR Number:</div>
+                                <div class="flex items-center justify-start gap-2">
+                                    <div id="bur-number" class="text-black text-base font-medium font-['Inter'] leading-tight">{{ $payable->BUR }}</div>
+                                </div>
 
-                            <!-- Copy BUR Number Button -->
-                            <button type="button" class="flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
-                                <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                                    <path stroke="currentColor" d="M2.6849 10.6668C1.95156 10.6668 1.35156 10.0668 1.35156 9.3335V2.66683C1.35156 1.9335 1.95156 1.3335 2.6849 1.3335H9.35156C10.0849 1.3335 10.6849 1.9335 10.6849 2.66683M6.6849 5.3335H13.3516C14.0879 5.3335 14.6849 5.93045 14.6849 6.66683V13.3335C14.6849 14.0699 14.0879 14.6668 13.3516 14.6668H6.6849C5.94852 14.6668 5.35156 14.0699 5.35156 13.3335V6.66683C5.35156 5.93045 5.94852 5.3335 6.6849 5.3335Z" stroke="#2D349A" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <defs> <clipPath id="clip0_4438_650"> <rect width="16" height="16" fill="white" transform="translate(0.0195312)"/></clipPath></defs>
-                                </svg>
-                            </button>
+                                <!-- Copy BUR Number Button -->
+                                <button id="copybtn" type="button" class="flex items-center justify-between font-medium text-xs text-indigo-800 dark:text-gray-200 leading-right flex font-['Inter'] hover:text-black active:text-cyan-700">
+                                    <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                                        <path stroke="currentColor" d="M2.6849 10.6668C1.95156 10.6668 1.35156 10.0668 1.35156 9.3335V2.66683C1.35156 1.9335 1.95156 1.3335 2.6849 1.3335H9.35156C10.0849 1.3335 10.6849 1.9335 10.6849 2.66683M6.6849 5.3335H13.3516C14.0879 5.3335 14.6849 5.93045 14.6849 6.66683V13.3335C14.6849 14.0699 14.0879 14.6668 13.3516 14.6668H6.6849C5.94852 14.6668 5.35156 14.0699 5.35156 13.3335V6.66683C5.35156 5.93045 5.94852 5.3335 6.6849 5.3335Z" stroke="#2D349A" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <defs> <clipPath id="clip0_4438_650"> <rect width="16" height="16" fill="white" transform="translate(0.0195312)"/></clipPath></defs>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
+
+                        <script>
+                            document.getElementById('copybtn').addEventListener('click', function() {
+                                var burNumber = document.getElementById('bur-number').textContent;
+                                navigator.clipboard.writeText(burNumber).then(function() {
+                                    console.log('BUR number copied to clipboard');
+                                }, function(err) {
+                                    console.error('Could not copy text: ', err);
+                                });
+                            });
+                        </script>
 
                         <div class="mx-auto w-full">
                             <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
