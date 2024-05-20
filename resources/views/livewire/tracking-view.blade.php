@@ -159,6 +159,8 @@
                                                 <option value="Payable waiting for signatories">Payable waiting for signatories</option>
                                                 <option value="Payable is missing a file/s">Payable is missing a file/s</option>
                                                 <option value="Payable is awaiting for cheque release">Payable is awaiting for cheque release</option>
+                                                <option value="Payable is sent to Office">Payable is sent to Office</option>
+                                                <option value="Payable is undergoing auditing">Payable is undergoing auditing</option>
                                             </select>
                                         </div>
 
@@ -235,6 +237,8 @@
                                                 <option value="Payable waiting for signatories">Payable waiting for signatories</option>
                                                 <option value="Payable is missing a file/s">Payable is missing a file/s</option>
                                                 <option value="Payable is awaiting for cheque release">Payable is awaiting for cheque release</option>
+                                                <option value="Payable is sent to Office">Payable is sent to Office</option>
+                                                <option value="Payable is undergoing auditing">Payable is undergoing auditing</option>
                                             </select>
                                         </div>
 
@@ -279,17 +283,6 @@
                             </button>
                         </div>
                     </div>
-
-                    <div>
-                        <!-- Current Status Box -->
-                        <div class="inline-flex flex-col items-start justify-start w-full gap-3 p-6 bg-blue-600 rounded-lg h-hug">
-                        <!-- Heading -->
-                            <div class="text-gray-100 text-base font-semibold font-['Inter'] leading-9">Waiting for Disbursement Voucher to be released</div>
-                        <!-- Subcopy -->
-                            <div class="text-zinc-100 text-xs font-regular font-['Inter'] leading-none">Payable already sent to Treasurer’s Office</div>
-                        </div>
-                    </div>
-
 
                     <div class="pt-5">
                         <!-- BUR Number + Copy BUR Number Button Section -->
