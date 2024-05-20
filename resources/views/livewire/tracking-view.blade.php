@@ -175,6 +175,7 @@
                                                 <option value="Budgeting">Budgeting</option>
                                                 <option value="Property">Property</option>
                                                 <option value="OVPF">OVPF</option>
+                                                <option value="COA">COA</option>
                                             </select>
                                         </div>
                                         
@@ -251,6 +252,7 @@
                                                 <option value="Budgeting">Budgeting</option>
                                                 <option value="Property">Property</option>
                                                 <option value="OVPF">OVPF</option>
+                                                <option value="COA">COA</option>
                                             </select>
                                         </div>
                                     </div>
@@ -279,15 +281,31 @@
                             </button>
                         </div>
                     </div>
-
-                    <div>
-                        <!-- Current Status Box -->
-                        <div class="inline-flex flex-col items-start justify-start w-full gap-3 p-6 bg-blue-600 rounded-lg h-hug">
-                        <!-- Heading -->
-                            <div class="text-gray-100 text-base font-semibold font-['Inter'] leading-9">Waiting for Disbursement Voucher to be released</div>
-                        <!-- Subcopy -->
-                            <div class="text-zinc-100 text-xs font-regular font-['Inter'] leading-none">Payable already sent to Treasurer’s Office</div>
-                        </div>
+                    
+                    <!-- Current Status Box -->
+                    <div class="font-['Inter']">
+                        @if ($payable -> latestTracking -> CurrentLocation == 'COA')
+                            <div class="inline-flex flex-col items-start justify-start w-full gap-1.5 p-6 bg-[#059669] rounded-lg h-hug">
+                            <!-- Heading -->
+                                <div class="ms-2 text-gray-100 text-lg font-semibold font-['Inter'] leading-9">{{$payable -> latestTracking -> CurrentStatus}}</div>
+                            <!-- Subcopy -->
+                                <div class="ms-2 text-zinc-100 text-xs font-regular font-['Inter'] leading-none">Payable already submitted at {{ $payable -> latestTracking -> CurrentLocation }}</div>
+                            </div>
+                        @elseif ($payable -> latestTracking -> CurrentLocation == 'OVPF')
+                            <div class="inline-flex flex-col items-start justify-start w-full gap-1.5 p-6 bg-[#0070FF] rounded-lg h-hug">
+                            <!-- Heading -->
+                                <div class="ms-2 text-gray-100 text-lg font-semibold font-['Inter'] leading-9">{{$payable -> latestTracking -> CurrentStatus}}</div>
+                            <!-- Subcopy -->
+                                <div class="ms-2 text-zinc-100 text-xs font-regular font-['Inter'] leading-none">Payable already at {{ $payable -> latestTracking -> CurrentLocation }}</div>
+                            </div>
+                        @else
+                            <div class="inline-flex flex-col items-start justify-start w-full gap-1.5 p-6 bg-[#0070FF] rounded-lg h-hug">
+                            <!-- Heading -->
+                                <div class="ms-2 text-gray-100 text-lg font-semibold font-['Inter'] leading-9">{{$payable -> latestTracking -> CurrentStatus}}</div>
+                            <!-- Subcopy -->
+                                <div class="ms-2 text-zinc-100 text-xs font-regular font-['Inter'] leading-none">Payable already at {{ $payable -> latestTracking -> CurrentLocation }} Office</div>
+                            </div>
+                        @endif
                     </div>
 
 
