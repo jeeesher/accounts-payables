@@ -42,7 +42,7 @@ use App\Models\Disbursement;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
 
 Route::get('/dashboard', Dashboard::class);
