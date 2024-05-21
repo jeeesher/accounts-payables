@@ -1,9 +1,7 @@
 import './bootstrap';
 
 import moment from 'moment';
-import Pikaday from 'pikaday';
 
-window.Pikaday = Pikaday;
 window.moment = moment;
 
 const IARfileInput = document.getElementById('IAR-file-upload');

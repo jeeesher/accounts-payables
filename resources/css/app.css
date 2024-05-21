@@ -5,7 +5,6 @@
 @import "tailwindcss/base";
 
 @import "tailwindcss/components";
-@import "./pikaday.css";
 
 @import "tailwindcss/utilities";
 
