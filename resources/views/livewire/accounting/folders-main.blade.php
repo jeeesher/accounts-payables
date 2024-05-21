@@ -16,9 +16,6 @@
                         Delete
                     </button>
 
-                    <!-- Export Button -->
-                    <x-export-dropdown />
-                        
                     <!-- Add Folder Button -->
                     <x-create-folder />
                     <button x-data x-on:click="$dispatch('open-create-folder')" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
