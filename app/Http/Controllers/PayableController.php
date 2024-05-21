@@ -421,11 +421,13 @@ class PayableController extends Controller
         return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking updated successfully!');
     }
 
-    public function downloadDV($id){
-        $disbursement = Disbursement::findOrFail($id);
-        $data = ['disbursement' => $disbursement];
-        
-        $pdf = Pdf::loadView('pdf.invoice', $data);
-        return $pdf->download('dv' . $disbursement->BUR . '.pdf');
+    public function downloadDV(Request $request){
+        $payable = $request->get('payable');
+        $disbursement = Disbursement::with('payable') // Assuming there is a relationship named 'payable'
+                        ->where('BUR', $payable)
+                        ->firstOrFail();
+
+        $pdf = PDF::loadView('livewire.disbursement-voucher', compact('disbursement'));
+        return $pdf->download('disbursement_voucher_' . $payable . '.pdf');
     }
 }

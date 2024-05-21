@@ -27,6 +27,8 @@ use App\Livewire\BtNavigation;
 
 
 use App\Http\Controllers\PayableController;
+use App\Livewire\DisbursementVoucher;
+use App\Models\Disbursement;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +59,7 @@ Route::controller(PayableController::class)->group(function () {
     Route::post('/payables/update', 'update')->name('update.payable');
 
     Route::post('/accounting/generate/gen/{id}', 'generateDv')->name('generate.dv');
-    Route::get('/accounting/download/dv/{id}', 'downloadDV');
+    Route::get('/accounting/download/dv', 'downloadDV')->name('download.dv');
 
     Route::post('/tracking/add/{id}', 'addTrack')->name('add.track');
     Route::post('/tracking/update/{id}', 'updateTrack')->name('update.track');
@@ -65,6 +67,8 @@ Route::controller(PayableController::class)->group(function () {
     Route::get('/SupplierInfo/{supplier}', 'SupplierInfo');
     Route::post('/particular/store', 'store')->name('particular.store');
 });
+
+Route::get('/disbursement/voucher', DisbursementVoucher::class);
 
 Route::get('/tracking', Tracking::class);
 Route::get('/tracking/view', TrackingView::class);

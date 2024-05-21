@@ -25,4 +25,9 @@ class Disbursement extends Model
         'CheckName', 'JEVNo',
         'JEVDate', 'ORNo'
     ];
+
+    public function payable()
+    {
+        return $this->belongsTo(Payable::class, 'BUR', 'BUR');
+    }
 }
