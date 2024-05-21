@@ -16,11 +16,8 @@
                         Back
                     </a>
 
-                    <!-- Export Dropdown -->
-                    <x-export-dropdown />
-
                     <!-- Go to Folders Button -->
-                    <a href="/folders/main" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <a href="/folders/main" type="button" class="inline-flex items-center text-[#2D349A] text-sm font-medium font-['Inter'] bg-indigo-50 shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M2.66536 13.3333H13.332C13.6857 13.3333 14.0248 13.1929 14.2748 12.9428C14.5249 12.6928 14.6654 12.3536 14.6654 12V5.33333C14.6654 4.97971 14.5249 4.64057 14.2748 4.39052C14.0248 4.14048 13.6857 4 13.332 4H8.04536C7.82576 3.99886 7.60983 3.9435 7.41676 3.83883C7.2237 3.73415 7.05948 3.58341 6.9387 3.4L6.39203 2.6C6.27125 2.41659 6.10703 2.26585 5.91397 2.16117C5.7209 2.0565 5.50497 2.00114 5.28536 2H2.66536C2.31174 2 1.9726 2.14048 1.72256 2.39052C1.47251 2.64057 1.33203 2.97971 1.33203 3.33333V12C1.33203 12.7333 1.93203 13.3333 2.66536 13.3333Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>    
@@ -29,6 +26,16 @@
                             <path stroke="currentColor" d="M3.33203 8.00004H12.6654M12.6654 8.00004L7.9987 3.33337M12.6654 8.00004L7.9987 12.6667" stroke="#FAFAFA" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
+
+                    <div class="flex">
+                        <!-- Generate DV Button -->
+                        <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                            <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path stroke="currentColor" d="M9.33464 1.33325V5.33325H13.3346M9.66797 1.33325H4.0013C3.64768 1.33325 3.30854 1.47373 3.05849 1.72378C2.80844 1.97382 2.66797 2.31296 2.66797 2.66659V13.3333C2.66797 13.6869 2.80844 14.026 3.05849 14.2761C3.30854 14.5261 3.64768 14.6666 4.0013 14.6666H12.0013C12.3549 14.6666 12.6941 14.5261 12.9441 14.2761C13.1942 14.026 13.3346 13.6869 13.3346 13.3333V4.99992L9.66797 1.33325Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>    
+                            Generate Disbursement Voucher 
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -356,16 +363,6 @@
             <div class="font-['Inter']">
                 <label for="dv-or-no" class="block mb-3 text-sm font-medium text-zinc-950 dark:text-white">OR No./Other Documents</label>
                 <textarea id="dv-or-no" rows="4" class="block p-2.5 w-full text-sm text-zinc-500 bg-white rounded-lg border border-gray-200 shadow focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="No OR No./Other Documents Available" disabled readonly>{{ $disbursement -> ORNo }}</textarea>
-            </div>
-
-            <div class="flex justify-end mt-8">
-                <!-- Generate DV Button -->
-                <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
-                    <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path stroke="currentColor" d="M9.33464 1.33325V5.33325H13.3346M9.66797 1.33325H4.0013C3.64768 1.33325 3.30854 1.47373 3.05849 1.72378C2.80844 1.97382 2.66797 2.31296 2.66797 2.66659V13.3333C2.66797 13.6869 2.80844 14.026 3.05849 14.2761C3.30854 14.5261 3.64768 14.6666 4.0013 14.6666H12.0013C12.3549 14.6666 12.6941 14.5261 12.9441 14.2761C13.1942 14.026 13.3346 13.6869 13.3346 13.3333V4.99992L9.66797 1.33325Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>    
-                    Generate Disbursement Voucher 
-                </button>
             </div>
         </div>
     </div>
