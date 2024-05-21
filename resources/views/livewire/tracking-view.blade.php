@@ -159,6 +159,8 @@
                                                 <option value="Payable waiting for signatories">Payable waiting for signatories</option>
                                                 <option value="Payable is missing a file/s">Payable is missing a file/s</option>
                                                 <option value="Payable is awaiting for cheque release">Payable is awaiting for cheque release</option>
+                                                <option value="Payable is sent to Office">Payable is sent to Office</option>
+                                                <option value="Payable is undergoing auditing">Payable is undergoing auditing</option>
                                             </select>
                                         </div>
 
@@ -236,6 +238,8 @@
                                                 <option value="Payable waiting for signatories">Payable waiting for signatories</option>
                                                 <option value="Payable is missing a file/s">Payable is missing a file/s</option>
                                                 <option value="Payable is awaiting for cheque release">Payable is awaiting for cheque release</option>
+                                                <option value="Payable is sent to Office">Payable is sent to Office</option>
+                                                <option value="Payable is undergoing auditing">Payable is undergoing auditing</option>
                                             </select>
                                         </div>
 
