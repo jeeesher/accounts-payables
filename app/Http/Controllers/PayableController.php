@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Files;
 use App\Models\payable;
 use App\Models\Supplier;
@@ -422,4 +424,23 @@ class PayableController extends Controller
 
         return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking updated successfully!');
     }
+
+    //search function 
+    public function searchPayable($currentRoute, Request $request) 
+    {
+        $query = Payable::query();
+
+        if (!empty($searchTerm)) {
+            $query->where(function ($query) use ($searchTerm) {
+                $query->where('BUR', 'like', "%{$searchTerm}%")
+                    ->orWhere('SupplierName', 'like', "%{$searchTerm}%");
+            });
+        }
+    
+        $payables = $query->paginate(10);
+    
+        return view('livewire.search-payable', compact('payables'));
+    
+    }
+
 }
