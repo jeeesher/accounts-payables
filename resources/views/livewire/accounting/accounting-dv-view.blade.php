@@ -9,7 +9,7 @@
                 <!-- Button Group -->
                 <div class="flex space gap-1">
                     <!-- Back Button -->
-                    <a href="{{ url('/payables/view?payable=' . $payable -> BUR)}}" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                    <a href="{{ url('/accounting/generate/dv?payable=' . $payable -> BUR)}}" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                         <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path stroke="currentColor" d="M11.9987 10H7.9987V12.6667L3.33203 8.00004L7.9987 3.33337V6.00004H11.9987V10Z" stroke="#18181B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -28,13 +28,13 @@
                     </a>
 
                     <div class="flex">
-                        <!-- Generate DV Button -->
-                        <button type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                        <!-- Export DV Button -->
+                        <a href="{{ url('/accounting/download/dv?payable=' . $payable -> BUR) }}" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                             <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path stroke="currentColor" d="M9.33464 1.33325V5.33325H13.3346M9.66797 1.33325H4.0013C3.64768 1.33325 3.30854 1.47373 3.05849 1.72378C2.80844 1.97382 2.66797 2.31296 2.66797 2.66659V13.3333C2.66797 13.6869 2.80844 14.026 3.05849 14.2761C3.30854 14.5261 3.64768 14.6666 4.0013 14.6666H12.0013C12.3549 14.6666 12.6941 14.5261 12.9441 14.2761C13.1942 14.026 13.3346 13.6869 13.3346 13.3333V4.99992L9.66797 1.33325Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>    
-                            Generate Disbursement Voucher 
-                        </button>
+                            Download Disbursement Voucher 
+                        </a>
                     </div>
                 </div>
             </div>

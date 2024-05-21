@@ -13,6 +13,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class PayableController extends Controller
@@ -377,9 +378,6 @@ class PayableController extends Controller
             $disbursement = Disbursement::create($disbursementData);
         }
 
-        // Create a new disbursement
-        
-
         return redirect('/accounting/dv/view?payable=' . $disbursement->BUR)->with('success', 'Disbursement saved successfully!'); 
     }
 
@@ -421,5 +419,13 @@ class PayableController extends Controller
         $track = Track::where('ID', $id)->first();
 
         return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking updated successfully!');
+    }
+
+    public function downloadDV($id){
+        $disbursement = Disbursement::findOrFail($id);
+        $data = ['disbursement' => $disbursement];
+        
+        $pdf = Pdf::loadView('pdf.invoice', $data);
+        return $pdf->download('dv' . $disbursement->BUR . '.pdf');
     }
 }

@@ -57,6 +57,7 @@ Route::controller(PayableController::class)->group(function () {
     Route::post('/payables/update', 'update')->name('update.payable');
 
     Route::post('/accounting/generate/gen/{id}', 'generateDv')->name('generate.dv');
+    Route::get('/accounting/download/dv/{id}', 'downloadDV');
 
     Route::post('/tracking/add/{id}', 'addTrack')->name('add.track');
     Route::post('/tracking/update/{id}', 'updateTrack')->name('update.track');
