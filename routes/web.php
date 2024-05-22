@@ -70,6 +70,8 @@ Route::controller(PayableController::class)->group(function () {
 
 Route::get('/disbursement/voucher', DisbursementVoucher::class);
 
+Route::get('/payables/{currentRoute}',[PayableController::class, 'searchPayable']);
+
 Route::get('/tracking', Tracking::class);
 Route::get('/tracking/view', TrackingView::class);
 

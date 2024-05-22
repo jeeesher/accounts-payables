@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Files;
 use App\Models\payable;
 use App\Models\Supplier;
@@ -402,6 +404,7 @@ class PayableController extends Controller
         return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking added successfully!');
     }
 
+    // updating track
     public function updateTrack($id, Request $request){
         $validated = $request->validate([
             'CurrentLocation' => ['required', 'string', 'max:255'],
@@ -421,6 +424,7 @@ class PayableController extends Controller
         return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking updated successfully!');
     }
 
+    // downloading dv
     public function downloadDV(Request $request){
         $payable = $request->get('payable');
         $disbursement = Disbursement::with('payable') // Assuming there is a relationship named 'payable'
@@ -429,5 +433,23 @@ class PayableController extends Controller
 
         $pdf = PDF::loadView('livewire.disbursement-voucher', compact('disbursement'));
         return $pdf->download('disbursement_voucher_' . $payable . '.pdf');
+    }
+
+    //search function 
+    public function searchPayable($currentRoute, Request $request) 
+    {
+        $query = Payable::query();
+
+        if (!empty($searchTerm)) {
+            $query->where(function ($query) use ($searchTerm) {
+                $query->where('BUR', 'like', "%{$searchTerm}%")
+                    ->orWhere('SupplierName', 'like', "%{$searchTerm}%");
+            });
+        }
+
+        $payables = $query->paginate(10);
+
+        return view('livewire.search-payable', compact('payables'));
+
     }
 }
