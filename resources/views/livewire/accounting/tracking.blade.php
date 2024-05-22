@@ -6,22 +6,43 @@
                 <div class="mt-4 mb-2 flex items-center justify-between">
                     <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter'] pt-2">
                         Tracking
-                        <!-- Tab Buttons -->
-                        <div class="ml-7 bg-zinc-100 justify-start items-start gap-2 inline-flex px-3 py-2 rounded-lg ">
-                            <button class="inline-flex h-7 items-center text-zinc-500 text-sm font-medium font-['Inter'] bg-zinc-100 hover:shadow hover:bg-white hover:text-zinc-950 focus:ring-1 focus:ring-zinc-200 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-white active:border-zinc-950 active:shadow ">
-                                2022-2023
-                            </button>
-                            <button class="inline-flex h-7 items-center text-zinc-500 text-sm font-medium font-['Inter'] bg-zinc-100 hover:shadow hover:bg-white hover:text-zinc-950 focus:ring-1 focus:ring-zinc-200 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-white active:border-zinc-950 active:shadow ">
-                                2019-2021
-                            </button>
-                            <button class="inline-flex h-7 items-center text-zinc-500 text-sm font-medium font-['Inter'] bg-zinc-100 hover:shadow hover:bg-white hover:text-zinc-950 focus:ring-1 focus:ring-zinc-200 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-white active:border-zinc-950 active:shadow ">
-                                2017-2018
-                            </button>
-                        </div>
                     </div>
                     
                     <!-- Button Group -->
                     <div class="flex space gap-1">
+                        <!-- Search Bar -->
+                        <div class = "flex items-center">
+                            <form action="{{ url()->current() }}" method="GET" class="flex items-center">
+                                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-2 flex items-center ps-3 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                            </svg>
+                                    </div> 
+                                    <input type="text" value="{{ request('searchBUR') }}" id="default-search" name= "searchBUR" class="form-input w-96 h-9 pl-10 py-1 bg-zinc-100 rounded-lg flex items-center grow shrink basis-0 text-neutral-700 border-none text-base font-normal font-['Nunito Sans'] leading-normal ml-2" placeholder="Search here"></input>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="mb-3 flex items-center justify-between">
+                    <!-- Tab Buttons -->
+                    <div class="bg-zinc-100 justify-start items-center gap-2 inline-flex px-3 py-2 rounded-lg ">
+                        <button class="inline-flex h-7 items-center text-zinc-500 text-sm font-medium font-['Inter'] bg-zinc-100 hover:shadow hover:bg-white hover:text-zinc-950 focus:ring-1 focus:ring-zinc-200 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-white active:border-zinc-950 active:shadow ">
+                            2022-2023
+                        </button>
+                        <button class="inline-flex h-7 items-center text-zinc-500 text-sm font-medium font-['Inter'] bg-zinc-100 hover:shadow hover:bg-white hover:text-zinc-950 focus:ring-1 focus:ring-zinc-200 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-white active:border-zinc-950 active:shadow ">
+                            2019-2021
+                        </button>
+                        <button class="inline-flex h-7 items-center text-zinc-500 text-sm font-medium font-['Inter'] bg-zinc-100 hover:shadow hover:bg-white hover:text-zinc-950 focus:ring-1 focus:ring-zinc-200 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-white active:border-zinc-950 active:shadow ">
+                            2017-2018
+                        </button>
+                    </div>
+
+                    <div class="mt-2 flex gap-1 justify-end items-center">
                         <!-- Delete Button -->
                         <x-delete-track />
                         <button x-data x-on:click="$dispatch('open-delete-track')" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
@@ -36,23 +57,6 @@
 
                         <!-- Export Dropdown -->
                         <x-export-dropdown />
-                    </div>
-                </div>
-
-                <div class="flex space gap-1 justify-end mb-4">
-                        <!-- Search Bar -->
-                    <div class = "flex items-center">
-                        <form action="{{ url()->current() }}" method="GET" class="flex items-center">
-                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 start-2 flex items-center ps-3 pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                                        </svg>
-                                </div> 
-                                <input type="text" value="{{ request('searchBUR') }}" id="default-search" name= "searchBUR" class="form-input w-96 h-9 pl-10 py-1 bg-zinc-100 rounded-lg flex items-center grow shrink basis-0 text-neutral-700 border-none text-base font-normal font-['Nunito Sans'] leading-normal ml-2" placeholder="Search here"></input>
-                            </div>
-                        </form>
                     </div>
                 </div>
 

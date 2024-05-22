@@ -3,11 +3,35 @@
         <div class="p-4 sm:ml-64">
             <div class="p-4 mt-20">
                 <!-- Payables Header -->
-                <div class="mb-2 flex items-center justify-between">
+                <div class="mb-4 flex items-center justify-between">
                     <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Payables</div>
                     
                     <!-- Button Group -->
                     <div class="flex space gap-1">
+                        <!-- Search Bar -->
+                        <div class = "flex items-center">
+                            <form action="{{ url()->current() }}" method="GET" class="flex items-center">
+                                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-2 flex items-center ps-3 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                            </svg>
+                                    </div> 
+                                    <input type="text" value="{{ request('searchBUR') }}" id="default-search" name= "searchBUR" class="form-input w-96 h-9 pl-10 py-1 bg-zinc-100 rounded-lg flex items-center grow shrink basis-0 text-neutral-700 border-none text-base font-normal font-['Nunito Sans'] leading-normal ml-2" placeholder="Search here"></input>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 flex items-center justify-between">
+                    <div>
+                        <!-- Year Filter Dropdown -->
+                        <x-filter-payable-year />
+                    </div>
+
+                    <div class="flex">
                         <!-- Delete Button -->
                         <x-delete-payable />
                         <button x-data x-on:click="$dispatch('open-delete-payable')" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
@@ -22,7 +46,7 @@
 
                         <!-- Export Dropdown -->
                         <x-export-dropdown />
-                        
+
                         <!-- Add New Payable Button -->
                         <a href="/payables/add" type="button" class="inline-flex items-center text-white text-sm font-medium font-['Inter'] bg-[#2D349A] shadow border border-zinc-200 hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
                             <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -30,26 +54,6 @@
                             </svg>
                             Add New Payable
                         </a>
-                    </div>
-                </div>
-
-                <div class="flex space gap-1 justify-between mb-4">
-                    <!-- Year Filter Dropdown -->
-                        <x-filter-payable-year />
-                    
-                        <!-- Search Bar -->
-                    <div class = "flex items-center">
-                        <form action="{{ url()->current() }}" method="GET" class="flex items-center">
-                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 start-2 flex items-center ps-3 pointer-events-none">
-                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                                            </svg>
-                                    </div> 
-                                    <input type="text" value="{{ request('searchBUR') }}" id="default-search" name= "searchBUR" class="form-input w-96 h-10 pl-10 py-1 bg-zinc-100 rounded-lg flex items-center grow shrink basis-0 text-neutral-700 border-none text-base font-normal font-['Nunito Sans'] leading-normal ml-2" placeholder="Search here"></input>
-                                </div>
-                        </form>
                     </div>
                 </div>
 
@@ -138,7 +142,7 @@
                                                                     if (! this.open) return
 
                                                                     this.open = false
-                                                                    
+
                                                                     focusAfter && focusAfter.focus()
                                                                 }
                                                             }"
@@ -190,7 +194,7 @@
                                                                 <a href="{{ $urlpayable }}" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                     View
                                                                 </a>
-                                                                
+
                                                                 @php
                                                                     $urltracking = '/tracking/view?payable=' . $payable -> BUR;
                                                                 @endphp
@@ -263,15 +267,15 @@
                                                                     this.open = false
 
                                                                     focusAfter && focusAfter.focus()
-                                                                    }
-                                                                }"
-                                                                x-on:keydown.escape.prevent.stop="close($refs.button)"
-                                                                x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                                                                x-id="['dropdown-table-action']"
-                                                                class="relative z-100 inset-0"
-                                                                >
-                                                                <!-- Button -->
-                                                                <button
+                                                                }
+                                                            }"
+                                                            x-on:keydown.escape.prevent.stop="close($refs.button)"
+                                                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                                                            x-id="['dropdown-table-action']"
+                                                            class="relative z-100 inset-0"
+                                                        >
+                                                            <!-- Button -->
+                                                            <button
                                                                 x-ref="button"
                                                                 x-on:click="toggle()"
                                                                 :aria-expanded="open"
@@ -301,7 +305,7 @@
                                                                 @php
                                                                     $urledit = '/payables/edit?payable=' . $payable -> BUR;
                                                                 @endphp
-                                                                
+
                                                                 <a href="{{ $urledit }}" wire:navigate class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                     Edit
                                                                 </a>
@@ -331,6 +335,10 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- Pagination -->
+                    
+
                 </div>
 
                 <!-- Script for Table -->
