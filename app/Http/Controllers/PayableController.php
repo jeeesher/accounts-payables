@@ -431,6 +431,10 @@ class PayableController extends Controller
                         ->where('BUR', $payable)
                         ->firstOrFail();
 
+        if (is_null($disbursement)) {
+            throw new \Exception('Disbursement data not found');
+        }
+
         $pdf = PDF::loadView('livewire.disbursement-voucher', compact('disbursement'));
         return $pdf->download('disbursement_voucher_' . $payable . '.pdf');
     }

@@ -34,7 +34,6 @@
         }
         .dv-title {
             display: flex;
-            align-items: center;
             border: 2px solid #000;
             box-sizing: border-box;
             padding: 5px;
@@ -58,7 +57,26 @@
             margin: 1px 0;
             text-align: left;
         }
-        .table {
+        .md {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: -3px;
+        }
+        .md .main {
+            width: 10%;
+            border: 2px solid #000;
+            padding: 5px;
+            text-align: left;
+        }
+        .md .sub-section {
+            width: 90%;
+            border: 2px solid #000;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* .table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
@@ -106,7 +124,7 @@
         }
         .footer .footer-info {
             margin-top: 20px;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -128,15 +146,30 @@
             </tr>
         </thead>
     </table>
+    <div>
+        <table>
+            <thead>
+                <tr class="md" width="100%">
+                    <th class="main" width="10%">
+                        <span>MODE OF PAYMENT</span>
+                    </th>
+                    <th class="sub-section items-flex" width="90%">
+                        <input type="checkbox" {{ $disbursement->ModePayment == 'Check' ? 'checked' : '' }}> Check </input>
+                        <input type="checkbox" {{ $disbursement->ModePayment == 'Cash' ? 'checked' : '' }}> Cash </input>
+                        <input type="checkbox" {{ $disbursement->ModePayment == 'Others' ? 'checked' : '' }}> Others </input>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    
         
         <!-- <div class="content">
             <div class="form-section">
                 <div class="form-group">
-                    <label>Mode of Payment:</label>
+                    <label><Mode of Payment:/label>
                     <div class="form-control">
-                        <input type="checkbox" {{ $disbursement->ModePayment == 'Check' ? 'checked' : '' }}> Check
-                        <input type="checkbox" {{ $disbursement->ModePayment == 'Cash' ? 'checked' : '' }}> Cash
-                        <input type="checkbox" {{ $disbursement->ModePayment == 'Others' ? 'checked' : '' }}> Others
+                        
                     </div>
                 </div>
                 <div class="form-group">
