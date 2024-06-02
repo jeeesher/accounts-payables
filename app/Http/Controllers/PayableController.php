@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\LocationChanged;
+use App\Models\CustomNotification;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Files;
@@ -403,8 +405,22 @@ class PayableController extends Controller
         // Create a new track
         $track = Track::create($trackData);
 
-        return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking added successfully!');
+        // Trigger the event
+        event(new LocationChanged($track));
+
+        // Pass the notifications data to the view
+        return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking updated successfully!');
     }
+
+    // Fetch Notification
+    /*
+    public function index()
+    {
+    // Fetch all notifications
+    $notifications = CustomNotification::orderBy('created_at', 'desc')->get();
+    return view('livewire.notifications', compact('notifications'));
+    }
+*/
 
     public function updateTrack($id, Request $request){
         $validated = $request->validate([

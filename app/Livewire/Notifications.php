@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\CustomNotification;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
@@ -9,6 +10,13 @@ use Livewire\Attributes\Title;
 
 class Notifications extends Component
 {
+    public $notifications;
+
+    public function mount()
+    {
+        $this->notifications = CustomNotification::orderBy('created_at', 'desc')->get();
+    }
+
     public function render()
     {
         return view('livewire.notifications');

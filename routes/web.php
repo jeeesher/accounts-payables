@@ -76,10 +76,13 @@ Route::get('/folders/main', FoldersMain::class);
 Route::get('/folders/yearly', FoldersYearly::class);
 Route::get('/folders/payable', FoldersPayable::class);
 
+// Route for Livewire notifications
 Route::get('/notifications', Notifications::class);
 
 Route::get('/accounting/generate/dv', AccountingGenerateDv::class);
 Route::get('/accounting/dv/view', AccountingDvView::class);
+
+
 
 //Route::get('/offices/bt/dashboard', BtDashboard::class);
 //Route::get('/offices/bt/payables', BtPayables::class);

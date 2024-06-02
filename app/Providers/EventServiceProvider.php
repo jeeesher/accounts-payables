@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\LocationChanged;
+use App\Listeners\LocationChangeNotification;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,17 +17,17 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
+        LocationChanged::class => [
+            LocationChangeNotification::class,
         ],
     ];
 
     /**
      * Register any events for your application.
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+        parent::boot();
     }
 
     /**
