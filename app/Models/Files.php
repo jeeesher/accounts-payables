@@ -9,7 +9,7 @@ class Files extends Model
 {
     use HasFactory;
 
-    protected $table = 'files';
+    protected $table = 'ap_files';
     protected $primaryKey = 'BUR';
     public $incrementing = false;
     protected $keyType = 'string';
