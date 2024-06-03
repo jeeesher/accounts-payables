@@ -59,7 +59,7 @@
 
                 <!-- Payables Table -->
                 <div x-data="dataHandler()">
-                    <div class="mb-4 shadow-sm border rounded-lg overflow-x-auto font-['Inter']" style="table-layout: fixed;">
+                    <div class="mb-4 shadow-sm border rounded-lg  font-['Inter']" style="table-layout: fixed;">
                         <table class="w-full table-auto text-sm text-left">
                             <thead class="text-gray-500 font-medium border-b-2 bg-gray-50 border-gray-200 font-['Inter']">
                                 <tr>
@@ -124,7 +124,7 @@
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->TermsPayment}}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->latestTracking->CurrentStatus}}</td>
-                                                <td class="text-right px-6 whitespace-nowrap">
+                                                <td class="text-right px-3 whitespace-nowrap">
                                                     <div class="flex justify-center">
                                                         <div
                                                             x-data="{

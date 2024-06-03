@@ -62,7 +62,7 @@
 
                 <!-- Payables Table -->
                 <div x-data="dataHandler()">
-                    <div class="mb-4 shadow-sm border rounded-lg overflow-x-auto font-['Inter']" style="table-layout: fixed;">
+                    <div class="mb-4 shadow-sm border rounded-lg font-['Inter']" style="table-layout: fixed;">
                         <table class="w-full table-auto text-sm text-left">
                             <thead class="text-gray-500 font-medium border-b-2 bg-gray-50 border-gray-200 font-['Inter']">
                                 <tr>
