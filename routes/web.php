@@ -66,6 +66,8 @@ Route::controller(PayableController::class)->group(function () {
 
     Route::get('/SupplierInfo/{supplier}', 'SupplierInfo');
     Route::post('/particular/store', 'store')->name('particular.store');
+
+    Route::post('/folders/add', 'addFolder')->name('add.folder');
 });
 
 Route::get('/disbursement/voucher', DisbursementVoucher::class);

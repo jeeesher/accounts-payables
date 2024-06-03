@@ -10,6 +10,7 @@ use App\Models\Supplier;
 use App\Models\Particular;
 use App\Models\Disbursement;
 use App\Models\Track;
+use App\Models\Folders;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
@@ -222,7 +223,7 @@ class PayableController extends Controller
 
         // Validate the request data
         $validated = $request->validate([
-            'BUR' => ['required', 'string', 'min:13', 'max:13'],
+            'BUR' => ['required', 'string'],
             'SupplierName' => ['required', 'string', 'exists:suppliers,SupplierName'],
             'EndUser' => 'required',
             'Amount' => 'required',
@@ -291,7 +292,7 @@ class PayableController extends Controller
             $file->move($path, $filename);
             $fileRecord->DV_File = $path.$filename;
             $fileRecord->BUR = $payable->BUR;
-            DB::table('files')
+            DB::table('ap_files')
                 ->where('BUR', $payable->BUR)
                 ->update([
                     'DV_File' => $path.$filename,
@@ -329,7 +330,7 @@ class PayableController extends Controller
             'ModePayment' => ['required', 'in:Check,Cash,Others'],
             'Payee' => ['required', 'string', 'max:255'],
             'TIN' => ['required', 'string', 'max:255'],
-            'BUR' => ['required', 'string', 'min:13',  'max:13', 'exists:payables,BUR'],
+            'BUR' => ['required', 'string', 'exists:payables,BUR'],
             'Address' => ['required', 'string', 'max:255'],
             'RCOffice' => ['required', 'string', 'max:255'],
             'RCCode' => ['required', 'string', 'max:255'],
@@ -460,5 +461,21 @@ class PayableController extends Controller
 
         return view('livewire.search-payable', compact('payables'));
 
+    }
+
+    // adding folder
+    public function addFolder(Request $request)
+    {
+        $validatedData = $request->validate([
+            'folder_name' => 'required|string|max:255',
+        ]);
+
+        Folders::create([
+            'folder_name' => $validatedData['folder_name'],
+        ]);
+
+        session()->flash('message', 'Folder created successfully.');
+
+        return redirect()->back();
     }
 }
