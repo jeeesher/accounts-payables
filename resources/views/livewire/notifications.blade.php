@@ -22,7 +22,7 @@
             <!-- Today Notifications -->
             {{--<div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Today</div>--}}
             <div class="w-full bg-white dark:bg-gray-800 sm:rounded-lg md:mb-6 ">
-            <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
+                <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
                     <table class="w-full text-sm text-left table-auto">
                         <thead class="font-medium text-gray-600 border-b bg-gray-50">
                             <tr>
@@ -34,23 +34,24 @@
                         <tbody class="text-gray-600 divide-y">
                             @foreach($notifications as $notification)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis">{{ $notification->created_at->format('m/d/y') }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis">{{ $notification->created_at->format('H:i:s') }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis text-black font-medium">{{ $notification->message }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 20%;">{{ $notification->created_at->format('m/d/y') }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 20%;">{{ $notification->created_at->format('H:i:s') }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis text-black font-medium" style="width: 60%;">{{ $notification->message }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
+                    <div class="w-full">
                         <table class="w-full text-sm text-left table-auto">
                             <thead class="font-medium text-gray-600 border-b bg-gray-50">
                             </thead>
                             <tbody class="text-gray-600 divide-y">
                                 <template x-for="(item, idx) in tableItems" :key="idx">
                                     <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 20%;" x-text="item.date"></td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 20%;" x-text="item.time"></td>
-                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis text-black font-medium" style="width: 60%;" x-text="item.status"></td>
+                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 10%;" x-text="item.date"></td>
+                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis" style="width: 10%;" x-text="item.time"></td>
+                                        <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis text-black font-medium" style="width: 50%;" x-text="item.status"></td>
                                     </tr>
                                 </template>
                             </tbody>
