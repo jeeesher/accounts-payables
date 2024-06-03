@@ -52,6 +52,59 @@ UNLOCK TABLES;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ap_folders`
+--
+
+DROP TABLE IF EXISTS `ap_folders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ap_folders` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `folder_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ap_folders`
+--
+
+LOCK TABLES `ap_folders` WRITE;
+/*!40000 ALTER TABLE `ap_folders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ap_folders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `custom_notifications`
+--
+
+DROP TABLE IF EXISTS `custom_notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `custom_notifications` (
+  `BUR` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `CurrentLocation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `custom_notifications`
+--
+
+LOCK TABLES `custom_notifications` WRITE;
+/*!40000 ALTER TABLE `custom_notifications` DISABLE KEYS */;
+/*!40000 ALTER TABLE `custom_notifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+-- --------------------------------------------------------
+--
 -- Table structure for table `disbursement`
 --
 
@@ -160,6 +213,38 @@ UNLOCK TABLES;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notifications`
+--
+
+DROP TABLE IF EXISTS `notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `notifications` (
+  `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `notifiable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `notifiable_id` bigint unsigned NOT NULL,
+  `data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `read_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `notifications_notifiable_type_notifiable_id_index` (`notifiable_type`,`notifiable_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notifications`
+--
+
+LOCK TABLES `notifications` WRITE;
+/*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `particular`
 --
 
@@ -176,7 +261,7 @@ CREATE TABLE `particular` (
   PRIMARY KEY (`ID`),
   KEY `particular_bur_foreign` (`BUR`),
   CONSTRAINT `particular_bur_foreign` FOREIGN KEY (`BUR`) REFERENCES `payables` (`BUR`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,7 +393,6 @@ CREATE TABLE `suppliers` (
 
 LOCK TABLES `suppliers` WRITE;
 /*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
-INSERT INTO `suppliers` VALUES ('Acme Supplies','123 Main Street, Anytown, CA','555-1212','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Component Central','45 Rue de la Technologie, Paris, France','+33 1 44 55 66 77','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Eastern Imports','555 Asia Avenue, Shanghai, China','+86 21 5555 1234','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Global Gadgets','789 Elm Street, Smallville, USA','800-555-3333','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Innovative Solutions','100 Tech Drive, Silicon Valley, CA','415-555-2468','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Martinez Manufacturing','Calle de la Industria 12, Madrid, Spain','+34 91 555 1234','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Precision Parts GmbH','Industriestraße 10, Berlin, Germany','+49 30 5555 9876','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Speedy Delivery Co.','333 Fleet Street, London, UK','+44 20 7946 0123','2024-05-02 07:26:36','2024-05-02 07:26:36'),('The Parts Place','Unit 2B, 56 Industrial Way, Gotham','555-9090','2024-05-02 07:26:36','2024-05-02 07:26:36'),('Widgets Inc.','PO Box 456, Metropolis, NY','212-555-9876','2024-05-02 07:26:36','2024-05-02 07:26:36');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -334,7 +418,7 @@ CREATE TABLE `tracking` (
   PRIMARY KEY (`ID`),
   KEY `tracking_bur_foreign` (`BUR`),
   CONSTRAINT `tracking_bur_foreign` FOREIGN KEY (`BUR`) REFERENCES `payables` (`BUR`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
