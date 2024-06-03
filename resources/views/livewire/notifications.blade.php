@@ -20,19 +20,28 @@
             </div>
 
             <!-- Today Notifications -->
-            <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Today</div>
+            {{--<div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Today</div>--}}
             <div class="w-full bg-white dark:bg-gray-800 sm:rounded-lg md:mb-6 ">
-                <div x-data="{ 
-                    tableItems: [
-                            { date: '00/00/0000', 'time': '00:00:00', 'status': 'Regular text column',  },
-                            { date: '00/00/0000', 'time': '00:00:00', 'status': 'Regular text column',  },
-                            { date: '00/00/0000', 'time': '00:00:00', 'status': 'Regular text column',  },
-                            { date: '00/00/0000', 'time': '00:00:00', 'status': 'Regular text column',  },
-                            { date: '00/00/0000', 'time': '00:00:00', 'status': 'Regular text column',  },
-                            { date: '00/00/0000', 'time': '00:00:00', 'status': 'Regular text column',  },
-                    ]}" class="w-full mx-auto">
-                        
-                    <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
+            <div class="mt-3 rounded-md overflow-x-auto font-['Inter']">
+                    <table class="w-full text-sm text-left table-auto">
+                        <thead class="font-medium text-gray-600 border-b bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-4">Date</th>
+                                <th class="px-6 py-4">Time</th>
+                                <th class="px-6 py-4">Message</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-600 divide-y">
+                            @foreach($notifications as $notification)
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis">{{ $notification->created_at->format('m/d/y') }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis">{{ $notification->created_at->format('H:i:s') }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap max-w-[100px] overflow-ellipsis text-black font-medium">{{ $notification->message }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
                         <table class="w-full text-sm text-left table-auto">
                             <thead class="font-medium text-gray-600 border-b bg-gray-50">
                             </thead>
@@ -49,7 +58,7 @@
                     </div>
                 </div>
             </div>
-
+            {{--
             <!-- Yesterday Notifications -->
             <div class="font-semibold text-lg text-black dark:text-gray-200 leading-right flex font-['Inter']">Yesterday</div>
             <div class="w-full bg-white dark:bg-gray-800 sm:rounded-lg md:mb-0">
@@ -79,6 +88,7 @@
                     </div>
                 </div>
             </div>
+            --}}
         </div>
     </div>
 </div>

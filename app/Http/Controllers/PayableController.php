@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Events\LocationChanged;
 
 
 class PayableController extends Controller
@@ -400,6 +401,10 @@ class PayableController extends Controller
 
         // Create a new track
         $track = Track::create($trackData);
+
+        // Trigger the event
+        event(new LocationChanged($track));
+
 
         return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking added successfully!');
     }
