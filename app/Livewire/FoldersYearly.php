@@ -9,6 +9,7 @@ use Livewire\Attributes\Title;
 
 class FoldersYearly extends Component
 {
+    public $ap_folders;
     public function render()
     {
         return view('livewire.accounting.folders-yearly');

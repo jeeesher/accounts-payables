@@ -10,7 +10,6 @@ use App\Models\Supplier;
 use App\Models\Particular;
 use App\Models\Disbursement;
 use App\Models\Track;
-use App\Models\Folders;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
@@ -406,7 +405,6 @@ class PayableController extends Controller
         // Trigger the event
         event(new LocationChanged($track));
 
-
         return redirect('/tracking/view?payable=' . $track->BUR)->with('success', 'Tracking added successfully!');
     }
 
@@ -463,19 +461,8 @@ class PayableController extends Controller
 
     }
 
-    // adding folder
-    public function addFolder(Request $request)
+    public function showYearly($folder_name)
     {
-        $validatedData = $request->validate([
-            'folder_name' => 'required|string|max:255',
-        ]);
-
-        Folders::create([
-            'folder_name' => $validatedData['folder_name'],
-        ]);
-
-        session()->flash('message', 'Folder created successfully.');
-
-        return redirect()->back();
+        return view('livewire.accounting.folders-yearly', compact('folder_name'));
     }
 }
