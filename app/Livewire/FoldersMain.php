@@ -10,7 +10,7 @@ use Livewire\Attributes\Title;
 class FoldersMain extends Component
 {
     public $ap_folders;
-    
+
     public function render()
     {
         return view('livewire.accounting.folders-main');
