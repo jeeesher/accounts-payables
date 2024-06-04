@@ -62,7 +62,7 @@
 
                 <!-- Payables Table -->
                 <div x-data="dataHandler()">
-                    <div class="mb-4 shadow-sm border rounded-lg font-['Inter']" style="table-layout: fixed;">
+                    <div class="mb-4 shadow-sm border font-['Inter']" style="table-layout: fixed;">
                         <table class="w-full table-auto text-sm text-left">
                             <thead class="text-gray-500 font-medium border-b-2 bg-gray-50 border-gray-200 font-['Inter']">
                                 <tr>
@@ -75,14 +75,14 @@
                                         </div>
                                         BUR Number
                                     </th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Supplier</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Particular</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Amount</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">End-User</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Current Location</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Terms of Payment</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Remarks</th>
-                                    <th class="py-3 px-6"></th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Supplier</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Particular</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Amount</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">End-User</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Current Location</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Terms of Payment</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Remarks</th>
+                                    <th class="py-3 px-3"></th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 divide-y">
@@ -127,7 +127,7 @@
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->TermsPayment}}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->latestTracking->CurrentStatus}}</td>
-                                                <td class="text-right px-6 whitespace-nowrap">
+                                                <td class="text-right px-3 whitespace-nowrap">
                                                     <div class="flex justify-center">
                                                         <div
                                                             x-data="{
@@ -145,7 +145,7 @@
                                                                     if (! this.open) return
 
                                                                     this.open = false
-                                                                    
+
                                                                     focusAfter && focusAfter.focus()
                                                                 }
                                                             }"
@@ -197,7 +197,7 @@
                                                                 <a href="{{ $urlpayable }}" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                     View
                                                                 </a>
-                                                                
+
                                                                 @php
                                                                     $urltracking = '/tracking/view?payable=' . $payable -> BUR;
                                                                 @endphp
@@ -270,15 +270,15 @@
                                                                     this.open = false
 
                                                                     focusAfter && focusAfter.focus()
-                                                                    }
-                                                                }"
-                                                                x-on:keydown.escape.prevent.stop="close($refs.button)"
-                                                                x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                                                                x-id="['dropdown-table-action']"
-                                                                class="relative z-100 inset-0"
-                                                                >
-                                                                <!-- Button -->
-                                                                <button
+                                                                }
+                                                            }"
+                                                            x-on:keydown.escape.prevent.stop="close($refs.button)"
+                                                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                                                            x-id="['dropdown-table-action']"
+                                                            class="relative z-100 inset-0"
+                                                        >
+                                                            <!-- Button -->
+                                                            <button
                                                                 x-ref="button"
                                                                 x-on:click="toggle()"
                                                                 :aria-expanded="open"
@@ -308,7 +308,7 @@
                                                                 @php
                                                                     $urledit = '/payables/edit?payable=' . $payable -> BUR;
                                                                 @endphp
-                                                                
+
                                                                 <a href="{{ $urledit }}" wire:navigate class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                                     Edit
                                                                 </a>

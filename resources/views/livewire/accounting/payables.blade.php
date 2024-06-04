@@ -59,7 +59,7 @@
 
                 <!-- Payables Table -->
                 <div x-data="dataHandler()">
-                    <div class="mb-4 shadow-sm border rounded-lg  font-['Inter']" style="table-layout: fixed;">
+                    <div class="mb-4 shadow-sm border font-['Inter']" style="table-layout: fixed;">
                         <table class="w-full table-auto text-sm text-left">
                             <thead class="text-gray-500 font-medium border-b-2 bg-gray-50 border-gray-200 font-['Inter']">
                                 <tr>
@@ -72,14 +72,14 @@
                                         </div>
                                         BUR Number
                                     </th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Supplier</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Particular</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Amount</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">End-User</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Current Location</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Terms of Payment</th>
-                                    <th class="py-3 px-6" style="white-space: nowrap;">Remarks</th>
-                                    <th class="py-3 px-6"></th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Supplier</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Particular</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Amount</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">End-User</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Current Location</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Terms of Payment</th>
+                                    <th class="py-3 px-4" style="white-space: nowrap;">Remarks</th>
+                                    <th class="py-3 px-3"></th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 divide-y">
@@ -335,10 +335,6 @@
                             </tbody>
                         </table>
                     </div>
-
-                    <!-- Pagination -->
-                    
-
                 </div>
 
                 <!-- Script for Table -->
