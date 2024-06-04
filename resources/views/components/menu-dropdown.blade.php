@@ -61,10 +61,6 @@
             style="display: none;"
             class="absolute right-3 mt-1 w-40 rounded-md bg-white shadow-md font-['Inter']"
         >  
-            <a href="/accounts" class="flex items-center gap-2 w-full border-b-2 first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm font-semibold hover:bg-gray-50 disabled:text-gray-500">
-                My Account
-            </a>
-
             <a href="#" class="flex items-center justify-between gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                 Log out
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
