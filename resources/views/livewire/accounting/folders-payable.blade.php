@@ -3,7 +3,7 @@
         <div class="p-4 mt-16">
             <!-- BUR Header -->
             <div class="mt-4 mb-4 flex items-center justify-between">
-                <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">{{ $folderPayable }}</div>
+                <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">{{ $folderPayable->BUR }}</div>
 
                 <!-- Button Group -->
                 <div class="flex gap-1 space">
@@ -65,7 +65,7 @@
                                         <option value="Cheque_File">Cheque</option>
                                     </select>
                                 </div>
-                                <input type="hidden" name="BUR" value="{{ $folderPayable }}">
+                                <input type="hidden" name="BUR" value="{{ $folderPayable->BUR }}">
                             </div>
                             
                             <!-- Add New Document Footer -->
