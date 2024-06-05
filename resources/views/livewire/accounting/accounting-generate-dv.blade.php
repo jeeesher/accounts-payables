@@ -32,7 +32,10 @@
                 <div class="pr-4 lg:w-1/3">
                     <div class="h-full pt-3 pb-2 text-left relative">
                         <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">No.</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">No.</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             @if ($disbursement)
                                 <input type="text" id="No" name="No" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter No." required value="{{ $disbursement -> No }}"/>
                             @else
@@ -43,7 +46,10 @@
                         </div>
                                 
                         <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Payee</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Payee</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             @if ($disbursement)
                                 <input type="text" id="Payee" name="Payee" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Payee" required value="{{ $disbursement -> Payee }}"/>
                             @else
@@ -56,9 +62,9 @@
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Address</div>
                             @if ($disbursement)
-                                <input type="text" id="Address" name="Address" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Address" required value="{{ $disbursement -> Address }}"/>
+                                <input type="text" id="Address" name="Address" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Address" value="{{ $disbursement -> Address }}"/>
                             @else
-                                <input type="text" id="Address" name="Address" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Address" required />
+                                <input type="text" id="Address" name="Address" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Address" />
                             @endif
 
                             @error('Address') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -70,7 +76,10 @@
                 <div class="pr-2 lg:w-1/3">
                     <div class="h-full pt-3 pb-2 pl-2 rounded-lg text-left relative">
                         <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             @if ($disbursement)
                                 <input type="date" id="Date" name="Date" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value="{{ $disbursement -> Date }}"/>
                             @else
@@ -83,9 +92,9 @@
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">TIN Employee No.</div>
                             @if($disbursement)
-                                <input type="text" id="TIN" name="TIN" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter TIN Employee No." required value="{{ $disbursement -> TIN }}"/>
+                                <input type="text" id="TIN" name="TIN" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter TIN Employee No." value="{{ $disbursement -> TIN }}"/>
                             @else
-                                <input type="text" id="TIN" name="TIN" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter TIN Employee No." required />
+                                <input type="text" id="TIN" name="TIN" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter TIN Employee No." />
                             @endif
 
                             @error('TIN') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -96,9 +105,9 @@
                             <div class="relative items-center">
                                 <div class="text-zinc-950 text-sm font-medium font-['Inter'] absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">Office/Unit/Project:</div>
                                 @if($disbursement)
-                                    <input type="text" id="RCOffice" name="RCOffice" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-40 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" required value="{{ $disbursement -> RCOffice }}"/>
+                                    <input type="text" id="RCOffice" name="RCOffice" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-40 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" value="{{ $disbursement -> RCOffice }}"/>
                                 @else
-                                    <input type="text" id="RCOffice" name="RCOffice" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-40 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" required />
+                                    <input type="text" id="RCOffice" name="RCOffice" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-40 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" />
                                 @endif
                                 
                                 @error('RCOffice') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -110,17 +119,17 @@
                 <!-- Mode of Payment and BUR No. Input Field -->
                 <div class="lg:w-1/3">
                     <div class="h-full pt-3 pl-4 pb-2 rounded-lg text-left relative">
-                        <div class="mb-6">
+                        <div class="mb-6 mt-1.5">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Mode of Payment</div>
                             @if ($disbursement)
-                                <select id="ModePayment" name="ModePayment" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Mode of Payment" required>
+                                <select id="ModePayment" name="ModePayment" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Mode of Payment" >
                                     <option disabled>Select Mode of Payment</option> 
                                     <option value="Check" {{ $disbursement -> ModePayment == 'Check' ? 'selected' : '' }}>Check</option>
                                     <option value="Cash" {{ $disbursement -> ModePayment == 'Cash' ? 'selected' : '' }}>Cash</option>
                                     <option value="Others" {{ $disbursement -> ModePayment == 'Others' ? 'selected' : '' }}>Others</option>
                                 </select>
                             @else
-                                <select id="ModePayment" name="ModePayment" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Mode of Payment" required>
+                                <select id="ModePayment" name="ModePayment" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Mode of Payment" >
                                     <option disabled selected>Select Mode of Payment</option> 
                                     <option value="Check">Check</option>
                                     <option value="Cash">Cash</option>
@@ -132,7 +141,10 @@
                         </div>
                                 
                         <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">BUR No.</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">BUR No.</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             <input type="text" id="BUR" name="BUR" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ $payable -> BUR }}" required />
                             @error('BUR') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
@@ -142,9 +154,9 @@
                             <div class="relative items-center">
                                 <div class="text-zinc-950 text-sm font-medium font-['Inter'] absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">Code:</div>
                                 @if($disbursement)
-                                    <input type="text" id="RCCode" name="RCCode" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" required value="{{ $disbursement -> RCCode }}"/>
+                                    <input type="text" id="RCCode" name="RCCode" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text"  value="{{ $disbursement -> RCCode }}"/>
                                 @else
-                                    <input type="text" id="RCCode" name="RCCode" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text" required />
+                                    <input type="text" id="RCCode" name="RCCode" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-16 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Text"  />
                                 @endif
 
                                 @error('RCCode') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -218,24 +230,40 @@
 
                         <!-- Certified Dropdown -->
                         <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Certified</div>
-                            <select id="Certified" name="Certified" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected value="">Select Certified Status</option> 
-                                <option value="Supporting Documents Complete">Supporting Documents Complete</option>
-                                <option value="Supporting Documents Incomplete">Supporting Documents Incomplete</option>
-                                <option value="Missing Documents">Missing Documents</option>
-                                <option value="Others">Others</option>
-                            </select>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Certified</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
+                            @if ($disbursement)
+                                <select id="Certified" name="Certified" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    <option disabled>Select Certified Status</option> 
+                                    <option value="Supporting Documents Complete" {{ $disbursement -> Certified == 'Supporting Documents Complete' ? 'selected' : '' }}>Supporting Documents Complete</option>
+                                    <option value="Supporting Documents Incomplete" {{ $disbursement -> Certified == 'Supporting Documents Incomplete' ? 'selected' : '' }}>Supporting Documents Incomplete</option>
+                                    <option value="Missing Documents" {{ $disbursement -> Certified == 'Missing Documents' ? 'selected' : '' }}>Missing Documents</option>
+                                    <option value="Others" {{ $disbursement -> Certified == 'Others' ? 'selected' : '' }}>Others</option>
+                                </select>
+                            @else
+                                <select id="Certified" name="Certified" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    <option selected value="">Select Certified Status</option> 
+                                    <option value="Supporting Documents Complete">Supporting Documents Complete</option>
+                                    <option value="Supporting Documents Incomplete">Supporting Documents Incomplete</option>
+                                    <option value="Missing Documents">Missing Documents</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            @endif
                             @error('Certified') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Printed Name Input Field -->
                         <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             @if ($disbursement)
-                                <input type="text" id="CertifiedBy" name="CertifiedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" value="{{ $disbursement -> CertifiedBy }}"/>
+                                <input type="text" id="CertifiedBy" name="CertifiedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required value="{{ $disbursement -> CertifiedBy }}"/>
                             @else
-                                <input type="text" id="CertifiedBy" name="CertifiedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" />
+                                <input type="text" id="CertifiedBy" name="CertifiedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required />
                             @endif
 
                             @error('CertifiedBy') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -243,11 +271,14 @@
 
                         <!-- Position Input Field -->
                         <div class="mb-2">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             @if ($disbursement)
-                                <input type="text" id="CertifiedPosition" name="CertifiedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" value="{{ $disbursement -> CertifiedPosition }}"/>
+                                <input type="text" id="CertifiedPosition" name="CertifiedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required value="{{ $disbursement -> CertifiedPosition }}"/>
                             @else
-                                <input type="text" id="CertifiedPosition" name="CertifiedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" />
+                                <input type="text" id="CertifiedPosition" name="CertifiedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required/>
                             @endif
                             
                             @error('CertifiedPosition') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -263,21 +294,32 @@
                         <!-- Approved for Dropdown -->
                         <div class="mb-6">
                             <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Approved for</div>
-                            <select id="Approved" name="Approved" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
-                                <option selected  value="">Select Approved for Status</option> 
-                                <option value="Approved">Approved</option>
-                                <option value="Not approved">Not approved</option>
-                            </select>
+                            @if ($disbursement)
+                                <select id="Approved" name="Approved" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                                    <option disabled>Select Approved for Status</option> 
+                                    <option value="Approved" {{ $disbursement -> Approved == 'Approved' ? 'selected' : '' }}>Approved</option>
+                                    <option value="Not approved" {{ $disbursement -> Approved == 'Not approved' ? 'selected' : '' }}>Not approved</option>
+                                </select>
+                            @else
+                                <select id="Approved" name="Approved" class="bg-white border border-zinc-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                                    <option selected  value="">Select Approved for Status</option> 
+                                    <option value="Approved">Approved</option>
+                                    <option value="Not approved">Not approved</option>
+                                </select>
+                            @endif
                             @error('Approved') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Printed Name Input Field -->
                         <div class="mb-6">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Printed Name</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             @if ($disbursement)
-                                <input type="text" id="ApprovedBy" name="ApprovedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" value="{{ $disbursement -> ApprovedBy }}"/>
+                                <input type="text" id="ApprovedBy" name="ApprovedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required value="{{ $disbursement -> ApprovedBy }}"/>
                             @else
-                                <input type="text" id="ApprovedBy" name="ApprovedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" />
+                                <input type="text" id="ApprovedBy" name="ApprovedBy" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Printed Name" required/>
                             @endif
                             
                             @error('ApprovedBy') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -285,11 +327,14 @@
 
                         <!-- Position Input Field -->
                         <div class="mb-2">
-                            <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
+                            <div class="flex items-center">
+                                <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Position</div>
+                                <span class="text-red-500 p-1 pl-3">*</span>
+                            </div>
                             @if ($disbursement)
-                                <input type="text" id="ApprovedPosition" name="ApprovedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" value="{{ $disbursement -> ApprovedPosition }}"/>
+                                <input type="text" id="ApprovedPosition" name="ApprovedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required value="{{ $disbursement -> ApprovedPosition }}"/>
                             @else
-                                <input type="text" id="ApprovedPosition" name="ApprovedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" />
+                                <input type="text" id="ApprovedPosition" name="ApprovedPosition" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Position" required />
                             @endif
                             
                             @error('ApprovedPosition') <span class="text-red-500">{{ $message }}</span> @enderror
@@ -325,11 +370,14 @@
                     <div class="pr-2 lg:w-1/3">
                         <div class="h-full pb-2 pl-2 rounded-lg text-left relative font-['Inter'] ">
                             <div class="mb-2">
-                                <div class="mb-3 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
+                                <div class="flex items-center">
+                                    <div class="mb-2 text-zinc-950 text-sm font-medium font-['Inter'] leading-tight">Date</div>
+                                    <span class="text-red-500 p-1 pl-3">*</span>
+                                </div>
                                 @if ($disbursement)
-                                    <input type="date" id="CheckDate" name="CheckDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" value="{{ $disbursement -> CheckDate }}"/>
+                                    <input type="date" id="CheckDate" name="CheckDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required value="{{ $disbursement -> CheckDate }}"/>
                                 @else
-                                    <input type="date" id="CheckDate" name="CheckDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" />
+                                    <input type="date" id="CheckDate" name="CheckDate" class="bg-white border border-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date" required />
                                 @endif
 
                                 @error('CheckDate') <span class="text-red-500">{{ $message }}</span> @enderror

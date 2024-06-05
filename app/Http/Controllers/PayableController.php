@@ -354,7 +354,7 @@ class PayableController extends Controller
         $disbursementData = [
             'No' => $validated['No'],
             'Date' => $validated['Date'],
-            'ModePayment' => $validated['ModePayment'],
+            'ModePayment' => $validated['ModePayment'] ?? 'Check',
             'Payee' => $validated['Payee'],
             'TIN' => $validated['TIN'],
             'BUR' => $validated['BUR'],
