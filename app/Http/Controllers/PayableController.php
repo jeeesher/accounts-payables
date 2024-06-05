@@ -467,7 +467,27 @@ class PayableController extends Controller
 
     public function exportExcel()
     {
-        $payables = Payable::all();
+        $payables = Payable::select('payables.BUR', 'payables.SupplierName', 'particular.ParticularDesc', 'payables.Amount', 'payables.EndUser', 'tracking.CurrentLocation', 'payables.TermsPayment', 'tracking.CurrentStatus')
+            ->join('tracking', 'tracking.BUR', '=', 'payables.BUR')
+            ->joinSub(function($query) {
+                $query->select('BUR', DB::raw('MIN(id) as min_id'))
+                    ->from('tracking')
+                    ->groupBy('BUR');
+            }, 'unique_tracking', function($join) {
+                $join->on('tracking.BUR', '=', 'unique_tracking.BUR')
+                    ->on('tracking.id', '=', 'unique_tracking.min_id');
+            })
+            ->join('particular', 'particular.BUR', '=', 'payables.BUR')
+            ->joinSub(function($query) {
+                $query->select('BUR', DB::raw('MIN(id) as min_id'))
+                    ->from('particular')
+                    ->groupBy('BUR');
+            }, 'unique_particular', function($join) {
+                $join->on('particular.BUR', '=', 'unique_particular.BUR')
+                    ->on('particular.id', '=', 'unique_particular.min_id');
+            })
+            ->orderBy('payables.created_at', 'desc') // Change 'desc' to $this->sort if using Livewire sorting
+            ->get();
 
         $data = [];
         $data[] = ['BUR Number', 'Supplier', 'Particular', 'Amount', 'End-User', 'Current Location', 'Terms of Payment', 'Remarks'];
@@ -476,12 +496,12 @@ class PayableController extends Controller
             $data[] = [
                 $payable->BUR,
                 $payable->SupplierName,
-                $payable->ParticularDesc,
+                $payable->ParticularDesc ?? '', // Ensure we access the correct alias
                 'Php ' . $payable->Amount,
                 $payable->EndUser,
-                $payable->latestTracking->CurrentLocation ?? '',
+                $payable->CurrentLocation ?? '',
                 $payable->TermsPayment,
-                $payable->latestTracking->CurrentStatus ?? ''
+                $payable->CurrentStatus ?? ''
             ];
         }
 
