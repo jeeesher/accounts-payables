@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\DB;
 
 class Payables extends Component
 {   
+    public $sort = 'desc';
+
+    public function setSort($sort)
+    {
+        $this->sort = ($sort === 'desc')? 'desc' : 'asc';
+    }
 
     public function render()
     {
@@ -33,7 +39,7 @@ class Payables extends Component
                     $join->on('particular.BUR', '=', 'unique_particular.BUR')
                         ->on('particular.id', '=', 'unique_particular.min_id');
                 })
-            ->orderBy('payables.created_at', 'desc')
+            ->orderBy('payables.created_at', $this->sort)
             ->get();
 
 
