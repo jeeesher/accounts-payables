@@ -28,6 +28,7 @@ use App\Livewire\BtNavigation;
 
 use App\Http\Controllers\PayableController;
 use App\Livewire\DisbursementVoucher;
+use App\Livewire\Test;
 use App\Models\Disbursement;
 
 /*
@@ -71,10 +72,11 @@ Route::controller(PayableController::class)->group(function () {
 
     Route::post('/folders/add', 'addFolder')->name('add.folder');
     Route::get('/folders/yearly/{folder_name}', 'showYearly')->name('folders.yearly');
+
+    Route::get('/payables/export', 'exportExcel')->name('payables.export');
 });
 
 Route::get('/disbursement/voucher', DisbursementVoucher::class);
-
 
 Route::get('/tracking', Tracking::class);
 Route::get('/tracking/view', TrackingView::class);
@@ -89,6 +91,8 @@ Route::get('/notifications', Notifications::class);
 
 Route::get('/accounting/generate/dv', AccountingGenerateDv::class);
 Route::get('/accounting/dv/view', AccountingDvView::class);
+
+//Route::get('/test/{folder_name}', Test::class);
 
 //Route::get('/offices/bt/dashboard', BtDashboard::class);
 //Route::get('/offices/bt/payables', BtPayables::class);

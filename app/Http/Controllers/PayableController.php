@@ -10,6 +10,7 @@ use App\Models\Supplier;
 use App\Models\Particular;
 use App\Models\Disbursement;
 use App\Models\Track;
+use App\Models\Folders;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Events\LocationChanged;
+use Shuchkin\SimpleXLSXGen;
 
 
 class PayableController extends Controller
@@ -463,6 +465,32 @@ class PayableController extends Controller
 
     public function showYearly($folder_name)
     {
+        $ap_folders = Folders::where('folder_name', $folder_name)->get();
+
         return view('livewire.accounting.folders-yearly', compact('folder_name'));
+    }
+
+    public function exportExcel()
+    {
+        $payables = Payable::all();
+
+        $data = [];
+        $data[] = ['BUR Number', 'Supplier', 'Particular', 'Amount', 'End-User', 'Current Location', 'Terms of Payment', 'Remarks'];
+
+        foreach ($payables as $payable) {
+            $data[] = [
+                $payable->BUR,
+                $payable->SupplierName,
+                $payable->ParticularDesc,
+                'Php ' . $payable->Amount,
+                $payable->EndUser,
+                $payable->latestTracking->CurrentLocation ?? '',
+                $payable->TermsPayment,
+                $payable->latestTracking->CurrentStatus ?? ''
+            ];
+        }
+
+        $xlsx = SimpleXLSXGen::fromArray($data);
+        return $xlsx->downloadAs('payables.xlsx');
     }
 }
