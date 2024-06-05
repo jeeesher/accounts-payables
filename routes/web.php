@@ -75,8 +75,6 @@ Route::controller(PayableController::class)->group(function () {
 
 Route::get('/payables/{currentRoute}',[PayableController::class, 'searchPayable']);
 
-Route::delete('/delete-file/{BUR}/{column}', [PayableController::class, 'deleteFile'])->name('delete.file');
-
 Route::get('/disbursement/voucher', DisbursementVoucher::class);
 
 Route::get('/tracking', Tracking::class);
@@ -87,6 +85,7 @@ Route::get('/accounts', Accounts::class);
 Route::get('/folders/main', FoldersMain::class);
 Route::get('/folders/yearly/{folder_name}', FoldersYearly::class)->name('folders.yearly');
 Route::get('/folders/payable/{BUR}', FoldersPayable::class)->name('folders.payable');
+Route::delete('/delete-file/{BUR}/{column}', [PayableController::class, 'deleteFile'])->name('delete.file');
 
 // Route for Livewire notifications
 Route::get('/notifications', Notifications::class);
