@@ -7,6 +7,14 @@
 
                 <!-- Button Group -->
                 <div class="flex gap-1 space">
+                    <!-- Back Button -->
+                    <a href="{{ session('previous_url', url('/folders/main')) }}" type="button" class="inline-flex items-center text-zinc-950 text-sm font-medium font-['Inter'] bg-white border border-zinc-200 shadow hover:bg-blue-800 hover:text-white focus:ring-2 focus:ring-blue-200 rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 active:bg-cyan-700">
+                        <svg class="me-2 mb-0.5" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path stroke="currentColor" d="M15.0013 12.7503H10.0013V16.0837L4.16797 10.2503L10.0013 4.41699V7.75033H15.0013V12.7503Z" stroke="#18181B" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Back
+                    </a>
+                    
                     <!-- Adding Document Modal -->
                     <div 
                         x-data = "{ show: false}" 
