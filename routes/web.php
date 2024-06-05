@@ -86,6 +86,8 @@ Route::get('/folders/main', FoldersMain::class);
 Route::get('/folders/yearly/{folder_name}', FoldersYearly::class)->name('folders.yearly');
 Route::get('/folders/payable/{BUR}', FoldersPayable::class)->name('folders.payable')->middleware('store.previous.url');
 Route::delete('/delete-file/{BUR}/{column}', [PayableController::class, 'deleteFile'])->name('delete.file');
+Route::delete('/delete-folder/{folderName}', [PayableController::class, 'deleteFolder'])->name('delete.folder');
+
 
 // Route for Livewire notifications
 Route::get('/notifications', Notifications::class);

@@ -489,22 +489,42 @@ class PayableController extends Controller
         return $xlsx->downloadAs('payables.xlsx');
     }
 
+    // adding folder
+    public function addFolder(Request $request)
+    {
+        $validatedData = $request->validate([
+            'folder_name' => 'required|string|max:255',
+        ]);
+
+        Folders::create([
+            'folder_name' => $validatedData['folder_name'],
+        ]);
+
+        session()->flash('message', 'Folder created successfully.');
+
+        return redirect()->back();
+    }
+
     //file deletion
     public function deleteFile($BUR, $column)
     {
-        // Fetch the file record from the database
         $file = DB::table('ap_files')->where('BUR', $BUR)->first();
 
         if ($file && $file->$column) {
-            // Delete the file from storage
             Storage::delete($file->$column);
 
-            // Update the database record to remove the file path
             DB::table('ap_files')->where('BUR', $BUR)->update([$column => null]);
 
             return redirect()->back()->with('success', 'File deleted successfully.');
         }
 
         return redirect()->back()->with('error', 'File not found.');
+    }
+
+    public function deleteFolder($folderName)
+    {
+        DB::table('ap_folders')->where('folder_name', $folderName)->delete();
+
+        return redirect('/folders/main')->with('success', 'Folder deleted successfully.');
     }
 }
