@@ -44,13 +44,11 @@
                     @endphp
 
                     @foreach($ap_files as $files)                        
-                        <div class="inline-flex items-center justify-start w-full gap-2 px-3 py-6 bg-white border border-gray-200 rounded-md shadow h-9">
+                        <a href="{{ route('folders.payable', ['BUR' => $files->BUR]) }}" class="inline-flex items-center justify-start w-full gap-2 px-3 py-6 bg-white border border-gray-200 rounded-md shadow h-9">
                             <div class="flex items-center justify-start h-5 gap-2 grow shrink basis-0">
                                 <div class="ml-2 grow shrink basis-0 text-950 text-sm font-medium font-['Inter'] leading-tight">{{ $files->BUR }}</div>
                             </div>
-                            <!-- Dropdown -->
-                            <x-folders-action-yearly />
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
