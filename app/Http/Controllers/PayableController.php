@@ -19,6 +19,7 @@ use Illuminate\Validation\Rule;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Events\LocationChanged;
 use Shuchkin\SimpleXLSXGen;
+use Illuminate\Support\Facades\Storage;
 
 
 class PayableController extends Controller
@@ -328,7 +329,7 @@ class PayableController extends Controller
         $validated = $request->validate([
             'No' => ['required'],
             'Date' => ['required', 'date'],
-            'ModePayment' => ['nullable'],
+            'ModePayment' => ['nullable', 'in:Check,Cash,Others'],
             'Payee' => ['required', 'string', 'max:255'],
             'TIN' => ['nullable', 'string', 'max:255'],
             'BUR' => ['required', 'string', 'exists:payables,BUR'],
@@ -448,19 +449,20 @@ class PayableController extends Controller
     //search function 
     public function searchPayable($currentRoute, Request $request) 
     {
+        
+        $search = $request->query('searchBUR', '');
         $query = Payable::query();
 
-        if (!empty($searchTerm)) {
-            $query->where(function ($query) use ($searchTerm) {
-                $query->where('BUR', 'like', "%{$searchTerm}%")
-                    ->orWhere('SupplierName', 'like', "%{$searchTerm}%");
+        if (!empty($search)) {
+            $query= $query->where(function ($query) use ($search) {
+                $query->where('BUR', 'like', "%{$search}%")
+                    ->orWhere('SupplierName', 'like', "%{$search}%");
             });
         }
 
         $payables = $query->paginate(10);
 
         return view('livewire.search-payable', compact('payables'));
-
     }
 
     public function exportExcel()
@@ -485,5 +487,24 @@ class PayableController extends Controller
 
         $xlsx = SimpleXLSXGen::fromArray($data);
         return $xlsx->downloadAs('payables.xlsx');
+    }
+
+    //file deletion
+    public function deleteFile($BUR, $column)
+    {
+        // Fetch the file record from the database
+        $file = DB::table('ap_files')->where('BUR', $BUR)->first();
+
+        if ($file && $file->$column) {
+            // Delete the file from storage
+            Storage::delete($file->$column);
+
+            // Update the database record to remove the file path
+            DB::table('ap_files')->where('BUR', $BUR)->update([$column => null]);
+
+            return redirect()->back()->with('success', 'File deleted successfully.');
+        }
+
+        return redirect()->back()->with('error', 'File not found.');
     }
 }

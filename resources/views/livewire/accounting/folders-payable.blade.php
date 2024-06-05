@@ -103,7 +103,6 @@
                                 $hasFile = false;
                             @endphp
 
-                            <!-- Check each file column -->
                             @if($files->IAR_File)
                                 @php $hasFile = true; @endphp
                                 <div class="w-full mb-4">
@@ -128,8 +127,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->IAR_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'IAR_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,8 +166,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->SRIDE_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'SRIDE_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,8 +205,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->RIS_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'RIS_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -230,8 +244,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->DR_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'DR_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -264,8 +283,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->SI_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'SI_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -298,8 +322,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->CRPO_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'CRPO_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -332,8 +361,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->BUR_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'BUR_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -366,8 +400,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->Cheque_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'Cheque_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -400,8 +439,13 @@
                                                         <button class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
                                                             <a href="{{ asset($files->DV_File) }}" target="_blank">View</a>
                                                         </button>
-                                                        <x-delete-file />
-                                                        <button x-data x-on:click="$dispatch('open-delete-file')" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">Delete</button>
+                                                        <form action="{{ route('delete.file', ['BUR' => $files->BUR, 'column' => 'DV_File']) }}" method="POST" onsubmit="return confirmDeleteFile()">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="flex items-center justify-between gap-2 w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

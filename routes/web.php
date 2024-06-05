@@ -66,14 +66,16 @@ Route::controller(PayableController::class)->group(function () {
     Route::post('/tracking/update/{id}', 'updateTrack')->name('update.track');
 
     Route::get('/SupplierInfo/{supplier}', 'SupplierInfo');
-    Route::post('/particular/store', 'store')->name('particular.store');
-    
-    Route::get('/payables/{currentRoute}','searchPayable');
+    Route::post('/particular/store', 'store')->name('particular.store');    
 
     Route::post('/folders/add', 'addFolder')->name('add.folder');
 
     Route::get('/payables/export', 'exportExcel')->name('payables.export');
 });
+
+Route::get('/payables/{currentRoute}',[PayableController::class, 'searchPayable']);
+
+Route::delete('/delete-file/{BUR}/{column}', [PayableController::class, 'deleteFile'])->name('delete.file');
 
 Route::get('/disbursement/voucher', DisbursementVoucher::class);
 
@@ -84,7 +86,7 @@ Route::get('/accounts', Accounts::class);
 
 Route::get('/folders/main', FoldersMain::class);
 Route::get('/folders/yearly/{folder_name}', FoldersYearly::class)->name('folders.yearly');
-Route::get('/folders/payable', FoldersPayable::class);
+Route::get('/folders/payable/{BUR}', FoldersPayable::class)->name('folders.payable');
 
 // Route for Livewire notifications
 Route::get('/notifications', Notifications::class);

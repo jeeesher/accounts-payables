@@ -55,7 +55,7 @@
             return confirm('Are you sure you want to update this tracking log?\nThis action cannot be undone. This will permanently edit the tracking log and replace the data in our records.');
         }
 
-        function confirmDeleteFIle() {
+        function confirmDeleteFile() {
             return confirm('Are you sure you want to delete this file?\nThis action cannot be undone. This will permanently delete the file and remove the data from our records.');
         }
 
