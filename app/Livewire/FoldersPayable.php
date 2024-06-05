@@ -18,13 +18,16 @@ class FoldersPayable extends Component
 
     public function mount($BUR) 
     {
-        $this->folderPayable = $BUR;
+        $this->folderPayable = DB::table('ap_files')->where('BUR', $BUR)->first();
         $this->folderUrl = route('folders.payable', ['BUR' => $BUR]);
 
         $this->ap_files = DB::table('ap_files')->where('BUR', $BUR)->get();
     }  
     public function render()
     {
-        return view('livewire.accounting.folders-payable');
+        return view('livewire.accounting.folders-payable', [
+            'folderPayable' => $this->folderPayable,
+            'ap_files' => $this->ap_files,
+        ]);
     }
 }

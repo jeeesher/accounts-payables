@@ -7,12 +7,14 @@ use Livewire\Attributes\Title;
 use App\Models\Payable;
 use App\Models\Particular;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 #[Title('Payable View')]
 
 class PayablesView extends Component
 {
     public $payable;
+    public $folderPayable;
     public $error = false; 
 
     public function mount(Request $request)
@@ -26,6 +28,7 @@ class PayablesView extends Component
                 $this->error = true;
             } else {
                 $this->payable->load('otherParticulars', 'files');
+                $this->folderPayable = DB::table('ap_files')->where('BUR', $payableBUR)->first();
             }
         } else {
             $this->error = true;
@@ -34,6 +37,8 @@ class PayablesView extends Component
 
     public function render()
     {
-        return view('livewire.accounting.payables-view');
+        return view('livewire.accounting.payables-view', [
+            'folderPayable' => $this->folderPayable,
+        ]);
     }
 }
