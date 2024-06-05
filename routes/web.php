@@ -69,6 +69,7 @@ Route::controller(PayableController::class)->group(function () {
     Route::post('/particular/store', 'store')->name('particular.store');    
 
     Route::post('/folders/add', 'addFolder')->name('add.folder');
+    Route::post('/folders/upload', 'uploadFile')->name('upload.file');
 
     Route::get('/payables/export', 'exportExcel')->name('payables.export');
 });

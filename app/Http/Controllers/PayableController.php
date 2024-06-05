@@ -521,6 +521,30 @@ class PayableController extends Controller
         return redirect()->back()->with('error', 'File not found.');
     }
 
+    //file upload
+    public function uploadFile(Request $request)
+    {
+        $validated = $request->validate([
+            'file' => 'required|file|mimes:pdf,jpeg,png,jpg|max:5120',
+            'BUR' => 'required|string|exists:ap_files,BUR',
+            'column' => ['required', Rule::in(['IAR_File', 'SRIDE_File', 'RIS_File', 'DR_File', 'SI_File', 'CRPO_File', 'BUR_File', 'Cheque_File', 'DV_File'])],
+        ]);
+
+        $file = $request->file('file');
+        $extension = $file->getClientOriginalExtension();
+        $filename = $validated['BUR'].'_'.$validated['column'].'.'.$extension;
+        $path = 'uploads/payables/';
+        $file->move($path, $filename);
+
+        DB::table('ap_files')
+            ->where('BUR', $validated['BUR'])
+            ->update([
+                $validated['column'] => $path.$filename,
+            ]);
+
+        return redirect()->back()->with('success', 'File uploaded successfully.');
+    }
+
     public function deleteFolder($folderName)
     {
         DB::table('ap_folders')->where('folder_name', $folderName)->delete();
