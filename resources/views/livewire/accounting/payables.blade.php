@@ -202,7 +202,7 @@
                                         </div>
                                         BUR Number
                                     </th>
-                                    <th class="py-3 px-4" style="white-space: nowrap;">Supplier</th>
+                                    <th class="py-3 px-5" style="white-space: nowrap;">Supplier</th>
                                     <th class="py-3 px-4" style="white-space: nowrap;">Particular</th>
                                     <th class="py-3 px-4" style="white-space: nowrap;">Amount</th>
                                     <th class="py-3 px-4" style="white-space: nowrap;">End-User</th>
@@ -350,11 +350,11 @@
                                                     </div>
                                                     {{ $payable->BUR }}
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->SupplierName}}</td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->ParticularDesc}}</td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">Php {{$payable->Amount}}</td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->EndUser}}</td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[180px] overflow-hidden overflow-ellipsis">
+                                                <td class="px-5 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->SupplierName}}</td>
+                                                <td class="px-5 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->ParticularDesc}}</td>
+                                                <td class="px-5 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">Php {{$payable->Amount}}</td>
+                                                <td class="px-5 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->EndUser}}</td>
+                                                <td class="px-5 py-4 whitespace-nowrap max-w-[180px] overflow-hidden overflow-ellipsis">
                                                     @if ($payable->latestTracking->CurrentLocation == 'COA')
                                                         <span>
                                                             <div class="w-26 h-6 pl-2 pr-2 py-1 bg-gray-100 rounded-2xl justify-left items-center gap-1.5 inline-flex text-gray-700 text-xs font-medium">
@@ -375,8 +375,8 @@
                                                         </span>
                                                     @endif
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->TermsPayment}}</td>
-                                                <td class="px-6 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->latestTracking->CurrentStatus}}</td>
+                                                <td class="px-5 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->TermsPayment}}</td>
+                                                <td class="px-5 py-4 whitespace-nowrap max-w-[150px] overflow-hidden overflow-ellipsis">{{$payable->latestTracking->CurrentStatus}}</td>
                                                 <td class="text-right px-6 whitespace-nowrap">
                                                     <div class="flex justify-center">
                                                         <div
