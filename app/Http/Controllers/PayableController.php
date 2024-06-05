@@ -328,21 +328,21 @@ class PayableController extends Controller
         $validated = $request->validate([
             'No' => ['required'],
             'Date' => ['required', 'date'],
-            'ModePayment' => ['required', 'in:Check,Cash,Others'],
+            'ModePayment' => ['nullable'],
             'Payee' => ['required', 'string', 'max:255'],
-            'TIN' => ['required', 'string', 'max:255'],
+            'TIN' => ['nullable', 'string', 'max:255'],
             'BUR' => ['required', 'string', 'exists:payables,BUR'],
-            'Address' => ['required', 'string', 'max:255'],
-            'RCOffice' => ['required', 'string', 'max:255'],
-            'RCCode' => ['required', 'string', 'max:255'],
-            'Certified' => ['nullable'],
-            'CertifiedBy' => ['nullable', 'string', 'max:255'],
-            'CertifiedPosition' => ['nullable', 'string', 'max:255'],
+            'Address' => ['nullable', 'string', 'max:255'],
+            'RCOffice' => ['nullable', 'string', 'max:255'],
+            'RCCode' => ['nullable', 'string', 'max:255'],
+            'Certified' => ['required'],
+            'CertifiedBy' => ['required', 'string', 'max:255'],
+            'CertifiedPosition' => ['required', 'string', 'max:255'],
             'Approved' => ['nullable', 'in:Approved,Not Approved'],
-            'ApprovedBy' => ['nullable', 'string', 'max:255'],
-            'ApprovedPosition' => ['nullable', 'string', 'max:255'],
+            'ApprovedBy' => ['required', 'string', 'max:255'],
+            'ApprovedPosition' => ['required', 'string', 'max:255'],
             'CheckNo' => ['nullable', 'string', 'max:255'],
-            'CheckDate' => ['nullable', 'date'],
+            'CheckDate' => ['required', 'date'],
             'BankName' => ['nullable', 'string', 'max:255'],
             'CheckName' => ['nullable', 'string', 'max:255'],
             'JEVNo' => ['nullable', 'string', 'max:255'],
@@ -433,7 +433,7 @@ class PayableController extends Controller
     // downloading dv
     public function downloadDV(Request $request){
         $payable = $request->get('payable');
-        $disbursement = Disbursement::with('payable') // Assuming there is a relationship named 'payable'
+        $disbursement = Disbursement::with('payable')
                         ->where('BUR', $payable)
                         ->firstOrFail();
 
@@ -461,13 +461,6 @@ class PayableController extends Controller
 
         return view('livewire.search-payable', compact('payables'));
 
-    }
-
-    public function showYearly($folder_name)
-    {
-        $ap_folders = Folders::where('folder_name', $folder_name)->get();
-
-        return view('livewire.accounting.folders-yearly', compact('folder_name'));
     }
 
     public function exportExcel()

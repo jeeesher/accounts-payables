@@ -3,7 +3,7 @@
         <div class="p-4 mt-16">
             <!-- Folders Yearly Header -->
             <div class="mt-4 flex items-center justify-between">
-                <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Folders: {{ $folder_name }}</div>
+                <div class="font-semibold text-2xl text-black dark:text-gray-200 leading-right flex font-['Inter']">Folders: {{ $folderName }}</div>
 
                 <!-- Button Group -->
                 <div class="flex gap-1 space">
@@ -26,16 +26,25 @@
                 </div>
             </div>
 
-            <div class="w-full bg-white dark:bg-gray-800 sm:rounded-lg md:mb-0">
+            <div class="mt-4 w-full bg-white dark:bg-gray-800 sm:rounded-lg md:mb-0">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     @php
+                        // Extract years from folderName
+                        preg_match('/(\d{4})-(\d{4})/', $folderName, $matches);
+                        $startYear = $matches[1];
+                        $endYear = $matches[2];
+
+                        // Query to filter ap_files
                         $ap_files = DB::table('ap_files')
-                        //->where('created_at', '2024' )
-                        ->get();
+                            ->where(function($query) use ($startYear, $endYear) {
+                                $query->where('BUR', 'like', "%$startYear%")
+                                        ->orWhere('BUR', 'like', "%$endYear%");
+                            })
+                            ->get();
                     @endphp
 
                     @foreach($ap_files as $files)                        
-                        <div class="mt-4 inline-flex items-center justify-start w-full gap-2 px-3 py-6 bg-white border border-gray-200 rounded-md shadow h-9">
+                        <div class="inline-flex items-center justify-start w-full gap-2 px-3 py-6 bg-white border border-gray-200 rounded-md shadow h-9">
                             <div class="flex items-center justify-start h-5 gap-2 grow shrink basis-0">
                                 <div class="ml-2 grow shrink basis-0 text-950 text-sm font-medium font-['Inter'] leading-tight">{{ $files->BUR }}</div>
                             </div>

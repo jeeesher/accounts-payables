@@ -67,7 +67,7 @@
             <!-- Folder Containers -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 @foreach ($ap_folders as $folder)
-                    <a href="{{ url('/folders/yearly', ['folder_name' => $folder->folder_name]) }}" class="flex flex-col items-start justify-center bg-white border border-gray-200 rounded h-14 text-[#6B6C7E] hover:text-blue-800 active:text-cyan-700 rounded-md hover:shadow">
+                    <a href="{{ route('folders.yearly', ['folder_name' => $folder->folder_name]) }}" class="flex flex-col items-start justify-center bg-white border border-gray-200 rounded h-14 text-[#6B6C7E] hover:text-blue-800 active:text-cyan-700 rounded-md hover:shadow">
                         <div class="inline-flex items-center justify-start gap-4 p-4">
                             <div class="relative w-5 h-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

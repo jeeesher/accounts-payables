@@ -71,7 +71,6 @@ Route::controller(PayableController::class)->group(function () {
     Route::get('/payables/{currentRoute}','searchPayable');
 
     Route::post('/folders/add', 'addFolder')->name('add.folder');
-    Route::get('/folders/yearly/{folder_name}', 'showYearly')->name('folders.yearly');
 
     Route::get('/payables/export', 'exportExcel')->name('payables.export');
 });
@@ -84,6 +83,7 @@ Route::get('/tracking/view', TrackingView::class);
 Route::get('/accounts', Accounts::class);
 
 Route::get('/folders/main', FoldersMain::class);
+Route::get('/folders/yearly/{folder_name}', FoldersYearly::class)->name('folders.yearly');
 Route::get('/folders/payable', FoldersPayable::class);
 
 // Route for Livewire notifications
