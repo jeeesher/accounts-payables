@@ -1,130 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>Disbursement Voucher</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Laravel</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp&display=swap" rel="stylesheet" /> -->
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            font-size: 12px;
-        }
-        .container {
-            width: 100%;
-            margin: 0 auto;
-        }
-        .header, .dv-title, .content, .footer {
-            width: 100%;
+            font-family: 'Figtree', sans-serif;
         }
         .header {
+            border: 2px solid black;
             text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            border: 2px solid #000;
-            padding: 5px;
-            margin: 0;
         }
-        .header .sub-title {
-            font-size: 12px;
-            font-weight: normal;
+        .header div {
+            margin: 5px 0;
         }
         .dv-table {
-            border-spacing: 0;
-            border-collapse: collapse;
             width: 100%;
-            margin-top: -2px;
+            border-collapse: collapse;
         }
-        .dv-title {
-            display: flex;
-            border: 2px solid #000;
-            box-sizing: border-box;
-            padding: 5px;
-        }
-        .dv-title .main {
-            font-size: 20px;
-            font-weight: bold;
+        .dv-table th, .dv-table td {
+            border-bottom: 2px solid black;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
             text-align: center;
         }
-        .dv-title .sub-section {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            border-left: 2px solid #000;
-            box-sizing: border-box;
-            padding-left: 5px;
+        .dv-title {
+            font-size: 1.5em;
+            font-weight: bold;
         }
-        .dv-title .sub-text {
-            font-size: 12px;
-            font-weight: normal;
-            margin: 1px 0;
-            text-align: left;
+        .sub-section {
+            text-align: right;
         }
-        .md {
-            border-spacing: 0;
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: -3px;
+        .sub-text {
+            display: block;
         }
-        .md .main {
-            width: 10%;
-            border: 2px solid #000;
-            padding: 5px;
-            text-align: left;
-        }
-        .md .sub-section {
-            width: 90%;
-            border: 2px solid #000;
-            padding: 5px;
-            display: flex;
-            justify-content: space-between;
-        }
-        /* .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .table th, .table td {
-            border: 1px solid #000;
+        .mode-of-payment th, .mode-of-payment td {
+            border-bottom: 2px solid black;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
             padding: 8px;
             text-align: left;
         }
-        .table th {
-            background-color: #f2f2f2;
+        .explanation-table, .signature-table, .footer-info-table {
+            width: 100%;
+            border-collapse: collapse;
         }
-        .form-section {
-            margin-top: 20px;
-        }
-        .form-section .section-title {
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .form-section .form-group {
-            margin-bottom: 10px;
-        }
-        .form-section .form-group label {
-            display: inline-block;
-            width: 150px;
-            font-weight: bold;
-        }
-        .form-section .form-group .form-control {
-            display: inline-block;
-            width: calc(100% - 160px);
+        .explanation-table th, .explanation-table td, .signature-table th, .signature-table td, .footer-info-table th, .footer-info-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
         }
         .signature-section {
-            margin-top: 20px;
             display: flex;
             justify-content: space-between;
         }
-        .signature-section .signature-box {
+        .signature-box {
             width: 48%;
-            border: 1px solid #000;
-            padding: 10px;
+            border: 1px solid black;
+            padding: 8px;
         }
-        .signature-section .signature-box .form-group {
-            margin-bottom: 20px;
+        .signature-box .form-group {
+            margin: 10px 0;
         }
-        .footer .footer-info {
+        .footer-info {
             margin-top: 20px;
-        } */
+        }
+        .footer-info .form-group {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -133,157 +87,112 @@
         <div class="sub-title">University of the City of Manila</div>
         <div class="sub-title">Intramuros, Manila</div>
     </div>
-    <table class="dv-table" width="100%">
+    <table class="dv-table">
         <thead>
-            <tr width="100%">
-                <th class="dv-title" width="70%">
-                    <span class="main">DISBURSEMENT VOUCHER</span>
-                </th>
-                <th class="sub-section" width="30%">
-                    <span class="sub-text">No. {{ $disbursement->No }}</span> <br>
-                    <span class="sub-text">Date: {{ $disbursement->Date }}</span> <br>
+            <tr>
+                <th class="dv-title items-center" colspan="2">DISBURSEMENT VOUCHER</th>
+                <th class="sub-section">
+                    <span class="sub-text">No. {{ $disbursement->No }}</span>
+                    <span class="sub-text">Date: {{ $disbursement->Date }}</span>
                 </th>
             </tr>
         </thead>
     </table>
-    <div>
-        <table>
-            <thead>
-                <tr class="md" width="100%">
-                    <th class="main" width="10%">
-                        <span>MODE OF PAYMENT</span>
-                    </th>
-                    <th class="sub-section items-flex" width="90%">
-                        <input type="checkbox" {{ $disbursement->ModePayment == 'Check' ? 'checked' : '' }}> Check </input>
-                        <input type="checkbox" {{ $disbursement->ModePayment == 'Cash' ? 'checked' : '' }}> Cash </input>
-                        <input type="checkbox" {{ $disbursement->ModePayment == 'Others' ? 'checked' : '' }}> Others </input>
-                    </th>
-                </tr>
-            </thead>
-        </table>
+    <table class="mode-of-payment" width="100%">
+        <thead>
+            <tr>
+                <th width="20%">MODE OF PAYMENT</th>
+                <td class="items-center" width="80%">
+                    <input class="m-3" type="checkbox"> Check </input>
+                    <input class="m-3" type="checkbox"> Cash </input>
+                    <input class="m-3" type="checkbox"> Others </input>
+                </td>
+            </tr>
+        </thead>
+    </table>
+    <table class="explanation-table">
+        <thead>
+            <tr>
+                <th>EXPLANATION</th>
+                <th>AMOUNT</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($disbursement->payable->otherParticulars as $particular)
+            <tr>
+                <td>{{ $particular->ParticularDesc }}</td>
+                <td>Php {{ number_format($particular->ParticularAmount, 2) }}</td>
+            </tr>
+            @endforeach
+            <tr>
+                <td>Total</td>
+                <td>Php {{ number_format($disbursement->payable->otherParticulars->sum('ParticularAmount'), 2) }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="signature-section">
+        <div class="signature-box">
+            <div class="section-title">A. Certified</div>
+            <div class="form-group">
+                <label>Supporting Documents:</label>
+                <div class="form-control">{{ $disbursement->Certified }}</div>
+            </div>
+            <div class="form-group">
+                <label>Signature:</label>
+                <div class="form-control">{{ $disbursement->CertifiedBy }}</div>
+            </div>
+            <div class="form-group">
+                <label>Printed Name:</label>
+                <div class="form-control">{{ $disbursement->CertifiedBy }}</div>
+            </div>
+            <div class="form-group">
+                <label>Position:</label>
+                <div class="form-control">{{ $disbursement->CertifiedPosition }}</div>
+            </div>
+        </div>
+        <div class="signature-box">
+            <div class="section-title">B. Approved for Payment</div>
+            <div class="form-group">
+                <label>Signature:</label>
+                <div class="form-control">{{ $disbursement->ApprovedBy }}</div>
+            </div>
+            <div class="form-group">
+                <label>Printed Name:</label>
+                <div class="form-control">{{ $disbursement->ApprovedBy }}</div>
+            </div>
+            <div class="form-group">
+                <label>Position:</label>
+                <div class="form-control">{{ $disbursement->ApprovedPosition }}</div>
+            </div>
+        </div>
     </div>
-    
-        
-        <!-- <div class="content">
-            <div class="form-section">
-                <div class="form-group">
-                    <label><Mode of Payment:/label>
-                    <div class="form-control">
-                        
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Payee:</label>
-                    <div class="form-control">{{ $disbursement->Payee }}</div>
-                </div>
-                <div class="form-group">
-                    <label>TIN/Employee No:</label>
-                    <div class="form-control">{{ $disbursement->TIN }}</div>
-                </div>
-                <div class="form-group">
-                    <label>BUR No:</label>
-                    <div class="form-control">{{ $disbursement->BUR }}</div>
-                </div>
-                <div class="form-group">
-                    <label>Address:</label>
-                    <div class="form-control">{{ $disbursement->Address }}</div>
-                </div>
-                <div class="form-group">
-                    <label>Responsibility Center</label>
-                    <div class="form-control">
-                        Office/Unit/Project: {{ $disbursement->RCOffice }}<br>
-                        Code: {{ $disbursement->RCCode }}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Date:</label>
-                    <div class="form-control">{{ $disbursement->Date }}</div>
-                </div>
-            </div>
-            <div class="table-section">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Explanation</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($disbursement->payable->otherParticulars as $particular)
-                        <tr>
-                            <td>{{ $particular->ParticularDesc }}</td>
-                            <td>Php {{ number_format($particular->ParticularAmount, 2) }}</td>
-                        </tr>
-                        @endforeach
-                        <tr>
-                            <td>Total</td>
-                            <td>Php {{ number_format($disbursement->payable->otherParticulars->sum('ParticularAmount'), 2) }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="signature-section">
-                <div class="signature-box">
-                    <div class="section-title">A. Certified</div>
-                    <div class="form-group">
-                        <label>Supporting Documents:</label>
-                        <div class="form-control">{{ $disbursement->Certified }}</div>
-                    </div>
-                    <div class="form-group">
-                        <label>Signature:</label>
-                        <div class="form-control">{{ $disbursement->CertifiedBy }}</div>
-                    </div>
-                    <div class="form-group">
-                        <label>Printed Name:</label>
-                        <div class="form-control">{{ $disbursement->CertifiedBy }}</div>
-                    </div>
-                    <div class="form-group">
-                        <label>Position:</label>
-                        <div class="form-control">{{ $disbursement->CertifiedPosition }}</div>
-                    </div>
-                </div>
-                <div class="signature-box">
-                    <div class="section-title">B. Approved for Payment</div>
-                    <div class="form-group">
-                        <label>Signature:</label>
-                        <div class="form-control">{{ $disbursement->ApprovedBy }}</div>
-                    </div>
-                    <div class="form-group">
-                        <label>Printed Name:</label>
-                        <div class="form-control">{{ $disbursement->ApprovedBy }}</div>
-                    </div>
-                    <div class="form-group">
-                        <label>Position:</label>
-                        <div class="form-control">{{ $disbursement->ApprovedPosition }}</div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-info">
-                <div class="form-group">
-                    <label>Check No:</label>
-                    <div class="form-control">{{ $disbursement->CheckNo }}</div>
-                </div>
-                <div class="form-group">
-                    <label>Date:</label>
-                    <div class="form-control">{{ $disbursement->CheckDate }}</div>
-                </div>
-                <div class="form-group">
-                    <label>Bank Name:</label>
-                    <div class="form-control">{{ $disbursement->BankName }}</div>
-                </div>
-                <div class="form-group">
-                    <label>OR No./Other Documents:</label>
-                    <div class="form-control">{{ $disbursement->ORNo }}</div>
-                </div>
-                <div class="form-group">
-                    <label>JEV No:</label>
-                    <div class="form-control">{{ $disbursement->JEVNo }}</div>
-                </div>
-                <div class="form-group">
-                    <label>Date:</label>
-                    <div class="form-control">{{ $disbursement->JEVDate }}</div>
-                </div>
-            </div>
-        </div> -->
+    <table class="footer-info-table">
+        <thead>
+            <tr>
+                <th colspan="2">C. Received Payment</th>
+                <th colspan="2">JEV No.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Check No.:</td>
+                <td>{{ $disbursement->CheckNo }}</td>
+                <td>OR No./Other Documents:</td>
+                <td>{{ $disbursement->ORNo }}</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>{{ $disbursement->CheckDate }}</td>
+                <td>JEV No.:</td>
+                <td>{{ $disbursement->JEVNo }}</td>
+            </tr>
+            <tr>
+                <td>Bank Name:</td>
+                <td>{{ $disbursement->BankName }}</td>
+                <td>Date:</td>
+                <td>{{ $disbursement->JEVDate }}</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
