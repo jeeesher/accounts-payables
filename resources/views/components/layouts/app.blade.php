@@ -7,8 +7,11 @@
         <title>{{ $title ?? config('app.name', 'Accounts Payable') }}</title>
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
+      
+      	<link href="https://fonts.bunny.net" rel="preconnect">
+    	<link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -32,6 +35,9 @@
         {{ $slot }}
 
         @stack('scripts')
+      
+      	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowSbite/2.3.0/flowbite.min.js"></script>
+
     </body>
 
     <script>
